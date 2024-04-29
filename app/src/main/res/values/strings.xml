@@ -1,4 +1,5 @@
 <resources>
+    <string name="default_web_client_id">879470839672-rou587fi59bt6qsdkje549mcq1hf0o68.apps.googleusercontent.com</string>
     <string name="app_name">Gana Goza</string>
     <string name="texto_pantalla_presentacion">PARADERO 21</string>
     <string name="firma">Paradero 21</string>

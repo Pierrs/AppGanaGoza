@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "879470839672",
+    "firebase_url": "https://app-gana-goza-default-rtdb.firebaseio.com",
     "project_id": "app-gana-goza",
     "storage_bucket": "app-gana-goza.appspot.com"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.dapm.ganagoza"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "879470839672-drnti4d2v34g1vrq7oet12qof0s329ij.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dapm.ganagoza",
+            "certificate_hash": "9525a6e6202aa61f0bde6b717fc528ff053ef286"
+          }
+        },
+        {
+          "client_id": "879470839672-rou587fi59bt6qsdkje549mcq1hf0o68.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyD-k_cITLh7VNFDDPl7Nl_RyQ39pCn7od0"
@@ -20,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879470839672-rou587fi59bt6qsdkje549mcq1hf0o68.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
