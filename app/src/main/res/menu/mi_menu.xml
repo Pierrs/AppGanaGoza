@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Item_juegos"
+        android:title="@string/Item_juegos"
+        android:icon="@drawable/ic_juego"
+        />
+    <item
+        android:id="@+id/Item_cuenta"
+        android:title="@string/Item_cuenta"
+        android:icon="@drawable/ic_cuenta"
+        />
+</menu>

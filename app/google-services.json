@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "879470839672",
+    "project_id": "app-gana-goza",
+    "storage_bucket": "app-gana-goza.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879470839672:android:858f9ff60fcd1e36e76a8d",
+        "android_client_info": {
+          "package_name": "com.dapm.ganagoza"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-k_cITLh7VNFDDPl7Nl_RyQ39pCn7od0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

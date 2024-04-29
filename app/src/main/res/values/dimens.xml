@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_texto_pantalla_presentacion">60sp</dimen>
+    <dimen name="firma">40sp</dimen>
+    <dimen name="m_altura_boton">50dp</dimen>
+    <dimen name="m_buttom_height">50dp</dimen>
+
+
+</resources>

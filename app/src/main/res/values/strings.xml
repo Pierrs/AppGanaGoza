@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Gana Goza</string>
+    <string name="texto_pantalla_presentacion">PARADERO 21</string>
+    <string name="firma">Paradero 21</string>
+    <string name="Ingresa_email">Continuar con Google</string>
+    <string name="Ingresar_cuenta">Acceder Ahora</string>
+    <string name="texto_login"> Inicio de Sessión</string>
+    <string name="Et_email">Email</string>
+    <string name="Et_password">Password</string>
+    <string name="Boton_ingresar">Ingresar</string>
+    <string name="texto_no_tiene_cuenta">¿No tienes una cuenta?</string>
+    <string name="Registro">Registrarme</string>
+    <string name="bienvenido_a">Bienvenido a</string>
+    <string name="ganagoza"> Gana Goza</string>
+    <string name="Texto_registro"> Registro de usuario</string>
+    <string name="Texto_repetir_password"> Repetir contraseña</string>
+    <string name="Boton_registrar"> Registrar</string>
+    <string name="Item_juegos">Juegos</string>
+    <string name="Item_cuenta">Mi cuenta</string>
+    <string name="Titulo_Rl">TE AMO SIDNY</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Boton_cerrar_sesion">Cerrar Session</string>
+
+
+</resources>
