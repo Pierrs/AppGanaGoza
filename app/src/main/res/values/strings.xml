@@ -21,6 +21,25 @@
     <string name="Titulo_Rl">TE AMO SIDNY</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+   
+
+    <!--Perfil de Usuario-->
+    <string name="Txt_perfil">Perfil de usuario</string>
+    <string name="Txt_informacion">Información: </string>
+    <string name="Txt_nombres">Nombres</string>
+    <string name="Tv_nombres">Nombres completos</string>
+    <string name="Txt_email">Email: </string>
+    <string name="Tv_email">email@dominio.com</string>
+    <string name="Txt_nacimiento">Fecha de nacimiento:</string>
+    <string name="Tv_nacimiento">dd//mm/aaaa</string>
+    <string name="Txt_miembro">Miembro desde: </string>
+    <string name="Tv_miembro">dd/mm/aaaa</string>
+    <string name="Txt_telefono">Teléfono</string>
+    <string name="Tv_telefono">939778924</string>
+    <string name="Txt_estado_cuenta">Estado de cuenta</string>
+    <string name="Tv_estado_cuenta">No verificado</string>
+    <string name="Txt_Opciones">Opciones</string>
+    <string name="Boton_editar_perfil">Editar perfil</string>
     <string name="Boton_cerrar_sesion">Cerrar Session</string>
 
 
