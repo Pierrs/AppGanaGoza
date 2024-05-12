@@ -12,9 +12,10 @@
         <TextView
             android:id="@+id/Txt_perfil"
             android:text="@string/Txt_perfil"
+            android:fontFamily="@font/jersey"
+            android:textColor="@color/black"
             android:gravity="center"
-            android:textStyle="bold"
-            android:textSize="20sp"
+            android:textSize="30dp"
             android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -187,22 +188,41 @@
             app:icon="@drawable/ic__editar"
             android:layout_centerInParent="true"
             android:layout_width="200dp"
-            android:layout_height="@dimen/m_buttom_height"/>
+            android:layout_height="60dp"
+            android:backgroundTint="@color/black"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/Boton_cambiar_pass"
+            android:text="@string/Boton_cambiar_pass"
+            android:layout_below="@+id/Boton_editar_perfil"
+            android:textAllCaps="true"
+            app:icon="@drawable/ic_password"
+            android:layout_centerInParent="true"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/black"/>/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/Boton_verificar_cuenta"
+            android:text="@string/Boton_verificar_cuenta"
+            android:layout_below="@+id/Boton_cambiar_pass"
+            android:textAllCaps="true"
+            app:icon="@drawable/ic_verificar"
+            android:layout_centerInParent="true"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/verde_oscuro"/>/>
+
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/Boton_cerrar_sesion"
             android:text="@string/Boton_cerrar_sesion"
-            android:layout_below="@+id/Boton_editar_perfil"
+            android:layout_below="@+id/Boton_verificar_cuenta"
             android:textAllCaps="true"
             app:icon="@drawable/ic_salir"
             android:layout_centerInParent="true"
             android:layout_width="200dp"
-            android:layout_height="@dimen/m_buttom_height"/>
-
-
-
+            android:layout_height="60dp"
+            android:backgroundTint="#FF0000"/>
     </RelativeLayout>
-
-    <!-- TODO: Update blank fragment layout -->
 
 </ScrollView>

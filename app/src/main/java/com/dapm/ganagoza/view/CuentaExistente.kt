@@ -36,6 +36,9 @@ class CuentaExistente : AppCompatActivity() {
         binding.Registro.setOnClickListener{
             startActivity(Intent(this@CuentaExistente,Registro_usuario::class.java))
         }
+        binding.TvRecuperar.setOnClickListener {
+            startActivity(Intent(this@CuentaExistente,RecuperarPassword::class.java))
+        }
 
     }
     private var email=""

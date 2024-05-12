@@ -15,16 +15,16 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
+            android:layout_weight="100"
             android:layout_margin="8dp"
-            android:layout_gravity="center"
             app:cardCornerRadius="16dp"
             app:cardElevation="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/background_registro_gradient"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_inicio_session"
                 android:orientation="vertical"
                 android:padding="8dp">
 
@@ -32,20 +32,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/texto_login"
+                    android:layout_marginTop="80dp"
                     android:fontFamily="@font/jersey"
-                    android:textColor="@color/black"
+                    android:text="@string/texto_login"
                     android:textAllCaps="true"
-                    android:textSize="40sp"
-                    />
+                    android:textColor="@color/black"
+                    android:textSize="40sp" />
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="15dp"
-                    android:src="@drawable/login" />
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:hardwareAccelerated="true"
+                    app:lottie_autoPlay="true"
+                    app:lottie_enableMergePathsForKitKatAndAbove="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/prueba18"/>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -54,15 +57,16 @@
                     app:boxCornerRadiusBottomEnd="8dp"
                     app:boxCornerRadiusBottomStart="8dp"
                     app:boxCornerRadiusTopEnd="8dp"
-                    app:boxCornerRadiusTopStart="8dp">
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:boxStrokeColor="@color/azul_cielo"
+                    app:boxStrokeWidth="5dp">
 
                     <EditText
                         android:id="@+id/Et_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/Et_email"
-                        android:inputType="textEmailAddress"
-                        />
+                        android:inputType="textEmailAddress" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -74,7 +78,9 @@
                     app:boxCornerRadiusBottomStart="8dp"
                     app:boxCornerRadiusTopEnd="8dp"
                     app:boxCornerRadiusTopStart="8dp"
-                    app:passwordToggleEnabled="true">
+                    app:passwordToggleEnabled="true"
+                    app:boxStrokeColor="@color/azul_cielo"
+                    app:boxStrokeWidth="5dp">
 
                     <EditText
                         android:id="@+id/Et_password"
@@ -91,23 +97,24 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"
-                    android:text="@string/Boton_ingresar"
+                    android:backgroundTint="@color/white"
                     android:fontFamily="@font/jersey"
+                    android:text="@string/Boton_ingresar"
                     android:textAllCaps="true"
-                    android:textSize="25dp"/>
+                    android:textColor="@color/rojo"
+                    android:textSize="25dp" />
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="50dp"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/texto_no_tiene_cuenta"
-                       />
+                        android:text="@string/texto_no_tiene_cuenta" />
 
                     <TextView
                         android:id="@+id/Registro"
@@ -115,9 +122,35 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:text="@string/Registro"
-                        android:textAllCaps="true"
+                        android:textColor="@color/rojo"
+                        android:textStyle="bold"
 
-                    />
+
+                        />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Txt_olvide_contraseña" />
+
+                    <TextView
+                        android:id="@+id/Tv_recuperar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/Tv_recuperar"
+                        android:textColor="@color/azul_cielo"
+                        android:textStyle="bold" />
+
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 

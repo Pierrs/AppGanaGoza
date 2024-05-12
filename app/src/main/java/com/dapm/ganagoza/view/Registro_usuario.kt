@@ -7,15 +7,10 @@ import android.util.Patterns
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.dapm.ganagoza.R
-import com.dapm.ganagoza.databinding.ActivityCuentaExistenteBinding
 import com.dapm.ganagoza.databinding.ActivityRegistroUsuarioBinding
 import com.dapm.ganagoza.utils.Constantes
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-import java.util.regex.Pattern
 
 class Registro_usuario : AppCompatActivity() {
     private lateinit var binding: ActivityRegistroUsuarioBinding
@@ -27,6 +22,7 @@ class Registro_usuario : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(binding.root)
 
+
         firebaseAuth=FirebaseAuth.getInstance()
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Espere por favor")
@@ -35,7 +31,6 @@ class Registro_usuario : AppCompatActivity() {
         binding.BotonIngresar.setOnClickListener{
             validarInformacion()
         }
-
     }
     private var email=""
     private var password=""
@@ -78,13 +73,13 @@ class Registro_usuario : AppCompatActivity() {
         progressDialog.show()
         firebaseAuth.createUserWithEmailAndPassword(email,password)
             .addOnSuccessListener {
-                llenarInformacionBD()
+                        llenarInformacionBD()
+
             }
             .addOnFailureListener{e->
                 progressDialog.dismiss()
                 Toast.makeText(this,
-                    "No se registro el usuarioo debido a ${e.message}",Toast.LENGTH_SHORT).show()
-
+                    "No se registro el usuario debido a ${e.message}",Toast.LENGTH_SHORT).show()
             }
     }
 
@@ -105,7 +100,7 @@ class Registro_usuario : AppCompatActivity() {
         hashMap["online"]=true
         hashMap["email"]="${emailUsuario}"
         hashMap["uid"]="${uidUsuario}"
-        hashMap["fecha_nacmiento"]=""
+        hashMap["fecha_nacimiento"]=""
 
         val referencias =FirebaseDatabase.getInstance().getReference("Usuarios")
         referencias.child(uidUsuario!!)
@@ -120,4 +115,5 @@ class Registro_usuario : AppCompatActivity() {
                     "No se registró debido a ${e.message}",Toast.LENGTH_SHORT).show()
             }
     }
+
 }

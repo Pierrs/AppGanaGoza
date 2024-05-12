@@ -10,20 +10,22 @@
     <string name="Et_password">Password</string>
     <string name="Boton_ingresar">Ingresar</string>
     <string name="texto_no_tiene_cuenta">¿No tienes una cuenta?</string>
-    <string name="Registro">Registrarme</string>
+    <string name="Registro">Registrate</string>
     <string name="bienvenido_a">Bienvenido a</string>
     <string name="ganagoza"> Gana Goza</string>
-    <string name="Texto_registro"> Registro de usuario</string>
+    <string name="Texto_registro"> Registrate</string>
     <string name="Texto_repetir_password"> Repetir contraseña</string>
     <string name="Boton_registrar"> Registrar</string>
     <string name="Item_juegos">Juegos</string>
     <string name="Item_cuenta">Mi cuenta</string>
     <string name="Titulo_Rl">TE AMO SIDNY</string>
+    <string name="btn_verifica_correo">Verificar </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-   
+
 
     <!--Perfil de Usuario-->
+    <string name="Boton_verificar_cuenta">Verificar cuenta</string>
     <string name="Txt_perfil">Perfil de usuario</string>
     <string name="Txt_informacion">Información: </string>
     <string name="Txt_nombres">Nombres</string>
@@ -40,7 +42,27 @@
     <string name="Tv_estado_cuenta">No verificado</string>
     <string name="Txt_Opciones">Opciones</string>
     <string name="Boton_editar_perfil">Editar perfil</string>
+    <string name="Boton_cambiar_pass">Cambiar contraseña</string>
     <string name="Boton_cerrar_sesion">Cerrar Session</string>
+    <string name="Txt_olvide_contraseña">¿Has olvidado tu contraseña?</string>
+    <string name="Tv_recuperar">Recuperar</string>
+    <string name="Txt_olvide_contraseña_2">Olvide mi contraseña</string>
+    <string name="Txt_instrucciones">Ingresar su correo electrónico registrado.</string>
+    <string name="Boton_enviar_instrucciones">Enviar</string>
+    <string name="Txt_cambiar_pass">Cambiar contraseña</string>
+    <string name="Txt_instr_cambio_pass">Escribe la nueva contraseña</string>
+    <string name="Et_password_actual">Contraseña actual</string>
+    <string name="Et_password_nueva">Contraseña nueva</string>
+    <string name="Et_password_nueva_r">Repetir la nueva contraseña</string>
+    <string name="Boton_actualizar_pass">Actualizar</string>
+
+    <!-- Editar Perfil-->
+    <string name="Txt_editar_perfil">Editar Perfil</string>
+    <string name="Et_nombres">Nombres completos</string>
+    <string name="Et_fecha_nacimiento">Fecha de nacimiento</string>
+    <string name="Codigo_telefono">+00</string>
+    <string name="Et_telefono">Teléfono</string>
+    <string name="Boton_actualizar">Actualizar</string>
 
 
 </resources>
