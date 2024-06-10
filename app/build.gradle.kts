@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("com.google.gms.google-services")
+    id("kotlin-kapt")
 }
 
 android {
@@ -37,6 +38,9 @@ android {
     buildFeatures{
         viewBinding=true
     }
+    dataBinding{
+        enable= true
+    }
 
 }
 
@@ -63,6 +67,23 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation ("com.hbb20:ccp:2.7.0")
     implementation("com.google.firebase:firebase-storage")
+    var nav_version = "2.3.5"
+    implementation ("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation ("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+    implementation ("androidx.room:room-ktx:2.5.0")
+    kapt("androidx.room:room-compiler:2.5.0")
+    implementation("com.getbase:floatingactionbutton:1.10.1")
+
+
+    //pruebas unitarias
+    testImplementation ("junit:junit:4.13.2")
+    testImplementation ("org.mockito:mockito-core:3.11.2")
+    testImplementation ("org.mockito.kotlin:mockito-kotlin:3.2.0")
+    testImplementation ("org.robolectric:robolectric:4.9")
+    testImplementation ("androidx.arch.core:core-testing:2.1.0")
+
 
     //noinspection UseTomlInstead
 

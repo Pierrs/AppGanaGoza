@@ -79,7 +79,7 @@ class Registro_usuario : AppCompatActivity() {
             .addOnFailureListener{e->
                 progressDialog.dismiss()
                 Toast.makeText(this,
-                    "No se registro el usuario debido a ${e.message}",Toast.LENGTH_SHORT).show()
+                    "No se registro el usuario debido a que ya existe ${e.message}",Toast.LENGTH_SHORT).show()
             }
     }
 
@@ -112,7 +112,7 @@ class Registro_usuario : AppCompatActivity() {
             .addOnFailureListener{e->
                 progressDialog.dismiss()
                 Toast.makeText(this,
-                    "No se registró debido a ${e.message}",Toast.LENGTH_SHORT).show()
+                    "No se registró debido a que ya existe este email.",Toast.LENGTH_SHORT).show()
             }
     }
 

@@ -4,6 +4,7 @@
     <dimen name="firma">40sp</dimen>
     <dimen name="m_altura_boton">50dp</dimen>
     <dimen name="m_buttom_height">50dp</dimen>
+    <dimen name="dimen_contenedor">16dp</dimen>
 
 
 </resources>

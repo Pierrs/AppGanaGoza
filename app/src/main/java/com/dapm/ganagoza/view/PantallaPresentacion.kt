@@ -6,8 +6,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.dapm.ganagoza.R
-import com.dapm.ganagoza.view.viewholder.JuegoViewModel
+import com.dapm.ganagoza.view.viewmodel.JuegoViewModel
 import com.dapm.ganagoza.databinding.ActivityPantallaPresentacionBinding
 
 class PantallaPresentacion : AppCompatActivity() {

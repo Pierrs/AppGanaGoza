@@ -24,12 +24,23 @@
             android:layout_alignParentBottom="true" />
     </RelativeLayout>
 
-    <FrameLayout
+    <RelativeLayout
         android:id="@+id/FragmentL1"
         android:layout_below="@id/ToobalRl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/View1"/>
+        android:layout_above="@+id/View1">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/contenedor_general"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+
+            android:visibility="gone" /> <!-- inicialmente oculto -->
+
+        <!-- Aquí puedes agregar otros fragmentos como "mi cuenta" -->
+    </RelativeLayout>
 
     <View
         android:id="@+id/View1"

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_contendor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dimen_contenedor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/bg_content_dialog_reto">
+            <TextView
+                android:id="@+id/tv_reto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="60dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                tools:text="reto que debes hacer"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/cl_contendor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cl_contendor">
+            </TextView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/iv_retp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@drawable/bg_circulo_reto"
+            android:padding="20dp"
+            android:src="@drawable/img_fondo"
+            app:layout_constraintBottom_toTopOf="@+id/cl_contendor"
+            app:layout_constraintEnd_toEndOf="@+id/cl_contendor"
+            app:layout_constraintStart_toStartOf="@+id/cl_contendor"
+            app:layout_constraintTop_toTopOf="@+id/cl_contendor"/>
+
+        <Button
+            android:id="@+id/bt_cerrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/color_general"
+            android:text="@string/btn_CerrarDialogo"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="@+id/cl_contendor"
+            app:layout_constraintEnd_toEndOf="@+id/cl_contendor"
+            app:layout_constraintStart_toStartOf="@+id/cl_contendor"
+            app:layout_constraintTop_toBottomOf="@+id/cl_contendor"/>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
