@@ -40,31 +40,31 @@
                     app:lottie_rawRes="@raw/prueba15" />
 
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginTop="150dp"
                     android:fontFamily="@font/jersey"
-                    android:textColor="@color/black"
+                    android:maxLines="1"
                     android:text="@string/bienvenido_a"
                     android:textAllCaps="true"
-                    android:textSize="48sp"
-                    android:maxLines="1"/>
+                    android:textColor="@color/black"
+                    android:textSize="48sp" />
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="5dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="40dp"
+                    android:fontFamily="@font/paradero21"
                     android:text="@string/ganagoza"
                     android:textAllCaps="true"
-                    android:textSize="58sp"
-                    android:fontFamily="@font/paradero21"
-                    android:layout_marginStart="40dp"
-                    />
+                    android:textSize="58sp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/Ingresar_email"
@@ -74,9 +74,9 @@
                     android:backgroundTint="@color/white"
                     android:elevation="8dp"
                     android:fontFamily="@font/jersey"
-                    android:textColor="@android:color/black"
                     android:text="@string/Ingresa_email"
                     android:textAllCaps="true"
+                    android:textColor="@android:color/black"
                     android:textSize="30sp"
                     app:icon="@drawable/google"
                     app:iconGravity="textStart"

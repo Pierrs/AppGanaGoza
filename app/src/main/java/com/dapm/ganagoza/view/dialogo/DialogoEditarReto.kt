@@ -35,7 +35,7 @@ object DialogoEditarReto {
             val descripcion = binding.idEditReto.text.toString().trim()
             val reto =Reto(reto.id,descripcion)
 
-            juegoViewModel.actaulizarReto(reto)
+            juegoViewModel.actualizarReto(reto)
             alertDialog.dismiss()
             actualizarLista.invoke()
         }
