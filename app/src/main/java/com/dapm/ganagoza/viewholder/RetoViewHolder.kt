@@ -7,12 +7,8 @@ import com.dapm.ganagoza.view.dialogo.DialogoAgregarReto
 import com.dapm.ganagoza.view.dialogo.DialogoEditarReto.showDialogEditReto
 import com.dapm.ganagoza.view.viewmodel.JuegoViewModel
 
-class RetoViewHolder( binding:ItemRetoBinding, juegoViewModel: JuegoViewModel):ViewHolder(binding.root) {
+class RetoViewHolder(private val binding: ItemRetoBinding, juegoViewModel: JuegoViewModel):ViewHolder(binding.root) {
     private val viewModel= juegoViewModel
-    private val binding:ItemRetoBinding
-    init {
-        this.binding=binding
-    }
     fun setItemReto(reto: Reto) {
         binding.tvName.text=reto.descripcionReto
         binding.ivDelete.setOnClickListener {

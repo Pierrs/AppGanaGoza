@@ -1,68 +1,12 @@
 <resources>
     <string name="default_web_client_id">879470839672-rou587fi59bt6qsdkje549mcq1hf0o68.apps.googleusercontent.com</string>
     <string name="app_name">Gana Goza</string>
-    <string name="texto_pantalla_presentacion">PARADERO 21</string>
-    <string name="firma">Paradero 21</string>
-    <string name="Ingresa_email">Continuar con Google</string>
-    <string name="Ingresar_cuenta">Acceder Ahora</string>
-    <string name="texto_login"> Inicio de Sessión</string>
-    <string name="Et_email">Email</string>
-    <string name="Et_password">Password</string>
-    <string name="Boton_ingresar">Ingresar</string>
-    <string name="texto_no_tiene_cuenta">¿No tienes una cuenta?</string>
-    <string name="Registro">Registrate</string>
-    <string name="bienvenido_a">Bienvenido a</string>
+    <string name="texto_pantalla_presentacion">GANA GOZA</string>
+    <string name="firma">Gana Goza</string>
     <string name="ganagoza"> Gana Goza</string>
-    <string name="Texto_registro"> Registrate</string>
-    <string name="Texto_repetir_password"> Repetir contraseña</string>
     <string name="Boton_registrar"> Registrar</string>
-    <string name="Item_juegos">Juegos</string>
-    <string name="Item_cuenta">Mi cuenta</string>
-    <string name="Titulo_Rl">TE AMO SIDNY</string>
-    <string name="btn_verifica_correo">Verificar </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
-
-    <!--Perfil de Usuario-->
-    <string name="Boton_verificar_cuenta">Verificar cuenta</string>
-    <string name="Txt_perfil">Perfil de usuario</string>
-    <string name="Txt_informacion">Información: </string>
-    <string name="Txt_nombres">Nombres</string>
-    <string name="Tv_nombres">Nombres completos</string>
-    <string name="Txt_email">Email: </string>
-    <string name="Tv_email">email@dominio.com</string>
-    <string name="Txt_nacimiento">Fecha de nacimiento:</string>
-    <string name="Tv_nacimiento">dd//mm/aaaa</string>
-    <string name="Txt_miembro">Miembro desde: </string>
-    <string name="Tv_miembro">dd/mm/aaaa</string>
-    <string name="Txt_telefono">Teléfono</string>
-    <string name="Tv_telefono">939778924</string>
-    <string name="Txt_estado_cuenta">Estado de cuenta</string>
-    <string name="Tv_estado_cuenta">No verificado</string>
-    <string name="Txt_Opciones">Opciones</string>
-    <string name="Boton_editar_perfil">Editar perfil</string>
-    <string name="Boton_cambiar_pass">Cambiar contraseña</string>
-    <string name="Boton_cerrar_sesion">Cerrar Session</string>
-    <string name="Txt_olvide_contraseña">¿Has olvidado tu contraseña?</string>
-    <string name="Tv_recuperar">Recuperar</string>
-    <string name="Txt_olvide_contraseña_2">Olvide mi contraseña</string>
-    <string name="Txt_instrucciones">Ingresar su correo electrónico registrado.</string>
-    <string name="Boton_enviar_instrucciones">Enviar</string>
-    <string name="Txt_cambiar_pass">Cambiar contraseña</string>
-    <string name="Txt_instr_cambio_pass">Escribe la nueva contraseña</string>
-    <string name="Et_password_actual">Contraseña actual</string>
-    <string name="Et_password_nueva">Contraseña nueva</string>
-    <string name="Et_password_nueva_r">Repetir la nueva contraseña</string>
-    <string name="Boton_actualizar_pass">Actualizar</string>
-
-    <!-- Editar Perfil-->
-    <string name="Txt_editar_perfil">Editar Perfil</string>
-    <string name="Et_nombres">Nombres completos</string>
-    <string name="Et_fecha_nacimiento">Fecha de nacimiento</string>
-    <string name="Codigo_telefono">+00</string>
-    <string name="Et_telefono">Teléfono</string>
-    <string name="Boton_actualizar">Actualizar</string>
 
 
     <string name="btn_CerrarDialogo">Cerrar</string>
@@ -79,6 +23,4 @@
     <string name="titulo_1">¿Cómo se juega?</string>
     <string name="descripcion_1">Los jugadores forman un circulo y en el centro colocan el dispositivo móvil, luuego tocan el botón parpadeante para girar la botella.El jugador que señale la botella debe cumplir el reto que lanza la app, de lo contrario abandona el juego.</string>
     <string name="name_reglas">Reglas del juego</string>
-    <string name="felicidades">Felicidades ganaste una recompensa!</string>
-
 </resources>

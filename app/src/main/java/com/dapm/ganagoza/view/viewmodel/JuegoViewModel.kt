@@ -20,7 +20,6 @@ import com.dapm.ganagoza.repository.RetoRepository
 import com.dapm.ganagoza.utils.Constantes
 import com.dapm.ganagoza.utils.Constantes.TIEMPO
 import com.dapm.ganagoza.view.MainActivity
-import com.dapm.ganagoza.view.OpcionesRegistro
 import com.dapm.ganagoza.view.dialogo.DialogoMostrarReto.showDialogMostrarReto
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay

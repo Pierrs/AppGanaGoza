@@ -11,12 +11,6 @@
         android:id="@+id/ToobalRl"
         android:layout_width="match_parent"
         android:layout_height="@dimen/m_altura_boton">
-        <TextView
-            android:id="@+id/TituloRl"
-            android:text="@string/Titulo_Rl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true" />
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -24,37 +18,11 @@
             android:layout_alignParentBottom="true" />
     </RelativeLayout>
 
-    <RelativeLayout
+    <FrameLayout
         android:id="@+id/FragmentL1"
-        android:layout_below="@id/ToobalRl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/View1">
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/contenedor_general"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:defaultNavHost="true"
-
-            android:visibility="gone" /> <!-- inicialmente oculto -->
-
-        <!-- Aquí puedes agregar otros fragmentos como "mi cuenta" -->
-    </RelativeLayout>
-
-    <View
-        android:id="@+id/View1"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#ccc"
-        android:layout_above="@+id/Boton_NV"/>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/Boton_NV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/mi_menu"
-        app:labelVisibilityMode="labeled" />
+        android:layout_below="@id/ToobalRl"
+        android:layout_marginTop="78dp" />
 
 </RelativeLayout>

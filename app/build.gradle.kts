@@ -2,10 +2,12 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("com.google.gms.google-services")
-    id("kotlin-kapt")
+    // Cambia id("kotlin-kapt") por:
+    id("com.google.devtools.ksp")
 }
 
 android {
+    // No cambia nada en esta sección
     namespace = "com.dapm.ganagoza"
     compileSdk = 34
 
@@ -41,11 +43,10 @@ android {
     dataBinding{
         enable= true
     }
-
 }
 
 dependencies {
-
+    // La mayoría se mantiene igual
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -57,7 +58,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    //implementation("com.google.firebase:firebase-analytics-ktx:21.6.2")
     implementation("com.airbnb.android:lottie:4.0.0")
     implementation(platform("com.google.firebase:firebase-bom:32.8.0"))
     implementation("com.google.firebase:firebase-auth")
@@ -73,13 +73,17 @@ dependencies {
     implementation ("androidx.navigation:navigation-ui-ktx:$nav_version")
 
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
-    implementation ("androidx.room:room-ktx:2.5.0")
-    kapt("androidx.room:room-compiler:2.5.0")
+
+    // Actualiza la versión de Room y cambia kapt por ksp
+    implementation ("androidx.room:room-ktx:2.6.1")
+    // Cambia esta línea:
+    // kapt("androidx.room:room-compiler:2.5.0")
+    // Por esta:
+    ksp("androidx.room:room-compiler:2.6.1")
+
     implementation("com.getbase:floatingactionbutton:1.10.1")
     implementation ("com.google.zxing:core:3.4.1")
     implementation ("com.journeyapps:zxing-android-embedded:4.2.0")
-
-
 
     //pruebas unitarias
     testImplementation ("junit:junit:4.13.2")
@@ -87,13 +91,4 @@ dependencies {
     testImplementation ("org.mockito.kotlin:mockito-kotlin:3.2.0")
     testImplementation ("org.robolectric:robolectric:4.9")
     testImplementation ("androidx.arch.core:core-testing:2.1.0")
-
-
-    //noinspection UseTomlInstead
-
-
-
-
-
-
 }

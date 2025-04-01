@@ -4,52 +4,111 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="@drawable/game_toolbar_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/waves_bg"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/wave_pattern"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             android:fitsSystemWindows="true"
-            app:layout_constraintTop_toTopOf="parent"
+            app:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbal"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:textAlignment="center"
-                android:background="@color/gradiente_final"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="0dp">
+                android:layout_height="70dp">
 
-                <ImageView
-                    android:id="@+id/iv_atras"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:src="@drawable/ic_back"
-                    android:background="?selectableItemBackgroundBorderless"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="16dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="23dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/iv_atras"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:src="@drawable/ic_back"
+                        app:tint="#FF5722" />
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:id="@+id/tv_titulo_barra"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/jersey"
-                    android:text="@string/retos"
-                    android:textColor="@color/color_general"
-                    android:textSize="25sp" />
+                    android:fontFamily="@font/bangers"
+                    android:text="¡JUEGO DE RETOS!"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:shadowColor="#000000"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4"
+                    android:rotation="-2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            </androidx.appcompat.widget.Toolbar>
+                <ImageView
+                    android:id="@+id/decoration_left"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_start"
+                    app:tint="#FFEB3B"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_barra"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_titulo_barra"
+                    app:layout_constraintTop_toTopOf="@+id/tv_titulo_barra" />
 
+                <ImageView
+                    android:id="@+id/decoration_right"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_start"
+                    app:tint="#FFEB3B"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_barra"
+                    app:layout_constraintStart_toEndOf="@+id/tv_titulo_barra"
+                    app:layout_constraintTop_toTopOf="@+id/tv_titulo_barra" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,76 +3,147 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/game_toolbar_background">
 
-        <LinearLayout
+        <!-- Patrón de ondas como fondo -->
+        <ImageView
+            android:id="@+id/wave_pattern_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/wave_pattern"
+            android:alpha="0.15" />
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="15dp"
+            android:layout_margin="24dp"
+            app:cardBackgroundColor="#80FFFFFF"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="10dp"
-                android:fontFamily="@font/jersey"
-                android:layout_gravity="center"
-                android:text="@string/agregar_reto"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                tools:ignore="MissingConstraints" />
-
-            <EditText
-                android:id="@+id/idEditPenitencia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:hint="@string/texto_hint"
-                app:backgroundTint="@color/color_general">
-
-            </EditText>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="end"
-                android:orientation="horizontal">
-                <Button
-                    android:id="@+id/idBtnCancelar"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Contenedor para título y estrella -->
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/btn_cancelar"
-                    android:backgroundTint="@color/color_general"
-                    android:layout_marginEnd="50dp"
-                    android:textColor="@color/white"
-                    android:textAllCaps="false"
-                    android:textSize="16sp"/>
-                <Button
-                    android:id="@+id/idBtnGuardar"
-                    android:layout_width="wrap_content"
+                    android:layout_gravity="center">
+
+                    <!-- Título con estilo similar a la barra principal -->
+                    <TextView
+                        android:id="@+id/tvTitulo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bangers"
+                        android:padding="10dp"
+                        android:rotation="-2"
+                        android:shadowColor="#000000"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:shadowRadius="3"
+                        android:text="@string/agregar_reto"
+                        android:textAllCaps="true"
+                        android:textColor="#FF5722"
+                        android:textSize="28sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- Icono decorativo al lado del título -->
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_start"
+                        app:tint="#FFEB3B"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvTitulo"
+                        app:layout_constraintStart_toEndOf="@+id/tvTitulo"
+                        app:layout_constraintTop_toTopOf="@+id/tvTitulo" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Texto descriptivo opcional -->
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:enabled="false"
-                    android:text="@string/btn_guardar"
-                    android:layout_marginEnd="50dp"
-                    android:textColor="@color/white"
-                    android:textAllCaps="false"
-                    android:textSize="16sp"/>
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center"
+                    android:text="Escribe un reto divertido para jugar"
+                    android:textColor="#80000000"
+                    android:textSize="14sp" />
+
+                <!-- Tarjeta para el campo de texto -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="20dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="3dp">
+
+                    <EditText
+                        android:id="@+id/idEditPenitencia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:fontFamily="sans-serif"
+                        android:hint="@string/texto_hint"
+                        android:minHeight="80dp"
+                        android:padding="16dp"
+                        android:gravity="top|start"
+                        android:textColorHint="#80000000"
+                        android:textSize="16sp" />
+                </androidx.cardview.widget.CardView>
+
+                <!-- Botones con tamaño reducido y mejor espaciado -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/idBtnCancelar"
+                        android:layout_width="110dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="16dp"
+                        android:backgroundTint="#FFFFFF"
+                        android:text="@string/btn_cancelar"
+                        android:textAllCaps="false"
+                        android:textColor="#FF5722"
+                        android:textSize="14sp"
+                        app:cornerRadius="24dp"
+                        app:strokeColor="#FF5722"
+                        app:strokeWidth="1.5dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/idBtnGuardar"
+                        android:layout_width="110dp"
+                        android:layout_height="48dp"
+                        android:backgroundTint="#FF5722"
+                        android:enabled="false"
+                        android:text="@string/btn_guardar"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        app:cornerRadius="24dp" />
+                </LinearLayout>
             </LinearLayout>
-
-        </LinearLayout>
-
-
-
-
-
-
+        </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
