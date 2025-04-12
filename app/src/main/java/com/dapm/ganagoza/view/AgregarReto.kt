@@ -4,12 +4,8 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dapm.ganagoza.R
 import com.dapm.ganagoza.databinding.ActivityAgregarRetoBinding
 import com.dapm.ganagoza.view.adapter.RetoAdapter
 import com.dapm.ganagoza.view.dialogo.DialogoAgregarReto.showDialogoAgregarReto
@@ -35,34 +31,35 @@ class AgregarReto : AppCompatActivity() {
             finish()
         }
         binding.floatBtn.setOnClickListener {
-            showDialogoAgregarReto(this, juegoViewModel,) {
+            showDialogoAgregarReto(this, juegoViewModel) {
                 observadorListaReto()
             }
         }
     }
+
     private fun observadorViewModel() {
         observadorListaReto()
         observadorProgress()
     }
 
     private fun observadorProgress() {
-       juegoViewModel.progresSstate.observe(this){
-           status->
-           binding.progress.isVisible=status
-       }
+        juegoViewModel.progresSstate.observe(this) { status ->
+            binding.progress.isVisible = status
+        }
     }
 
     private fun observadorListaReto() {
         juegoViewModel.obtenerListaReto()
         juegoViewModel.listaReto.observe(this) { lista ->
-            val recycler=binding.recycleView
-            val layoutManager=LinearLayoutManager(this)
-            layoutManager.reverseLayout=true
-            recycler.layoutManager=layoutManager
-            val adapter=RetoAdapter(lista,juegoViewModel)
-            recycler.adapter=adapter
+            val recycler = binding.recycleView
+            val layoutManager = LinearLayoutManager(this)
+            layoutManager.reverseLayout = false // Asegura el orden correcto de los elementos
+            layoutManager.stackFromEnd = false // Evita que se apilen al final
+            recycler.layoutManager = layoutManager
+            val adapter = RetoAdapter(lista, juegoViewModel)
+            recycler.adapter = adapter
             adapter.notifyDataSetChanged()
+            recycler.scrollToPosition(0) // Desplaza al primer elemento automáticamente
         }
     }
 }
-

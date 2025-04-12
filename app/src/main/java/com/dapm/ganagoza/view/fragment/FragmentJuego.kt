@@ -163,7 +163,6 @@ class FragmentJuego : Fragment() {
     override fun onResume() {
         super.onResume()
         observadorListaReto()
-        // Reanuda la música si no está reproduciéndose
         if (::audioFondo.isInitialized && !audioFondo.isPlaying) {
             audioFondo.start()
         }
@@ -171,7 +170,6 @@ class FragmentJuego : Fragment() {
 
     override fun onPause() {
         super.onPause()
-        // Pausa la música cuando el fragmento se detiene
         if (::audioFondo.isInitialized) {
             audioFondo.pause()
         }
@@ -179,7 +177,6 @@ class FragmentJuego : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
-        // Libera los recursos de MediaPlayer cuando el fragmento se detiene
         if (::audioFondo.isInitialized) {
             audioFondo.release()
         }

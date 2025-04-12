@@ -2,111 +2,154 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="#80FFFFFF">
 
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dimen_contenedor"
-            app:cardCornerRadius="50dp"
-            app:cardElevation="10dp"
-            android:padding="10dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:gravity="center"
+            android:baselineAligned="false">
 
-            <!-- Aquí está el ConstraintLayout con el fondo degradado -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/game_toolbar_background"> <!-- Este es el fondo degradado -->
+            <!-- Botón de volumen - Simplificado para respuesta rápida -->
+            <LinearLayout
+                android:id="@+id/cl_volumen"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
 
-                <ImageView
-                    android:id="@+id/idImgEstrella"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/ic_estrella"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/cl_volumen"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent" />
+                <FrameLayout
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:background="@drawable/circle_background">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/cl_volumen"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/idImgReglas"
-                    app:layout_constraintStart_toEndOf="@+id/idImgEstrella"
-                    app:layout_constraintTop_toTopOf="parent">
                     <ImageView
                         android:id="@+id/idImgVolume"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_gravity="center"
                         android:src="@drawable/ic_volumen"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        android:duplicateParentState="true"
+                        app:tint="#FF5722" />
 
                     <ImageView
                         android:id="@+id/idImgNoVolumen"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_gravity="center"
                         android:src="@drawable/ic_no_volumen"
                         android:visibility="gone"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        android:duplicateParentState="true"
+                        app:tint="#FF5722" />
+                </FrameLayout>
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sonido"
+                    android:textColor="#000000"
+                    android:textSize="11sp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/bangers"/>
+            </LinearLayout>
+
+            <!-- Botón de reglas - Simplificado para respuesta rápida -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/idImgReglas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:padding="10dp"
                     android:src="@drawable/ic_reglas_juego"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/cl_volumen"
-                    app:layout_constraintEnd_toStartOf="@+id/idImgAgregarReto"
-                    app:layout_constraintTop_toBottomOf="parent" />
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:tint="#4CAF50" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reglas"
+                    android:textColor="#000000"
+                    android:textSize="11sp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/bangers"/>
+            </LinearLayout>
+
+            <!-- Botón de agregar reto - Simplificado para respuesta rápida -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/idImgAgregarReto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:padding="10dp"
                     android:src="@drawable/ic_agregar_reto"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
-                    android:background="?selectableItemBackgroundBorderless"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/idImgReglas"
-                    app:layout_constraintEnd_toStartOf="@+id/idBotonCompartir"
-                    app:layout_constraintTop_toBottomOf="parent" />
+                    android:focusable="true"
+                    app:tint="#2196F3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Retos"
+                    android:textColor="#000000"
+                    android:textSize="11sp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/bangers"/>
+            </LinearLayout>
+
+            <!-- Botón de compartir - Simplificado para respuesta rápida -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/idBotonCompartir"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:padding="10dp"
                     android:src="@drawable/ic_compartir"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/idImgAgregarReto"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="parent" />
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:tint="#9C27B0" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Compartir"
+                    android:textColor="#000000"
+                    android:textSize="11sp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/bangers"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </layout>

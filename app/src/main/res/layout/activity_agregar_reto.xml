@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/game_toolbar_background"
+        android:fitsSystemWindows="false"
         tools:context=".view.AgregarReto">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -15,32 +16,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            app:elevation="0dp">
+            android:fitsSystemWindows="false"
+            app:elevation="0dp"
+            app:layout_scrollFlags="noScroll">
 
             <include
                 android:id="@+id/ic_contenedor_barra"
                 layout="@layout/barra_principal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:fitsSystemWindows="false" />
 
         </com.google.android.material.appbar.AppBarLayout>
-
-        <!-- Añadir patrón de ondas similar a la barra principal -->
-        <ImageView
-            android:id="@+id/wave_pattern_full"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:src="@drawable/wave_pattern"
-            android:alpha="0.15"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="0dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <!-- Título principal con formato similar a la barra -->
             <TextView
                 android:id="@+id/tvTituloPantalla"
                 android:layout_width="wrap_content"
@@ -53,7 +49,6 @@
                 android:textColor="#FFFFFF"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                android:shadowColor="#000000"
                 android:shadowDx="2"
                 android:shadowDy="2"
                 android:shadowRadius="4"
@@ -61,19 +56,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- Ícono decorativo como en la barra -->
-            <ImageView
-                android:id="@+id/decoration_title"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/ic_start"
-                app:tint="#FFEB3B"
-                app:layout_constraintBottom_toBottomOf="@+id/tvTituloPantalla"
-                app:layout_constraintStart_toEndOf="@+id/tvTituloPantalla"
-                app:layout_constraintTop_toTopOf="@+id/tvTituloPantalla" />
-
-            <!-- Subtítulo adaptado al estilo -->
             <TextView
                 android:id="@+id/tvSubtituloPantalla"
                 android:layout_width="0dp"
@@ -85,7 +67,6 @@
                 android:text="Personaliza tus desafíos para el juego"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                android:shadowColor="#80000000"
                 android:shadowDx="1"
                 android:shadowDy="1"
                 android:shadowRadius="2"
@@ -93,7 +74,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTituloPantalla" />
 
-            <!-- Tarjeta principal con esquinas redondeadas como en la barra -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardViewContainer"
                 android:layout_width="match_parent"
@@ -110,19 +90,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvSubtituloPantalla">
 
-                <!-- RecyclerView con padding adecuado -->
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycleView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:clipToPadding="false"
+                    android:overScrollMode="never"
+                    android:fadingEdge="none"
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp"
                     android:paddingTop="12dp"
                     android:paddingBottom="24dp"
                     tools:listitem="@layout/item_reto" />
 
-                <!-- Estado vacío con estilo coherente - CORREGIDA LA PROPIEDAD lineSpacingExtra -->
                 <TextView
                     android:id="@+id/emptyStateText"
                     android:layout_width="wrap_content"
@@ -143,7 +123,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- Botón flotante con estilo similar a la barra -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/float_btn"
             android:layout_width="wrap_content"
@@ -160,12 +139,10 @@
             app:borderWidth="0dp"
             app:maxImageSize="28dp" />
 
-        <!-- Overlay de carga con estilo coherente -->
         <FrameLayout
             android:id="@+id/loadingOverlay"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#99000000"
             android:visibility="gone">
 
             <androidx.cardview.widget.CardView

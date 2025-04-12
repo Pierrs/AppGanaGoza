@@ -7,22 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
 
-    <RelativeLayout
-        android:id="@+id/ToobalRl"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/m_altura_boton">
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#ccc"
-            android:layout_alignParentBottom="true" />
-    </RelativeLayout>
-
     <FrameLayout
         android:id="@+id/FragmentL1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/ToobalRl"
-        android:layout_marginTop="78dp" />
+        android:layout_height="match_parent" />
 
 </RelativeLayout>
