@@ -1,13 +1,17 @@
 package com.dapm.ganagoza.view.fragment
+
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import androidx.core.view.updatePadding
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.dapm.ganagoza.R
 import com.dapm.ganagoza.databinding.FragmentJuegoBinding
@@ -15,6 +19,7 @@ import com.dapm.ganagoza.model.Reto
 import com.dapm.ganagoza.view.AgregarReto
 import com.dapm.ganagoza.view.ReglaJuego
 import com.dapm.ganagoza.view.viewmodel.JuegoViewModel
+import com.dapm.ganagoza.view.dialogo.LanguageDialog
 
 class FragmentJuego : Fragment() {
     private lateinit var listaReto: MutableList<Reto>
@@ -38,9 +43,24 @@ class FragmentJuego : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        controladores(view)
+
+        setupWindowInsets()
+
+        controladores()
         observadorViewModel()
         controladoresMultimedia()
+    }
+
+    private fun setupWindowInsets() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+            val navigationInsets = insets.getInsets(WindowInsetsCompat.Type.navigationBars())
+
+            binding.clContenedorBoton.updatePadding(
+                bottom = navigationInsets.bottom
+            )
+
+            insets
+        }
     }
 
     private fun controladoresMultimedia() {
@@ -52,12 +72,13 @@ class FragmentJuego : Fragment() {
         audioFondo.start()
     }
 
-    private fun controladores(view: View) {
+    private fun controladores() {
         binding.botonGirar.setOnClickListener {
             juegoViewModel.girarBotella()
         }
 
-        binding.icContentedorMenuJuego.idImgReglas.setOnClickListener {
+
+        binding.icContentedorMenuJuego.clReglas.setOnClickListener {
             audioFondo.pause()
             val intent = Intent(requireContext(), ReglaJuego::class.java)
             startActivity(intent)
@@ -67,13 +88,23 @@ class FragmentJuego : Fragment() {
             sonido = !sonido
             juegoViewModel.setHabilitarSonido(sonido)
         }
-        binding.icContentedorMenuJuego.idImgAgregarReto.setOnClickListener {
+
+
+        binding.icContentedorMenuJuego.clRetos.setOnClickListener {
             audioFondo.pause()
             val intent = Intent(requireContext(), AgregarReto::class.java)
             startActivity(intent)
         }
-        binding.icContentedorMenuJuego.idBotonCompartir.setOnClickListener {
+
+
+        binding.icContentedorMenuJuego.clCompartir.setOnClickListener {
             juegoViewModel.compartir(audioFondo, requireActivity())
+        }
+
+        binding.icContentedorMenuJuego.clIdioma.setOnClickListener {
+            audioFondo.pause()
+            val languageDialog = LanguageDialog(requireContext())
+            languageDialog.show()
         }
     }
 

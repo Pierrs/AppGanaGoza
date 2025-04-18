@@ -15,7 +15,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF">
 
             <!-- Barra superior con acciones -->
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -43,9 +44,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:fontFamily="@font/bangers"
-                    android:text="RETO"
+                    android:text="@string/reto"
                     android:textColor="#FF5722"
-                    android:textSize="16sp"
+                    android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/indicador"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -102,7 +103,7 @@
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- Contenido del reto -->
+            <!-- Contenido del reto - Texto más grande -->
             <TextView
                 android:id="@+id/tvName"
                 android:layout_width="match_parent"
@@ -110,7 +111,7 @@
                 android:padding="16dp"
                 android:text="@string/descripcion_del_reto"
                 android:textColor="#333333"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:lineSpacingExtra="4dp"
                 app:layout_constraintTop_toBottomOf="@+id/actionBar"
                 app:layout_constraintBottom_toBottomOf="parent" />

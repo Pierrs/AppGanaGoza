@@ -3,12 +3,9 @@
     <string name="app_name">Gana Goza</string>
     <string name="texto_pantalla_presentacion">GANA GOZA</string>
     <string name="firma">Gana Goza</string>
-    <string name="ganagoza"> Gana Goza</string>
-    <string name="Boton_registrar"> Registrar</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="ganagoza">Gana Goza</string>
+    <string name="Boton_registrar">Registrar</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
-
     <string name="btn_CerrarDialogo">Cerrar</string>
     <string name="retos">Retos</string>
     <string name="descripcion_del_reto">Descripcion del reto</string>
@@ -23,4 +20,43 @@
     <string name="titulo_1">¿Cómo se juega?</string>
     <string name="descripcion_1">Los jugadores forman un circulo y en el centro colocan el dispositivo móvil, luuego tocan el botón parpadeante para girar la botella.El jugador que señale la botella debe cumplir el reto que lanza la app, de lo contrario abandona el juego.</string>
     <string name="name_reglas">Reglas del juego</string>
+    <string name="btn_sonido">Sonido</string>
+    <string name="btn_reglas">Reglas</string>
+    <string name="btn_retos">Retos</string>
+    <string name="btn_compartir">Compartir</string>
+    <string name="btn_idioma">Idioma</string>
+    <string name="personaliza_tus_desaf_os_para_el_juego">Personaliza tus desafíos para el juego</string>
+    <string name="mis_retos">¡MIS RETOS!</string>
+    <string name="juego_de_retos">¡JUEGO DE RETOS!</string>
+    <string name="escribe_un_reto_divertido_para_jugar">Escribe un reto divertido para jugar</string>
+    <string name="modifica_tu_reto_y_sorprende_a_todos">Modifica tu reto y sorprende a todos</string>
+    <string name="girar">¡GIRAR!</string>
+    <string name="reto">RETO</string>
+    <string name="select_language">Seleccionar Idioma</string>
+    <string name="spanish">Español</string>
+    <string name="english">Inglés</string>
+    <string name="french">Francés</string>
+    <string name="portuguese">Portugués</string>
+
+
+
+
+
+    <string name="al_continuar_aceptas_nuestros_terminos_y_condiciones">Al continuar aceptas nuestros términos y condiciones</string>
+    <string name="ver_politica_de_privacidad">Ver política de privacidad</string>
+    <string name="privacy_icon_description">Icono de privacidad</string>
+    <string name="privacy_title">Términos de Privacidad</string>
+    <string name="accept_terms">Aceptar y Continuar</string>
+    <string name="terminos_condiciones">TÉRMINOS Y CONDICIONES</string>
+    <string name="politica_privacidad">POLÍTICA DE PRIVACIDAD</string>
+
+
+    <string name="logo_del_juego">Logo del juego</string>
+    <string name="gana_goza">GANA GOZA</string>
+    <string name="pierde_y_cumple_un_reto">¡PIERDE Y CUMPLE UN RETO!</string>
+    <string name="puntos_uno">•</string>
+    <string name="puntos_dos">•</string>
+    <string name="puntos_tres">•</string>
+    <string name="cargando">Cargando…</string>
+    <string name="version_del_juego">v1.0</string>
 </resources>

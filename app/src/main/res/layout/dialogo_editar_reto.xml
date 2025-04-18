@@ -77,7 +77,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="16dp"
                     android:gravity="center"
-                    android:text="Modifica tu reto y sorprende a todos"
+                    android:text="@string/modifica_tu_reto_y_sorprende_a_todos"
                     android:textColor="#80000000"
                     android:textSize="14sp" />
 

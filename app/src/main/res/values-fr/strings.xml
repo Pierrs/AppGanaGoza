@@ -1,0 +1,68 @@
+<resources>
+    <string name="default_web_client_id">879470839672-rou587fi59bt6qsdkje549mcq1hf0o68.apps.googleusercontent.com</string>
+    <string name="app_name">Gana Goza</string>
+    <string name="texto_pantalla_presentacion">GANA GOZA</string>
+    <string name="firma">Gana Goza</string>
+    <string name="ganagoza">Gana Goza</string>
+    <string name="Boton_registrar">Enregistrer</string>
+    <string name="hello_blank_fragment">Bonjour fragment vide</string>
+    <string name="btn_CerrarDialogo">Fermer</string>
+    <string name="retos">Défis</string>
+    <string name="descripcion_del_reto">Description du défi</string>
+    <string name="btn_flotante">Ajouter un défi</string>
+    <string name="agregar_reto">Ajouter un défi</string>
+    <string name="texto_hint">Écrivez le défi</string>
+    <string name="btn_cancelar">Annuler</string>
+    <string name="btn_guardar">Garder</string>
+    <string name="title_dialog_eliminar">Voulez-vous supprimer le défi suivant?</string>
+    <string name="editar_reto">Modifier le défi</string>
+    <string name="reto_modificar">Défi à modifier</string>
+    <string name="titulo_1">Comment jouer?</string>
+    <string name="descripcion_1">Les joueurs forment un cercle et placent l\'appareil mobile au centre, puis touchent le bouton clignotant pour faire tourner la bouteille. Le joueur désigné par la bouteille doit accomplir le défi lancé par l\'application, sinon il quitte le jeu.</string>
+    <string name="name_reglas">Règles du jeu</string>
+    <string name="btn_sonido">Son</string>
+    <string name="btn_reglas">Règles</string>
+    <string name="btn_retos">Défis</string>
+    <string name="btn_compartir">Partager</string>
+    <string name="btn_idioma">Langue</string>
+    <string name="personaliza_tus_desaf_os_para_el_juego">Personnalisez vos défis pour le jeu</string>
+    <string name="mis_retos">MES DÉFIS!</string>
+    <string name="juego_de_retos">JEU DE DÉFIS!</string>
+    <string name="escribe_un_reto_divertido_para_jugar">Écrivez un défi amusant pour jouer</string>
+    <string name="modifica_tu_reto_y_sorprende_a_todos">Modifiez votre défi et surprenez tout le monde</string>
+    <string name="girar">TOURNER!</string>
+    <string name="reto">DÉFI</string>
+    <string name="select_language">Choisir la langue</string>
+    <string name="spanish">Espagnol</string>
+    <string name="english">Anglais</string>
+    <string name="french">Français</string>
+    <string name="portuguese">Portugais</string>
+
+
+
+
+
+
+
+    <string name="al_continuar_aceptas_nuestros_terminos_y_condiciones">En continuant, vous acceptez nos termes et conditions</string>
+    <string name="ver_politica_de_privacidad">Voir la politique de confidentialité</string>
+    <string name="privacy_icon_description">Icône de confidentialité</string>
+    <string name="privacy_title">Termes de confidentialité</string>
+    <string name="accept_terms">Accepter et enregistrer</string>
+
+    <string name="terminos_condiciones">CONDITIONS GÉNÉRALES</string>
+    <string name="politica_privacidad">POLITIQUE DE CONFIDENTIALITÉ</string>
+
+
+    <string name="logo_del_juego">Logo du jeu</string>
+    <string name="gana_goza">GANA GOZA</string>
+    <string name="pierde_y_cumple_un_reto">PERDEZ ET RELEVEZ UN DÉFI !</string>
+    <string name="puntos_uno">•</string>
+    <string name="puntos_dos">•</string>
+    <string name="puntos_tres">•</string>
+    <string name="cargando">>Chargement…</string>
+    <string name="version_del_juego">v1.0</string>
+
+
+
+</resources>

@@ -1,0 +1,63 @@
+<resources>
+    <string name="default_web_client_id">879470839672-rou587fi59bt6qsdkje549mcq1hf0o68.apps.googleusercontent.com</string>
+    <string name="app_name">Gana Goza</string>
+    <string name="texto_pantalla_presentacion">GANA GOZA</string>
+    <string name="firma">Gana Goza</string>
+    <string name="ganagoza">Gana Goza</string>
+    <string name="Boton_registrar">Register</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_CerrarDialogo">Close</string>
+    <string name="retos">Challenges</string>
+    <string name="descripcion_del_reto">Challenge description</string>
+    <string name="btn_flotante">Add challenge</string>
+    <string name="agregar_reto">Add challenge</string>
+    <string name="texto_hint">Write the challenge</string>
+    <string name="btn_cancelar">Cancel</string>
+    <string name="btn_guardar">Save</string>
+    <string name="title_dialog_eliminar">Do you want to delete the following challenge?</string>
+    <string name="editar_reto">Edit Challenge</string>
+    <string name="reto_modificar">Challenge to modify</string>
+    <string name="titulo_1">How to play?</string>
+    <string name="descripcion_1">Players form a circle and place the mobile device in the center, then touch the flashing button to spin the bottle. The player pointed by the bottle must complete the challenge given by the app, otherwise they leave the game.</string>
+    <string name="name_reglas">Game Rules</string>
+    <string name="btn_sonido">Sound</string>
+    <string name="btn_reglas">Rules</string>
+    <string name="btn_retos">Challenges</string>
+    <string name="btn_compartir">Share</string>
+    <string name="btn_idioma">Language</string>
+    <string name="personaliza_tus_desaf_os_para_el_juego">Customize your challenges for the game</string>
+    <string name="mis_retos">MY CHALLENGES!</string>
+    <string name="juego_de_retos">CHALLENGE GAME!</string>
+    <string name="escribe_un_reto_divertido_para_jugar">Write a fun challenge to play</string>
+    <string name="modifica_tu_reto_y_sorprende_a_todos">Modify your challenge and surprise everyone</string>
+    <string name="girar">SPIN!</string>
+    <string name="reto">CHALLENGE</string>
+    <string name="select_language">Select Language</string>
+    <string name="spanish">Spanish</string>
+    <string name="english">English</string>
+    <string name="french">French</string>
+    <string name="portuguese">Portuguese</string>
+
+
+
+    <string name="al_continuar_aceptas_nuestros_terminos_y_condiciones">By continuing, you accept our terms and conditions</string>
+    <string name="ver_politica_de_privacidad">View Privacy Policy</string>
+    <string name="privacy_icon_description">Privacy Icon</string>
+    <string name="privacy_title">Our Privacy Policy</string>
+    <string name="accept_terms">Accept and Save</string>
+
+    <string name="terminos_condiciones">TERMS AND CONDITIONS</string>
+    <string name="politica_privacidad">>PRIVACY POLICY</string>
+
+
+    <string name="logo_del_juego">Game Logo</string>
+    <string name="gana_goza">GANA GOZA</string>
+    <string name="pierde_y_cumple_un_reto">LOSE AND ACCEPT A CHALLENGE!</string>
+    <string name="puntos_uno">•</string>
+    <string name="puntos_dos">•</string>
+    <string name="puntos_tres">•</string>
+    <string name="cargando">>Loading…</string>
+    <string name="version_del_juego">v1.0</string>
+
+
+</resources>

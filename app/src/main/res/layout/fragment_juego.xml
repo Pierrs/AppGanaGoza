@@ -5,20 +5,22 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false">
 
-        <!-- ImageView para la imagen de fondo -->
         <ImageView
             android:id="@+id/iv_fondo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/fotooficial" />
+            android:adjustViewBounds="true"
+            android:src="@drawable/img_fondo" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".view.fragment.FragmentJuego">
+            android:fitsSystemWindows="true"
+            tools:context="com.dapm. presentation.view.fragment.FragmentJuego">
 
             <include
                 android:id="@+id/ic_contentedor_menu_juego"
@@ -26,84 +28,91 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dimen_contenedor"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/iv_botella"
                 android:layout_width="wrap_content"
-                android:layout_height="350dp"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
                 android:src="@drawable/botella"
-                app:layout_constraintTop_toBottomOf="@+id/ic_contentedor_menu_juego"
                 app:layout_constraintBottom_toTopOf="@+id/cl_contenedor_boton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.45"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/ic_contentedor_menu_juego" />
 
-            <!-- Cuenta regresiva mejorada -->
             <TextView
                 android:id="@+id/tv_cuenta_regresiva"
-                android:fontFamily="@font/jersey"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="70sp"
-                android:textColor="#FFEB3B"
-                android:textStyle="bold"
+                android:elevation="10dp"
+                android:fontFamily="@font/jersey"
                 android:shadowColor="#000000"
                 android:shadowDx="3"
                 android:shadowDy="3"
                 android:shadowRadius="6"
+                android:textColor="#FFEB3B"
+                android:textSize="70sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/cl_contenedor_boton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ic_contentedor_menu_juego"/>
+                app:layout_constraintTop_toBottomOf="@+id/ic_contentedor_menu_juego" />
 
+            <!-- BOTÓN DE GIRAR CENTRADO Y SIN CORTES -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_contenedor_boton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="64dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.25"
+                app:layout_constraintStart_toStartOf="parent">
 
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/lottie_cerpentina"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    app:lottie_autoPlay="false"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
                     android:visibility="gone"
-                    app:lottie_loop="false"
-                    app:lottie_rawRes="@raw/cerpentina"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:lottie_autoPlay="false"
+                    app:lottie_loop="false"
+                    app:lottie_rawRes="@raw/cerpentina" />
 
-                <!-- Botón mejorado -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cv_boton_container"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    app:cardCornerRadius="75dp"
-                    app:cardElevation="8dp"
-                    app:strokeWidth="3dp"
-                    app:strokeColor="#FFD700"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="80dp"
+                    app:cardElevation="12dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="#FFD700"
+                    app:strokeWidth="4dp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:foreground="?android:attr/selectableItemBackground">
 
-                        <!-- Fondo del botón con gradiente -->
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/button_gradient"
-                            android:scaleType="centerCrop"/>
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/button_gradient" />
 
-                        <!-- Animación del botón (mantiene la misma que tenías) -->
                         <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/botonGirar"
                             android:layout_width="match_parent"
@@ -112,27 +121,25 @@
                             app:lottie_autoPlay="true"
                             app:lottie_colorFilter="@color/botonGirar"
                             app:lottie_loop="true"
-                            app:lottie_rawRes="@raw/boton" />
+                            app:lottie_rawRes="@raw/boton"
+                            app:lottie_speed="1.2" />
 
-                        <!-- Texto del botón -->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="¡GIRAR!"
-                            android:textColor="#FFFFFF"
-                            android:textSize="24sp"
-                            android:textStyle="bold"
+                            android:layout_centerInParent="true"
                             android:fontFamily="@font/jersey"
                             android:shadowColor="#000000"
-                            android:shadowDx="2"
-                            android:shadowDy="2"
-                            android:shadowRadius="4"
-                            android:layout_centerInParent="true" />
+                            android:shadowDx="3"
+                            android:shadowDy="3"
+                            android:shadowRadius="5"
+                            android:text="@string/girar"
+                            android:textColor="#FFFFFF"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
                     </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </FrameLayout>
 </layout>

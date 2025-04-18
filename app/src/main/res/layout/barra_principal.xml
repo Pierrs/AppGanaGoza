@@ -56,8 +56,8 @@
 
                     <ImageView
                         android:id="@+id/iv_atras"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
@@ -71,7 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/bangers"
-                    android:text="¡JUEGO DE RETOS!"
+                    android:text="@string/juego_de_retos"
                     android:textAllCaps="true"
                     android:textColor="#FFFFFF"
                     android:textSize="28sp"

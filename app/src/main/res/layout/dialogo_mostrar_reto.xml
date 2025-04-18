@@ -7,91 +7,106 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Contenedor principal con dimensiones exactas del original pero fondo mejorado -->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_contendor"
+        <!-- Contenedor principal con esquinas redondeadas -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_contenedor"
             android:layout_width="302dp"
             android:layout_height="185dp"
-            android:layout_gravity="center"
             android:layout_margin="@dimen/dimen_contenedor"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.45">
 
-            <!-- Fondo con gradiente (reemplaza bg_content_dialog_reto) -->
-
-            <!-- Texto del reto con estilo mejorado pero dimensiones exactas originales -->
-
-            <View
-                android:layout_width="295dp"
-                android:layout_height="208dp"
-                android:background="@drawable/game_toolbar_background"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/tv_reto"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="70dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="60dp"
-                android:fontFamily="@font/bangers"
-                android:shadowColor="#80000000"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="1"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="reto que debes hacer"></TextView>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_height="match_parent">
 
-        <!-- Círculo con ícono en dimensiones exactas originales pero con estilo mejorado -->
+                <!-- Fondo con gradiente -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/game_toolbar_background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- Texto del reto con estilo mejorado -->
+                <TextView
+                    android:id="@+id/tv_reto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="60dp"
+                    android:fontFamily="@font/bangers"
+                    android:shadowColor="#80000000"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="reto que debes hacer" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Círculo con ícono mejorado -->
         <androidx.cardview.widget.CardView
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            app:cardCornerRadius="45dp"
-            app:cardElevation="6dp"
-            app:layout_constraintBottom_toTopOf="@+id/cl_contendor"
-            app:layout_constraintEnd_toEndOf="@+id/cl_contendor"
-            app:layout_constraintStart_toStartOf="@+id/cl_contendor"
-            app:layout_constraintTop_toTopOf="@+id/cl_contendor">
+            android:id="@+id/cv_icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/cv_contenedor"
+            app:layout_constraintEnd_toEndOf="@+id/cv_contenedor"
+            app:layout_constraintStart_toStartOf="@+id/cv_contenedor"
+            app:layout_constraintTop_toTopOf="@+id/cv_contenedor"
+            app:layout_constraintVertical_bias="0.4">
 
             <ImageView
-                android:id="@+id/iv_retp"
+                android:id="@+id/iv_reto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="20dp"
-                android:src="@drawable/img_fondo" />
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_fondo">
+
+            </ImageView>
         </androidx.cardview.widget.CardView>
 
-        <!-- Botón cerrar con dimensiones originales pero estilo mejorado -->
-        <Button
+        <!-- Botón cerrar con estilo más redondeado - POSICIÓN CORREGIDA -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_cerrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:backgroundTint="@color/color_general"
+            android:fontFamily="@font/bangers"
+            android:paddingStart="24dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="10dp"
             android:text="@string/btn_CerrarDialogo"
+            android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="25sp"
-            android:fontFamily="@font/bangers"
-            android:textAllCaps="false"
-            app:cornerRadius="16dp"
-            app:layout_constraintBottom_toBottomOf="@+id/cl_contendor"
-            app:layout_constraintEnd_toEndOf="@+id/cl_contendor"
-            app:layout_constraintStart_toStartOf="@+id/cl_contendor"
-            app:layout_constraintTop_toBottomOf="@+id/cl_contendor"/>
+            app:cornerRadius="24dp"
+            app:elevation="6dp"
+            app:layout_constraintEnd_toEndOf="@+id/cv_contenedor"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="@+id/cv_contenedor"
+            app:layout_constraintTop_toBottomOf="@+id/cv_contenedor" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

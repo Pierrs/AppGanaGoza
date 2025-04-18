@@ -1,29 +1,59 @@
 package com.dapm.ganagoza.view
 
+import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
+import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.dapm.ganagoza.view.viewmodel.JuegoViewModel
-import com.dapm.ganagoza.databinding.ActivityPantallaPresentacionBinding
+import androidx.core.view.WindowCompat
+import com.dapm.ganagoza.R
+import com.dapm.ganagoza.view.dialogo.PrivacyTermsDialog
 
 class PantallaPresentacion : AppCompatActivity() {
-    private val juegoViewModel: JuegoViewModel by viewModels()
-    private lateinit var binding: ActivityPantallaPresentacionBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        binding = ActivityPantallaPresentacionBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
+        window.statusBarColor = Color.TRANSPARENT
+
+
+
+        setContentView(R.layout.activity_pantalla_presentacion)
+
+        setupWindowInsets()
+
+        checkPrivacyTerms()
+    }
+
+    private fun setupWindowInsets() {
+        val rootView = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.main)
+
+        ViewCompat.setOnApplyWindowInsetsListener(rootView) { _, insets ->
             insets
         }
-        juegoViewModel.pantallaPresentacion(this)
+    }
+
+    private fun checkPrivacyTerms() {
+        if (PrivacyTermsDialog.shouldShowDialog(this)) {
+            val privacyDialog = PrivacyTermsDialog(this)
+            privacyDialog.setOnDismissListener {
+                continuarAMainActivity()
+            }
+            privacyDialog.show()
+        } else {
+            continuarAMainActivity()
+        }
+    }
+
+    private fun continuarAMainActivity() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }, 2000)
     }
 }

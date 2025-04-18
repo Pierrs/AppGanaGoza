@@ -79,7 +79,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="16dp"
                     android:gravity="center"
-                    android:text="Escribe un reto divertido para jugar"
+                    android:text="@string/escribe_un_reto_divertido_para_jugar"
                     android:textColor="#80000000"
                     android:textSize="14sp" />
 

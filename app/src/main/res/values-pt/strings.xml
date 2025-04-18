@@ -1,0 +1,64 @@
+<resources>
+    <string name="default_web_client_id">879470839672-rou587fi59bt6qsdkje549mcq1hf0o68.apps.googleusercontent.com</string>
+    <string name="app_name">Gana Goza</string>
+    <string name="texto_pantalla_presentacion">GANA GOZA</string>
+    <string name="firma">Gana Goza</string>
+    <string name="ganagoza">Gana Goza</string>
+    <string name="Boton_registrar">Registrar</string>
+    <string name="hello_blank_fragment">Olá fragmento em branco</string>
+    <string name="btn_CerrarDialogo">Fechar</string>
+    <string name="retos">Desafios</string>
+    <string name="descripcion_del_reto">Descrição do desafio</string>
+    <string name="btn_flotante">Adicionar desafio</string>
+    <string name="agregar_reto">Adicionar desafio</string>
+    <string name="texto_hint">Escreva o desafio</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_guardar">Salvar</string>
+    <string name="title_dialog_eliminar">Deseja excluir o seguinte desafio?</string>
+    <string name="editar_reto">Editar Desafio</string>
+    <string name="reto_modificar">Desafio para modificar</string>
+    <string name="titulo_1">Como jogar?</string>
+    <string name="descripcion_1">Os jogadores formam um círculo e colocam o dispositivo móvel no centro, depois tocam no botão piscante para girar a garrafa. O jogador apontado pela garrafa deve cumprir o desafio lançado pelo aplicativo, caso contrário, sai do jogo.</string>
+    <string name="name_reglas">Regras do jogo</string>
+    <string name="btn_sonido">Som</string>
+    <string name="btn_reglas">Regras</string>
+    <string name="btn_retos">Desafios</string>
+    <string name="btn_compartir">Divulgar </string>
+    <string name="btn_idioma">Idioma</string>
+    <string name="personaliza_tus_desaf_os_para_el_juego">Personalize seus desafios para o jogo</string>
+    <string name="mis_retos">MEUS DESAFIOS!</string>
+    <string name="juego_de_retos">JOGO DE DESAFIOS!</string>
+    <string name="escribe_un_reto_divertido_para_jugar">Escreva um desafio divertido para jogar</string>
+    <string name="modifica_tu_reto_y_sorprende_a_todos">Modifique seu desafio e surpreenda a todos</string>
+    <string name="girar">GIRAR!</string>
+    <string name="reto">DESAFIO</string>
+    <string name="select_language">Selecionar idioma</string>
+    <string name="spanish">Espanhol</string>
+    <string name="english">Inglês</string>
+    <string name="french">Francês</string>
+    <string name="portuguese">Português</string>
+
+
+
+
+
+
+    <string name="al_continuar_aceptas_nuestros_terminos_y_condiciones">Ao continuar, você aceita nossos termos e condições</string>
+    <string name="ver_politica_de_privacidad">Ver política de privacidade</string>
+    <string name="privacy_icon_description">Ícone de privacidade</string>
+    <string name="privacy_title">Termos de privacidade</string>
+    <string name="accept_terms">Aceitar e salvar</string>
+
+
+    <string name="terminos_condiciones">TERMOS E CONDIÇÕES</string>
+    <string name="politica_privacidad">POLÍTICA DE PRIVACIDADE</string>
+
+    <string name="logo_del_juego">Logo do jogo</string>
+    <string name="gana_goza">GANA GOZA</string>
+    <string name="pierde_y_cumple_un_reto">PERCA E ACEITE UM DESAFIO!</string>
+    <string name="puntos_uno">•</string>
+    <string name="puntos_dos">•</string>
+    <string name="puntos_tres">•</string>
+    <string name="cargando">>Carregando…</string>
+    <string name="version_del_juego">v1.0</string>
+</resources>
