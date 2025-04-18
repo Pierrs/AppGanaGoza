@@ -6,12 +6,12 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.widget.addTextChangedListener
 import com.dapm.ganagoza.databinding.DialogoAgregarRetoBinding
 import com.dapm.ganagoza.model.Reto
-import com.dapm.ganagoza.view.viewmodel.JuegoViewModel
+import com.dapm.ganagoza.view.viewmodel.VistaModeloJuego
 
 object DialogoAgregarReto {
     fun showDialogoAgregarReto(
         context: Context,
-        juegoViewModel: JuegoViewModel,
+        vistaModeloJuego: VistaModeloJuego,
         actualizarLista: () -> Unit
     ) {
         val inflater = LayoutInflater.from(context)
@@ -33,7 +33,7 @@ object DialogoAgregarReto {
         binding.idBtnGuardar.setOnClickListener {
             val descripcion = binding.idEditPenitencia.text.toString().trim()
             val reto = Reto(descripcionReto = descripcion)
-            juegoViewModel.agregarReto(reto)
+            vistaModeloJuego.agregarReto(reto)
             alertDialog.dismiss()
             actualizarLista.invoke()
         }

@@ -6,12 +6,12 @@ import android.view.LayoutInflater
 import androidx.core.widget.addTextChangedListener
 import com.dapm.ganagoza.databinding.DialogoEditarRetoBinding
 import com.dapm.ganagoza.model.Reto
-import com.dapm.ganagoza.view.viewmodel.JuegoViewModel
+import com.dapm.ganagoza.view.viewmodel.VistaModeloJuego
 
 object DialogoEditarReto {
     fun showDialogEditReto(
         contex: Context,
-        juegoViewModel: JuegoViewModel,
+        vistaModeloJuego: VistaModeloJuego,
         reto: Reto,
 
         actualizarLista: () -> Unit
@@ -33,9 +33,9 @@ object DialogoEditarReto {
 
         binding.btnEditar.setOnClickListener {
             val descripcion = binding.idEditReto.text.toString().trim()
-            val reto =Reto(reto.id,descripcion)
+            val reto =Reto(reto.retoId,descripcion)
 
-            juegoViewModel.actualizarReto(reto)
+            vistaModeloJuego.editarReto(reto)
             alertDialog.dismiss()
             actualizarLista.invoke()
         }

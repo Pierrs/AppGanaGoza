@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dapm.ganagoza.databinding.ActivityAgregarRetoBinding
 import com.dapm.ganagoza.view.adapter.RetoAdapter
 import com.dapm.ganagoza.view.dialogo.DialogoAgregarReto.showDialogoAgregarReto
-import com.dapm.ganagoza.view.viewmodel.JuegoViewModel
+import com.dapm.ganagoza.view.viewmodel.VistaModeloJuego
 
 class AgregarReto : AppCompatActivity() {
     private lateinit var binding: ActivityAgregarRetoBinding
-    private val juegoViewModel: JuegoViewModel by viewModels()
+    private val vistaModeloJuego: VistaModeloJuego by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,7 @@ class AgregarReto : AppCompatActivity() {
             finish()
         }
         binding.floatBtn.setOnClickListener {
-            showDialogoAgregarReto(this, juegoViewModel) {
+            showDialogoAgregarReto(this, vistaModeloJuego) {
                 observadorListaReto()
             }
         }
@@ -43,20 +43,20 @@ class AgregarReto : AppCompatActivity() {
     }
 
     private fun observadorProgress() {
-        juegoViewModel.progresSstate.observe(this) { status ->
+        vistaModeloJuego.progresSstate.observe(this) { status ->
             binding.progress.isVisible = status
         }
     }
 
     private fun observadorListaReto() {
-        juegoViewModel.obtenerListaReto()
-        juegoViewModel.listaReto.observe(this) { lista ->
+        vistaModeloJuego.obtenerTodosLosRetos()
+        vistaModeloJuego.listaReto.observe(this) { lista ->
             val recycler = binding.recycleView
             val layoutManager = LinearLayoutManager(this)
             layoutManager.reverseLayout = false // Asegura el orden correcto de los elementos
             layoutManager.stackFromEnd = false // Evita que se apilen al final
             recycler.layoutManager = layoutManager
-            val adapter = RetoAdapter(lista, juegoViewModel)
+            val adapter = RetoAdapter(lista, vistaModeloJuego)
             recycler.adapter = adapter
             adapter.notifyDataSetChanged()
             recycler.scrollToPosition(0) // Desplaza al primer elemento automáticamente

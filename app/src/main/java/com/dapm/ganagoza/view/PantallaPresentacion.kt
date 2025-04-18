@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import com.dapm.ganagoza.R
-import com.dapm.ganagoza.view.dialogo.PrivacyTermsDialog
+import com.dapm.ganagoza.view.dialogo.DiálogoPrivacidadCondiciones
 
 class PantallaPresentacion : AppCompatActivity() {
 
@@ -38,8 +38,8 @@ class PantallaPresentacion : AppCompatActivity() {
     }
 
     private fun checkPrivacyTerms() {
-        if (PrivacyTermsDialog.shouldShowDialog(this)) {
-            val privacyDialog = PrivacyTermsDialog(this)
+        if (DiálogoPrivacidadCondiciones.shouldShowDialog(this)) {
+            val privacyDialog = DiálogoPrivacidadCondiciones(this)
             privacyDialog.setOnDismissListener {
                 continuarAMainActivity()
             }

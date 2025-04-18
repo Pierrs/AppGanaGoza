@@ -3,9 +3,9 @@ package com.dapm.ganagoza.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "retos")
 data class Reto(
     @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
+    val retoId: Int = 0,
     val descripcionReto: String
 )

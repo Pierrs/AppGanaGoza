@@ -5,34 +5,30 @@ import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
-import android.os.Handler
 import android.view.animation.Animation
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.RotateAnimation
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dapm.ganagoza.R
 import com.dapm.ganagoza.model.Reto
-import com.dapm.ganagoza.repository.RetoRepository
+import com.dapm.ganagoza.repository.RepositorioRetos
 import com.dapm.ganagoza.utils.Constantes
-import com.dapm.ganagoza.utils.Constantes.TIEMPO
+import com.dapm.ganagoza.utils.Constantes.RETARDO_POR_DEFECTO
 import com.dapm.ganagoza.view.MainActivity
 import com.dapm.ganagoza.view.dialogo.DialogoMostrarReto.showDialogMostrarReto
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 import kotlin.random.Random
 
 
-class JuegoViewModel(application: Application) : AndroidViewModel(application) {
+class VistaModeloJuego(application: Application) : AndroidViewModel(application) {
     private val context = getApplication<Application>()
-    private val retoRepository = RetoRepository(context)
+    private val retoRepository = RepositorioRetos(context)
 
     private val _estadoRotacionBotella = MutableLiveData(false)
     val estadoRotacionBotella: LiveData<Boolean> get() = _estadoRotacionBotella
@@ -68,7 +64,7 @@ class JuegoViewModel(application: Application) : AndroidViewModel(application) {
         executor.schedule({
             activity.startActivity(Intent(activity, MainActivity::class.java))
             activity.finish()
-        }, TIEMPO, TimeUnit.MILLISECONDS)
+        }, RETARDO_POR_DEFECTO, TimeUnit.MILLISECONDS)
     }
 
     fun girarBotella() {
@@ -118,7 +114,7 @@ class JuegoViewModel(application: Application) : AndroidViewModel(application) {
             _progresSstate.value = true
             try {
                 retoRepository.agregarReto(reto)
-                obtenerListaReto()
+                obtenerTodosLosRetos()
                 _progresSstate.value = false
             } catch (e: Exception) {
                 _progresSstate.value = false
@@ -126,11 +122,11 @@ class JuegoViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun obtenerListaReto() {
+    fun obtenerTodosLosRetos() {
         viewModelScope.launch {
             _progresSstate.value = true
             try {
-                _listaReto.value = retoRepository.obtenerListaReto()
+                _listaReto.value = retoRepository.obtenerTodosLosRetos()
                 _progresSstate.value = false
             } catch (e: Exception) {
                 _progresSstate.value = false
@@ -150,11 +146,11 @@ class JuegoViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun actualizarReto(reto: Reto) {
+    fun editarReto(reto: Reto) {
         viewModelScope.launch {
             _progresSstate.value = true
             try {
-                retoRepository.actualizarReto(reto)
+                retoRepository.editarReto(reto)
                 _progresSstate.value = false
             } catch (e: Exception) {
                 _progresSstate.value = false
@@ -170,7 +166,7 @@ class JuegoViewModel(application: Application) : AndroidViewModel(application) {
             descripcion = listaReto[randomReto].descripcionReto
             descripcion
         } else {
-            val emptyReto = Constantes.EMPTY_RETO
+            val emptyReto = Constantes.MENSAJE_SIN_RETO
             emptyReto
         }
     }
@@ -186,16 +182,6 @@ class JuegoViewModel(application: Application) : AndroidViewModel(application) {
         val compartir = eslogan + urlApp
         intent.putExtra(Intent.EXTRA_TEXT, compartir)
         activity.startActivity(intent)
-    }
-
-
-    fun incrementarContadorJuegos() {
-        val nuevoValor = (contadorJuegos.value ?: 0) + 1
-        contadorJuegos.value = nuevoValor
-    }
-
-    fun obtenerContadorJuegos(): Int {
-        return contadorJuegos.value ?: 0
     }
 }
 

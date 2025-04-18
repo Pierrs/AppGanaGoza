@@ -18,8 +18,8 @@ import com.dapm.ganagoza.databinding.FragmentJuegoBinding
 import com.dapm.ganagoza.model.Reto
 import com.dapm.ganagoza.view.AgregarReto
 import com.dapm.ganagoza.view.ReglaJuego
-import com.dapm.ganagoza.view.viewmodel.JuegoViewModel
-import com.dapm.ganagoza.view.dialogo.LanguageDialog
+import com.dapm.ganagoza.view.dialogo.DialogoIdioma
+import com.dapm.ganagoza.view.viewmodel.VistaModeloJuego
 
 class FragmentJuego : Fragment() {
     private lateinit var listaReto: MutableList<Reto>
@@ -28,7 +28,7 @@ class FragmentJuego : Fragment() {
     private lateinit var audioMostrarReto: MediaPlayer
     private lateinit var audioBoton: MediaPlayer
     private lateinit var audioSuspenso: MediaPlayer
-    private val juegoViewModel: JuegoViewModel by viewModels()
+    private val juegoViewModel: VistaModeloJuego by viewModels()
     private lateinit var binding: FragmentJuegoBinding
     var sonido = false
 
@@ -103,8 +103,8 @@ class FragmentJuego : Fragment() {
 
         binding.icContentedorMenuJuego.clIdioma.setOnClickListener {
             audioFondo.pause()
-            val languageDialog = LanguageDialog(requireContext())
-            languageDialog.show()
+            val dialogoIdioma = DialogoIdioma(requireContext())
+            dialogoIdioma.mostrar()
         }
     }
 
@@ -118,7 +118,7 @@ class FragmentJuego : Fragment() {
     }
 
     private fun observadorListaReto() {
-        juegoViewModel.obtenerListaReto()
+        juegoViewModel.obtenerTodosLosRetos()
         juegoViewModel.listaReto.observe(viewLifecycleOwner) { lista ->
             listaReto = lista
         }

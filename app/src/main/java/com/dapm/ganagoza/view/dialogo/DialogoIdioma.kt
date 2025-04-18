@@ -6,18 +6,18 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
-import com.dapm.ganagoza.databinding.DialogLanguageSelectionBinding
-import com.dapm.ganagoza.utils.LanguageManager
+import com.dapm.ganagoza.databinding.DialogoSeleccionIdiomaBinding
+import com.dapm.ganagoza.utils.GestorIdioma
 import androidx.core.graphics.drawable.toDrawable
 
-class LanguageDialog(private val context: Context) {
+class DialogoIdioma(private val contexto: Context) {
 
-    private val binding: DialogLanguageSelectionBinding by lazy {
-        DialogLanguageSelectionBinding.inflate(LayoutInflater.from(context))
+    private val binding: DialogoSeleccionIdiomaBinding by lazy {
+        DialogoSeleccionIdiomaBinding.inflate(LayoutInflater.from(contexto))
     }
 
-    private val dialog: Dialog by lazy {
-        Dialog(context).apply {
+    private val dialogo: Dialog by lazy {
+        Dialog(contexto).apply {
             requestWindowFeature(Window.FEATURE_NO_TITLE)
             setContentView(binding.root)
             window?.apply {
@@ -31,31 +31,31 @@ class LanguageDialog(private val context: Context) {
         }
     }
 
-    fun show() {
-        setupListeners()
-        dialog.show()
+    fun mostrar() {
+        configurarEscuchadores()
+        dialogo.show()
     }
 
-    private fun setupListeners() {
+    private fun configurarEscuchadores() {
         binding.layoutSpanish.setOnClickListener {
-            changeLanguage(LanguageManager.SPANISH)
+            cambiarIdioma(GestorIdioma.ESPANOL)
         }
 
         binding.layoutEnglish.setOnClickListener {
-            changeLanguage(LanguageManager.ENGLISH)
+            cambiarIdioma(GestorIdioma.INGLES)
         }
 
         binding.layoutFrench.setOnClickListener {
-            changeLanguage(LanguageManager.FRENCH)
+            cambiarIdioma(GestorIdioma.FRANCES)
         }
 
         binding.layoutPortuguese.setOnClickListener {
-            changeLanguage(LanguageManager.PORTUGUESE)
+            cambiarIdioma(GestorIdioma.PORTUGUES)
         }
     }
 
-    private fun changeLanguage(languageCode: String) {
-        dialog.dismiss()
-        LanguageManager.setLocale(context as AppCompatActivity, languageCode)
+    private fun cambiarIdioma(codigoIdioma: String) {
+        dialogo.dismiss()
+        GestorIdioma.establecerLocale(contexto as AppCompatActivity, codigoIdioma)
     }
 }

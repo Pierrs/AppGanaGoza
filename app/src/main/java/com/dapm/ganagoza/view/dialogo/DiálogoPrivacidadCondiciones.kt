@@ -23,7 +23,7 @@ import androidx.core.content.edit
 import java.util.Locale
 import androidx.core.graphics.toColorInt
 
-class PrivacyTermsDialog(context: Context) : Dialog(context) {
+class DiálogoPrivacidadCondiciones(context: Context) : Dialog(context) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
