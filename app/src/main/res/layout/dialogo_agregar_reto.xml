@@ -94,7 +94,7 @@
                     app:cardElevation="3dp">
 
                     <EditText
-                        android:id="@+id/idEditPenitencia"
+                        android:id="@+id/id_escribir_reto"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@null"

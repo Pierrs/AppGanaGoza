@@ -2,24 +2,51 @@ package com.dapm.ganagoza.view.dialogo
 
 import android.app.AlertDialog
 import android.content.Context
-import com.dapm.ganagoza.R
+import android.view.LayoutInflater
+import com.dapm.ganagoza.databinding.DialogoEliminarRetoBinding
 import com.dapm.ganagoza.model.Reto
 import com.dapm.ganagoza.view.viewmodel.VistaModeloJuego
 
-fun DialogoAgregarReto(context: Context,juegoViewModel: VistaModeloJuego,reto: Reto):AlertDialog{
-    val builder = AlertDialog.Builder(context)
-    builder.setCancelable(false)
-    builder.setTitle(R.string.title_dialog_eliminar)
-        .setMessage("\n${reto.descripcionReto}")
-        .setPositiveButton("SI"){
-            dialog,with->
-            juegoViewModel.eliminarReto(reto)
-            dialog.dismiss()
-            juegoViewModel.obtenerTodosLosRetos()
+object DialogoEliminarReto {
+
+    fun mostrarDialogoEliminarReto(
+        contexto: Context,
+        vistaModelo: VistaModeloJuego,
+        reto: Reto,
+        alActualizarLista: () -> Unit
+    ) {
+        val binding = DialogoEliminarRetoBinding.inflate(LayoutInflater.from(contexto))
+        val dialogo = crearDialogo(contexto, binding)
+
+        configurarEventos(binding, dialogo, vistaModelo, reto, alActualizarLista)
+        dialogo.show()
+    }
+
+    private fun crearDialogo(
+        contexto: Context,
+        binding: DialogoEliminarRetoBinding
+    ): AlertDialog {
+        return AlertDialog.Builder(contexto).apply {
+            setView(binding.root)
+            setCancelable(false)
+        }.create()
+    }
+
+    private fun configurarEventos(
+        binding: DialogoEliminarRetoBinding,
+        dialogo: AlertDialog,
+        vistaModelo: VistaModeloJuego,
+        reto: Reto,
+        alActualizarLista: () -> Unit
+    ) {
+        binding.idBtnNo.setOnClickListener {
+            dialogo.dismiss()
         }
-        .setNegativeButton("NO"){
-            dialog,with ->
-            dialog.dismiss()
+
+        binding.idBtnSi.setOnClickListener {
+            vistaModelo.eliminarReto(reto)
+            alActualizarLista()
+            dialogo.dismiss()
         }
-    return builder.create()
+    }
 }

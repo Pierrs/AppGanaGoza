@@ -8,7 +8,6 @@
         android:layout_height="match_parent"
         android:background="@drawable/game_toolbar_background">
 
-        <!-- Fondo con patrón de ondas -->
         <ImageView
             android:id="@+id/wave_pattern_bg"
             android:layout_width="match_parent"
@@ -17,7 +16,6 @@
             android:src="@drawable/wave_pattern"
             android:alpha="0.15" />
 
-        <!-- Tarjeta central con esquinas redondeadas y fondo semitransparente -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,7 +34,7 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <!-- Encabezado con título y un ícono decorativo -->
+                <!-- Encabezado con título -->
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -53,7 +51,7 @@
                         android:shadowDx="2"
                         android:shadowDy="2"
                         android:shadowRadius="3"
-                        android:text="@string/editar_reto"
+                        android:text="@string/eliminar_reto"
                         android:textAllCaps="true"
                         android:textColor="#FF5722"
                         android:textSize="28sp"
@@ -61,27 +59,21 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
 
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_marginStart="8dp"
-                        app:layout_constraintTop_toTopOf="@+id/tvTitulo"
-                        app:layout_constraintBottom_toBottomOf="@+id/tvTitulo"
-                        app:layout_constraintStart_toEndOf="@+id/tvTitulo" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <!-- Texto descriptivo opcional -->
+                <!-- Texto descriptivo -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="12dp"
                     android:layout_marginBottom="16dp"
                     android:gravity="center"
-                    android:text="@string/modifica_tu_reto_y_sorprende_a_todos"
+                    android:text="@string/desea_eliminar_este_reto"
                     android:textColor="#80000000"
-                    android:textSize="14sp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
-                <!-- Campo de edición contenido dentro de una tarjeta para mejor estilo -->
+                <!-- Contenido del reto en una tarjeta -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -90,19 +82,6 @@
                     app:cardBackgroundColor="#FFFFFF"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="3dp">
-
-                    <EditText
-                        android:id="@+id/idEditarReto"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:fontFamily="sans-serif"
-                        android:hint="@string/reto_modificar"
-                        android:minHeight="80dp"
-                        android:padding="16dp"
-                        android:gravity="top|start"
-                        android:textColorHint="#80000000"
-                        android:textSize="16sp" />
                 </androidx.cardview.widget.CardView>
 
                 <!-- Botones de acción con MaterialButton para un look moderno -->
@@ -114,12 +93,12 @@
                     android:layout_marginTop="8dp">
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/idBtnCancelar"
+                        android:id="@+id/idBtnNo"
                         android:layout_width="110dp"
                         android:layout_height="48dp"
                         android:layout_marginEnd="16dp"
                         android:backgroundTint="#FFFFFF"
-                        android:text="@string/btn_cancelar"
+                        android:text="@string/btn_no"
                         android:textAllCaps="false"
                         android:textColor="#FF5722"
                         android:textSize="14sp"
@@ -128,12 +107,11 @@
                         app:strokeWidth="1.5dp" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnEditar"
+                        android:id="@+id/idBtnSi"
                         android:layout_width="110dp"
                         android:layout_height="48dp"
                         android:backgroundTint="#FF5722"
-                        android:enabled="false"
-                        android:text="@string/btn_guardar"
+                        android:text="@string/btn_si"
                         android:textAllCaps="false"
                         android:textColor="#FFFFFF"
                         android:textSize="14sp"

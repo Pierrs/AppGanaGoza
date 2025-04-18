@@ -9,38 +9,62 @@ import com.dapm.ganagoza.model.Reto
 import com.dapm.ganagoza.view.viewmodel.VistaModeloJuego
 
 object DialogoEditarReto {
-    fun showDialogEditReto(
-        contex: Context,
-        vistaModeloJuego: VistaModeloJuego,
+
+    fun mostrarDialogoEditarReto(
+        contexto: Context,
+        vistaModelo: VistaModeloJuego,
         reto: Reto,
-
-        actualizarLista: () -> Unit
+        alActualizarLista: () -> Unit
     ) {
-        val inflater = LayoutInflater.from(contex)
-        val binding = DialogoEditarRetoBinding.inflate(inflater)
-        var alertDialog = AlertDialog.Builder(contex).create()
-        alertDialog.setCancelable(false)
-        alertDialog.setView(binding.root)
+        val binding = DialogoEditarRetoBinding.inflate(LayoutInflater.from(contexto))
+        val dialogo = crearDialogo(contexto, binding)
 
-        binding.idEditReto.addTextChangedListener{
-            binding.btnEditar.isEnabled=binding.idEditReto.text.toString().isNotEmpty()
+        configurarEventos(binding, dialogo, vistaModelo, reto, alActualizarLista)
+        configurarCamposIniciales(binding, reto)
+        dialogo.show()
+    }
+
+    private fun crearDialogo(
+        contexto: Context,
+        binding: DialogoEditarRetoBinding
+    ): AlertDialog {
+        return AlertDialog.Builder(contexto).apply {
+            setView(binding.root)
+            setCancelable(false)
+        }.create()
+    }
+    private fun configurarCamposIniciales(
+        binding: DialogoEditarRetoBinding,
+        reto: Reto
+    ) {
+        binding.idEditarReto.setText(reto.descripcionReto)
+        binding.btnEditar.isEnabled = reto.descripcionReto.isNotBlank()
+
+        binding.idEditarReto.addTextChangedListener {
+            binding.btnEditar.isEnabled = it.toString().isNotBlank()
         }
+    }
 
-        binding.idEditReto.setText(reto.descripcionReto)
+    private fun configurarEventos(
+        binding: DialogoEditarRetoBinding,
+        dialogo: AlertDialog,
+        vistaModelo: VistaModeloJuego,
+        reto: Reto,
+        alActualizarLista: () -> Unit
+    ) {
         binding.idBtnCancelar.setOnClickListener {
-            alertDialog.dismiss()
+            dialogo.dismiss()
         }
 
         binding.btnEditar.setOnClickListener {
-            val descripcion = binding.idEditReto.text.toString().trim()
-            val reto =Reto(reto.retoId,descripcion)
+            val nuevaDescripcion = binding.idEditarReto.text.toString().trim()
 
-            vistaModeloJuego.editarReto(reto)
-            alertDialog.dismiss()
-            actualizarLista.invoke()
+            if (nuevaDescripcion.isNotEmpty()) {
+                val retoActualizado = Reto(reto.retoId, nuevaDescripcion)
+                vistaModelo.actualizarReto(retoActualizado)
+                alActualizarLista()
+                dialogo.dismiss()
+            }
         }
-        alertDialog.show()
-
     }
-
 }

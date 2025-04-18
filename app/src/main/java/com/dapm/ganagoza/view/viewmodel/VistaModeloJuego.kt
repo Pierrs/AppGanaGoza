@@ -18,7 +18,7 @@ import com.dapm.ganagoza.repository.RepositorioRetos
 import com.dapm.ganagoza.utils.Constantes
 import com.dapm.ganagoza.utils.Constantes.RETARDO_POR_DEFECTO
 import com.dapm.ganagoza.view.MainActivity
-import com.dapm.ganagoza.view.dialogo.DialogoMostrarReto.showDialogMostrarReto
+import com.dapm.ganagoza.view.dialogo.DialogoMostrarReto.mostrarDialogoReto
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.util.concurrent.Executors
@@ -98,7 +98,7 @@ class VistaModeloJuego(application: Application) : AndroidViewModel(application)
     }
 
     fun dialogoMostrarReto(context: Context, audioFondo: MediaPlayer, mensajeReto: String) {
-        showDialogMostrarReto(context, audioFondo, mensajeReto)
+        mostrarDialogoReto(context, audioFondo, mensajeReto)
     }
 
     suspend fun esperar(tiempo: Int) {
@@ -146,11 +146,11 @@ class VistaModeloJuego(application: Application) : AndroidViewModel(application)
         }
     }
 
-    fun editarReto(reto: Reto) {
+    fun actualizarReto(reto: Reto) {
         viewModelScope.launch {
             _progresSstate.value = true
             try {
-                retoRepository.editarReto(reto)
+                retoRepository.actualizarReto(reto)
                 _progresSstate.value = false
             } catch (e: Exception) {
                 _progresSstate.value = false

@@ -8,7 +8,7 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dapm.ganagoza.databinding.ActivityAgregarRetoBinding
 import com.dapm.ganagoza.view.adapter.AdaptadorDeRetos
-import com.dapm.ganagoza.view.dialogo.DialogoAgregarReto.showDialogoAgregarReto
+import com.dapm.ganagoza.view.dialogo.DialogoAgregarReto.mostrarDialogoAgregarReto
 import com.dapm.ganagoza.view.viewmodel.VistaModeloJuego
 
 class AgregarReto : AppCompatActivity() {
@@ -31,7 +31,7 @@ class AgregarReto : AppCompatActivity() {
             finish()
         }
         binding.floatBtn.setOnClickListener {
-            showDialogoAgregarReto(this, vistaModeloJuego) {
+            mostrarDialogoAgregarReto(this, vistaModeloJuego) {
                 observadorListaReto()
             }
         }

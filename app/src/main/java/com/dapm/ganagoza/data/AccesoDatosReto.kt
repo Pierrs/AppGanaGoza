@@ -22,7 +22,7 @@ interface AccesoDatosReto {
 
 
  @Update
- fun editarReto(reto: Reto)
+ fun actualizarReto(reto: Reto)
 
 
  @Delete

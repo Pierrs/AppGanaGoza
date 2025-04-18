@@ -59,4 +59,11 @@
     <string name="puntos_tres">•</string>
     <string name="cargando">Cargando…</string>
     <string name="version_del_juego">v1.0</string>
+
+
+
+    <string name="eliminar_reto">Eliminar Reto</string>
+    <string name="desea_eliminar_este_reto">¿Desea eliminar este reto?</string>
+    <string name="btn_si">SI</string>
+    <string name="btn_no">NO</string>
 </resources>

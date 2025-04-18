@@ -35,9 +35,9 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <!-- Texto del reto con estilo mejorado -->
+
                 <TextView
-                    android:id="@+id/tv_reto"
+                    android:id="@+id/tv_mostrar_reto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -85,9 +85,9 @@
             </ImageView>
         </androidx.cardview.widget.CardView>
 
-        <!-- Botón cerrar con estilo más redondeado - POSICIÓN CORREGIDA -->
+
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/bt_cerrar"
+            android:id="@+id/idBtnCancelar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"

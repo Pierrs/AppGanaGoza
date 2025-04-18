@@ -2,8 +2,8 @@ package com.dapm.ganagoza.viewholder
 import androidx.recyclerview.widget.RecyclerView
 import com.dapm.ganagoza.databinding.ItemRetoBinding
 import com.dapm.ganagoza.model.Reto
-import com.dapm.ganagoza.view.dialogo.DialogoAgregarReto
 import com.dapm.ganagoza.view.dialogo.DialogoEditarReto
+import com.dapm.ganagoza.view.dialogo.DialogoEliminarReto.mostrarDialogoEliminarReto
 import com.dapm.ganagoza.view.viewmodel.VistaModeloJuego
 
 class ContenedorVistaReto(
@@ -16,12 +16,17 @@ class ContenedorVistaReto(
         binding.ivEditar.setOnClickListener { onEditarClick(reto) }
         binding.ivEliminar.setOnClickListener { onEliminarClick(reto) }
     }
-    private fun onEliminarClick(reto: Reto) {
-        val dialogo = DialogoAgregarReto(binding.root.context, vistaModeloJuego, reto)
-        dialogo.show()
-    }
     private fun onEditarClick(reto: Reto) {
-        DialogoEditarReto.showDialogEditReto(binding.root.context, vistaModeloJuego, reto) {
+        DialogoEditarReto.mostrarDialogoEditarReto(binding.root.context, vistaModeloJuego, reto) {
+            vistaModeloJuego.obtenerTodosLosRetos()
+        }
+    }
+    private fun onEliminarClick(reto: Reto) {
+        mostrarDialogoEliminarReto(
+            binding.root.context,
+            vistaModeloJuego,
+            reto
+        ) {
             vistaModeloJuego.obtenerTodosLosRetos()
         }
     }

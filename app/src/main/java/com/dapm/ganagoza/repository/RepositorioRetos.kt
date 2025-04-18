@@ -17,9 +17,9 @@ class RepositorioRetos(context: Context) {
         }
     }
 
-    suspend fun editarReto(reto: Reto) {
+    suspend fun actualizarReto(reto: Reto) {
         withContext(Dispatchers.IO) {
-            accesoDatos.editarReto(reto)
+            accesoDatos.actualizarReto(reto)
         }
     }
     suspend fun eliminarReto(reto: Reto) {

@@ -2,6 +2,7 @@ package com.dapm.ganagoza.view.dialogo
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.WindowManager
 import androidx.appcompat.app.AlertDialog
 import androidx.core.widget.addTextChangedListener
 import com.dapm.ganagoza.databinding.DialogoAgregarRetoBinding
@@ -9,44 +10,51 @@ import com.dapm.ganagoza.model.Reto
 import com.dapm.ganagoza.view.viewmodel.VistaModeloJuego
 
 object DialogoAgregarReto {
-    fun showDialogoAgregarReto(
-        context: Context,
-        vistaModeloJuego: VistaModeloJuego,
-        actualizarLista: () -> Unit
+
+    fun mostrarDialogoAgregarReto(
+        contexto: Context,
+        vistaModelo: VistaModeloJuego,
+        alActualizarLista: () -> Unit
     ) {
-        val inflater = LayoutInflater.from(context)
-        val binding = DialogoAgregarRetoBinding.inflate(inflater)
+        val binding = DialogoAgregarRetoBinding.inflate(LayoutInflater.from(contexto))
+        val dialogo = crearDialogo(contexto, binding)
 
-        val alertDialog = AlertDialog.Builder(context)
+        configurarEventos(binding, dialogo, vistaModelo, alActualizarLista)
+        dialogo.show()
+    }
+
+    private fun crearDialogo(
+        contexto: Context,
+        binding: DialogoAgregarRetoBinding
+    ): AlertDialog {
+        return AlertDialog.Builder(contexto)
             .setView(binding.root)
-            .setCancelable(false) // Evita que se cierre tocando fuera
+            .setCancelable(false)
             .create()
+    }
 
-        binding.idEditPenitencia.addTextChangedListener {
-            binding.idBtnGuardar.isEnabled = binding.idEditPenitencia.text.toString().isNotEmpty()
+    private fun configurarEventos(
+        binding: DialogoAgregarRetoBinding,
+        dialogo: AlertDialog,
+        vistaModelo: VistaModeloJuego,
+        alActualizarLista: () -> Unit
+    ) {
+        binding.idEscribirReto.addTextChangedListener {
+            binding.idBtnGuardar.isEnabled = it.toString().isNotBlank()
         }
 
         binding.idBtnCancelar.setOnClickListener {
-            alertDialog.dismiss()
+            dialogo.dismiss()
         }
 
         binding.idBtnGuardar.setOnClickListener {
-            val descripcion = binding.idEditPenitencia.text.toString().trim()
-            val reto = Reto(descripcionReto = descripcion)
-            vistaModeloJuego.agregarReto(reto)
-            alertDialog.dismiss()
-            actualizarLista.invoke()
+            val descripcion = binding.idEscribirReto.text.toString().trim()
+            if (descripcion.isNotEmpty()) {
+                val nuevoReto = Reto(descripcionReto = descripcion)
+                vistaModelo.agregarReto(nuevoReto)
+                alActualizarLista()
+            }
+            dialogo.dismiss()
         }
-
-        alertDialog.show()
-
-        // Forzar que el diálogo aparezca en el centro y tenga el tamaño adecuado
-        alertDialog.window?.setLayout(
-            android.view.WindowManager.LayoutParams.WRAP_CONTENT,
-            android.view.WindowManager.LayoutParams.WRAP_CONTENT
-        )
-
-        // Asegurar que el fondo del diálogo sea transparente para evitar el "fondo negro"
-        alertDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
     }
 }
