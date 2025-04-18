@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dapm.ganagoza.databinding.ActivityAgregarRetoBinding
-import com.dapm.ganagoza.view.adapter.RetoAdapter
+import com.dapm.ganagoza.view.adapter.AdaptadorDeRetos
 import com.dapm.ganagoza.view.dialogo.DialogoAgregarReto.showDialogoAgregarReto
 import com.dapm.ganagoza.view.viewmodel.VistaModeloJuego
 
@@ -56,7 +56,7 @@ class AgregarReto : AppCompatActivity() {
             layoutManager.reverseLayout = false // Asegura el orden correcto de los elementos
             layoutManager.stackFromEnd = false // Evita que se apilen al final
             recycler.layoutManager = layoutManager
-            val adapter = RetoAdapter(lista, vistaModeloJuego)
+            val adapter = AdaptadorDeRetos(lista, vistaModeloJuego)
             recycler.adapter = adapter
             adapter.notifyDataSetChanged()
             recycler.scrollToPosition(0) // Desplaza al primer elemento automáticamente

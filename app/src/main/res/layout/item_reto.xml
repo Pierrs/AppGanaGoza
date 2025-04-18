@@ -70,7 +70,7 @@
                         app:cardBackgroundColor="#20000000">
 
                         <ImageView
-                            android:id="@+id/iv_edit"
+                            android:id="@+id/iv_editar"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="center"
@@ -90,7 +90,7 @@
                         app:cardBackgroundColor="#20000000">
 
                         <ImageView
-                            android:id="@+id/iv_delete"
+                            android:id="@+id/iv_eliminar"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="center"
@@ -105,7 +105,7 @@
 
             <!-- Contenido del reto - Texto más grande -->
             <TextView
-                android:id="@+id/tvName"
+                android:id="@+id/tvDetalleReto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
