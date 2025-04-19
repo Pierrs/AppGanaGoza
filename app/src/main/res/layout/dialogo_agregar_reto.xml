@@ -8,9 +8,8 @@
         android:layout_height="match_parent"
         android:background="@drawable/game_toolbar_background">
 
-        <!-- Patrón de ondas como fondo -->
         <ImageView
-            android:id="@+id/wave_pattern_bg"
+            android:id="@+id/fondo_patron_onda"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
@@ -35,15 +34,13 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <!-- Contenedor para título y estrella -->
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center">
 
-                    <!-- Título con estilo similar a la barra principal -->
                     <TextView
-                        android:id="@+id/tvTitulo"
+                        android:id="@+id/tvEncabezado"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/bangers"
@@ -61,18 +58,16 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <!-- Icono decorativo al lado del título -->
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginStart="8dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/tvTitulo"
-                        app:layout_constraintStart_toEndOf="@+id/tvTitulo"
-                        app:layout_constraintTop_toTopOf="@+id/tvTitulo" />
+                        app:layout_constraintBottom_toBottomOf="@+id/tvEncabezado"
+                        app:layout_constraintStart_toEndOf="@+id/tvEncabezado"
+                        app:layout_constraintTop_toTopOf="@+id/tvEncabezado" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <!-- Texto descriptivo opcional -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -83,7 +78,6 @@
                     android:textColor="#80000000"
                     android:textSize="14sp" />
 
-                <!-- Tarjeta para el campo de texto -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -99,7 +93,7 @@
                         android:layout_height="wrap_content"
                         android:background="@null"
                         android:fontFamily="sans-serif"
-                        android:hint="@string/texto_hint"
+                        android:hint="@string/textoIndicacion"
                         android:minHeight="80dp"
                         android:padding="16dp"
                         android:gravity="top|start"
@@ -107,7 +101,7 @@
                         android:textSize="16sp" />
                 </androidx.cardview.widget.CardView>
 
-                <!-- Botones con tamaño reducido y mejor espaciado -->
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

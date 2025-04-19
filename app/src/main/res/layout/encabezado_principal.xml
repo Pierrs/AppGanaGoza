@@ -19,7 +19,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/waves_bg"
+            android:id="@+id/ondas_fondo"
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:scaleType="fitXY"
@@ -87,7 +87,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/decoration_left"
+                    android:id="@+id/decoracion_izquierda"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginEnd="8dp"
@@ -98,7 +98,7 @@
                     app:layout_constraintTop_toTopOf="@+id/tv_titulo_encabezado" />
 
                 <ImageView
-                    android:id="@+id/decoration_right"
+                    android:id="@+id/decoracion_derecha"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginStart="8dp"

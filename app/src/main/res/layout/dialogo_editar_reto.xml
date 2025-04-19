@@ -8,16 +8,14 @@
         android:layout_height="match_parent"
         android:background="@drawable/game_toolbar_background">
 
-        <!-- Fondo con patrón de ondas -->
         <ImageView
-            android:id="@+id/wave_pattern_bg"
+            android:id="@+id/fondo_patron_onda"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
             android:src="@drawable/wave_pattern"
             android:alpha="0.15" />
 
-        <!-- Tarjeta central con esquinas redondeadas y fondo semitransparente -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,14 +34,14 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <!-- Encabezado con título y un ícono decorativo -->
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center">
 
                     <TextView
-                        android:id="@+id/tvTitulo"
+                        android:id="@+id/tvEncabezado"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/jersey"
@@ -65,12 +63,11 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginStart="8dp"
-                        app:layout_constraintTop_toTopOf="@+id/tvTitulo"
-                        app:layout_constraintBottom_toBottomOf="@+id/tvTitulo"
-                        app:layout_constraintStart_toEndOf="@+id/tvTitulo" />
+                        app:layout_constraintTop_toTopOf="@+id/tvEncabezado"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvEncabezado"
+                        app:layout_constraintStart_toEndOf="@+id/tvEncabezado" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <!-- Texto descriptivo opcional -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -81,7 +78,7 @@
                     android:textColor="#80000000"
                     android:textSize="14sp" />
 
-                <!-- Campo de edición contenido dentro de una tarjeta para mejor estilo -->
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -105,7 +102,6 @@
                         android:textSize="16sp" />
                 </androidx.cardview.widget.CardView>
 
-                <!-- Botones de acción con MaterialButton para un look moderno -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -33,7 +33,7 @@ class AgregarReto : AppCompatActivity() {
                 cargarListaDeRetos()
             }
         }
-        recycleView.layoutManager = LinearLayoutManager(this@AgregarReto).apply {
+        listaElementos.layoutManager = LinearLayoutManager(this@AgregarReto).apply {
             reverseLayout = false
             stackFromEnd = false
         }
@@ -49,8 +49,8 @@ class AgregarReto : AppCompatActivity() {
     private fun cargarListaDeRetos() {
         modeloVista.obtenerTodosLosRetos()
         modeloVista.retosDisponibles.observe(this) { retos ->
-            vista.recycleView.adapter = AdaptadorDeRetos(retos, modeloVista)
-            vista.recycleView.scrollToPosition(0)
+            vista.listaElementos.adapter = AdaptadorDeRetos(retos, modeloVista)
+            vista.listaElementos.scrollToPosition(0)
         }
     }
 }

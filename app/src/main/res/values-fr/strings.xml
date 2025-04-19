@@ -4,21 +4,17 @@
     <string name="texto_pantalla_presentacion">GANA GOZA</string>
     <string name="firma">Gana Goza</string>
     <string name="ganagoza">Gana Goza</string>
-    <string name="Boton_registrar">Enregistrer</string>
-    <string name="hello_blank_fragment">Bonjour fragment vide</string>
+
     <string name="btn_CerrarDialogo">Fermer</string>
-    <string name="retos">Défis</string>
-    <string name="descripcion_del_reto">Description du défi</string>
-    <string name="btn_flotante">Ajouter un défi</string>
+
     <string name="agregar_reto">Ajouter un défi</string>
-    <string name="texto_hint">Écrivez le défi</string>
+    <string name="textoIndicacion">Écrivez le défi</string>
     <string name="btn_cancelar">Annuler</string>
     <string name="btn_guardar">Garder</string>
-    <string name="title_dialog_eliminar">Voulez-vous supprimer le défi suivant?</string>
     <string name="editar_reto">Modifier le défi</string>
     <string name="reto_modificar">Défi à modifier</string>
-    <string name="titulo_1">Comment jouer?</string>
-    <string name="descripcion_1">Les joueurs forment un cercle et placent l\'appareil mobile au centre, puis touchent le bouton clignotant pour faire tourner la bouteille. Le joueur désigné par la bouteille doit accomplir le défi lancé par l\'application, sinon il quitte le jeu.</string>
+    <string name="encabezado_regla_juego">Comment jouer?</string>
+    <string name="detalle_regla_juego">Les joueurs forment un cercle et placent l\'appareil mobile au centre, puis touchent le bouton clignotant pour faire tourner la bouteille. Le joueur désigné par la bouteille doit accomplir le défi lancé par l\'application, sinon il quitte le jeu.</string>
     <string name="name_reglas">Règles du jeu</string>
     <string name="btn_sonido">Son</string>
     <string name="btn_reglas">Règles</string>
@@ -32,11 +28,11 @@
     <string name="modifica_tu_reto_y_sorprende_a_todos">Modifiez votre défi et surprenez tout le monde</string>
     <string name="girar">TOURNER!</string>
     <string name="reto">DÉFI</string>
-    <string name="select_language">Choisir la langue</string>
-    <string name="spanish">Espagnol</string>
-    <string name="english">Anglais</string>
-    <string name="french">Français</string>
-    <string name="portuguese">Portugais</string>
+    <string name="selecionar_idioma">Choisir la langue</string>
+    <string name="español">Espagnol</string>
+    <string name="ingles">Anglais</string>
+    <string name="francia">Français</string>
+    <string name="brasil">Portugais</string>
 
 
 
@@ -62,6 +58,20 @@
     <string name="puntos_tres">•</string>
     <string name="cargando">>Chargement…</string>
     <string name="version_del_juego">v1.0</string>
+
+
+
+    <string name="no_hay_retos_todav_a_npresiona_para_crear_uno_nuevo">PAS ENCORE DE DÉFIS !\nAppuyez sur + pour en créer un nouveau</string>
+    <string name="btn_flotante_agregar_reto">Ajouter un défi</string>
+    <string name="eliminar_reto">Supprimer le défi</string>
+    <string name="desea_eliminar_este_reto">Voulez-vous supprimer ce défi ?</string>
+    <string name="reto_que_debes_hacer">Défi que tu dois faire</string>
+    <string name="descripcion_del_reto">Description du défi</string>
+    <string name="btn_si">OUI</string>
+    <string name="btn_no">NON</string>
+
+
+
 
 
 

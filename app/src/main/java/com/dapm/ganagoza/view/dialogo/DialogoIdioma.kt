@@ -37,19 +37,19 @@ class DialogoIdioma(private val contexto: Context) {
     }
 
     private fun configurarEscuchadores() {
-        binding.layoutSpanish.setOnClickListener {
+        binding.formatoEspanol.setOnClickListener {
             cambiarIdioma(GestorIdioma.ESPANOL)
         }
 
-        binding.layoutEnglish.setOnClickListener {
+        binding.formatoIngles.setOnClickListener {
             cambiarIdioma(GestorIdioma.INGLES)
         }
 
-        binding.layoutFrench.setOnClickListener {
+        binding.formatoFrancia.setOnClickListener {
             cambiarIdioma(GestorIdioma.FRANCES)
         }
 
-        binding.layoutPortuguese.setOnClickListener {
+        binding.formatoBrasil.setOnClickListener {
             cambiarIdioma(GestorIdioma.PORTUGUES)
         }
     }

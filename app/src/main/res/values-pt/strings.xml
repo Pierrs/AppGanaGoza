@@ -4,23 +4,21 @@
     <string name="texto_pantalla_presentacion">GANA GOZA</string>
     <string name="firma">Gana Goza</string>
     <string name="ganagoza">Gana Goza</string>
-    <string name="Boton_registrar">Registrar</string>
-    <string name="hello_blank_fragment">Olá fragmento em branco</string>
+
+
     <string name="btn_CerrarDialogo">Fechar</string>
-    <string name="retos">Desafios</string>
+
     <string name="descripcion_del_reto">Descrição do desafio</string>
-    <string name="btn_flotante">Adicionar desafio</string>
+
     <string name="agregar_reto">Adicionar desafio</string>
-    <string name="texto_hint">Escreva o desafio</string>
+    <string name="textoIndicacion">Escreva o desafio</string>
     <string name="btn_cancelar">Cancelar</string>
     <string name="btn_guardar">Salvar</string>
-    <string name="title_dialog_eliminar">Deseja excluir o seguinte desafio?</string>
     <string name="editar_reto">Editar Desafio</string>
     <string name="reto_modificar">Desafio para modificar</string>
-    <string name="titulo_1">Como jogar?</string>
-    <string name="descripcion_1">Os jogadores formam um círculo e colocam o dispositivo móvel no centro, depois tocam no botão piscante para girar a garrafa. O jogador apontado pela garrafa deve cumprir o desafio lançado pelo aplicativo, caso contrário, sai do jogo.</string>
-    <string name="name_reglas">Regras do jogo</string>
-    <string name="btn_sonido">Som</string>
+    <string name="encabezado_regla_juego">Como jogar?</string>
+    <string name="detalle_regla_juego">Os jogadores formam um círculo e colocam o dispositivo móvel no centro, depois tocam no botão piscante para girar a garrafa. O jogador apontado pela garrafa deve cumprir o desafio lançado pelo aplicativo, caso contrário, sai do jogo.</string>
+
     <string name="btn_reglas">Regras</string>
     <string name="btn_retos">Desafios</string>
     <string name="btn_compartir">Divulgar </string>
@@ -32,11 +30,11 @@
     <string name="modifica_tu_reto_y_sorprende_a_todos">Modifique seu desafio e surpreenda a todos</string>
     <string name="girar">GIRAR!</string>
     <string name="reto">DESAFIO</string>
-    <string name="select_language">Selecionar idioma</string>
-    <string name="spanish">Espanhol</string>
-    <string name="english">Inglês</string>
-    <string name="french">Francês</string>
-    <string name="portuguese">Português</string>
+    <string name="selecionar_idioma">Selecionar idioma</string>
+    <string name="español">Espanhol</string>
+    <string name="ingles">Inglês</string>
+    <string name="francia">Francês</string>
+    <string name="brasil">Português</string>
 
 
 
@@ -61,4 +59,18 @@
     <string name="puntos_tres">•</string>
     <string name="cargando">>Carregando…</string>
     <string name="version_del_juego">v1.0</string>
+
+
+    <string name="name_reglas">Regras do jogo</string>
+    <string name="no_hay_retos_todav_a_npresiona_para_crear_uno_nuevo">AINDA NÃO HÁ DESAFIOS!\nPressione + para criar um novo</string>
+    <string name="btn_flotante_agregar_reto">Adicionar desafio</string>
+    <string name="eliminar_reto">Excluir desafio</string>
+    <string name="desea_eliminar_este_reto">Deseja excluir este desafio?</string>
+    <string name="reto_que_debes_hacer">Desafio que você deve fazer</string>
+
+    <string name="btn_sonido">Som</string>
+
+    <string name="btn_si">SIM</string>
+    <string name="btn_no">NÃO</string>
+
 </resources>

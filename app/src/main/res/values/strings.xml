@@ -4,52 +4,12 @@
     <string name="texto_pantalla_presentacion">GANA GOZA</string>
     <string name="firma">Gana Goza</string>
     <string name="ganagoza">Gana Goza</string>
-    <string name="Boton_registrar">Registrar</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="btn_CerrarDialogo">Cerrar</string>
-    <string name="retos">Retos</string>
-    <string name="descripcion_del_reto">Descripcion del reto</string>
-    <string name="btn_flotante">Agregar reto</string>
-    <string name="agregar_reto">Agregar reto</string>
-    <string name="texto_hint">Escriba el reto</string>
-    <string name="btn_cancelar">Cancelar</string>
-    <string name="btn_guardar">Guardar</string>
-    <string name="title_dialog_eliminar">¿Deseas eliminar el siguiente reto?</string>
-    <string name="editar_reto">Editar Reto</string>
-    <string name="reto_modificar">Reto a modificar</string>
-    <string name="titulo_1">¿Cómo se juega?</string>
-    <string name="descripcion_1">Los jugadores forman un circulo y en el centro colocan el dispositivo móvil, luuego tocan el botón parpadeante para girar la botella.El jugador que señale la botella debe cumplir el reto que lanza la app, de lo contrario abandona el juego.</string>
+
     <string name="name_reglas">Reglas del juego</string>
-    <string name="btn_sonido">Sonido</string>
-    <string name="btn_reglas">Reglas</string>
-    <string name="btn_retos">Retos</string>
-    <string name="btn_compartir">Compartir</string>
-    <string name="btn_idioma">Idioma</string>
-    <string name="personaliza_tus_desaf_os_para_el_juego">Personaliza tus desafíos para el juego</string>
     <string name="mis_retos">¡MIS RETOS!</string>
-    <string name="juego_de_retos">¡JUEGO DE RETOS!</string>
-    <string name="escribe_un_reto_divertido_para_jugar">Escribe un reto divertido para jugar</string>
-    <string name="modifica_tu_reto_y_sorprende_a_todos">Modifica tu reto y sorprende a todos</string>
-    <string name="girar">¡GIRAR!</string>
-    <string name="reto">RETO</string>
-    <string name="select_language">Seleccionar Idioma</string>
-    <string name="spanish">Español</string>
-    <string name="english">Inglés</string>
-    <string name="french">Francés</string>
-    <string name="portuguese">Portugués</string>
-
-
-
-
-
-    <string name="al_continuar_aceptas_nuestros_terminos_y_condiciones">Al continuar aceptas nuestros términos y condiciones</string>
-    <string name="ver_politica_de_privacidad">Ver política de privacidad</string>
-    <string name="descripcion_icono_politica_privacidad">Icono de privacidad</string>
-    <string name="titulo_privacidad">Términos de Privacidad</string>
-    <string name="aceptar_terminos">Aceptar y Continuar</string>
-    <string name="terminos_condiciones">TÉRMINOS Y CONDICIONES</string>
-    <string name="politica_privacidad">POLÍTICA DE PRIVACIDAD</string>
-
+    <string name="personaliza_tus_desaf_os_para_el_juego">Personaliza tus desafíos para el juego</string>
+    <string name="no_hay_retos_todav_a_npresiona_para_crear_uno_nuevo">¡NO HAY RETOS TODAVÍA!\nPresiona + para crear uno nuevo</string>
+    <string name="btn_flotante_agregar_reto">Agregar reto</string>
 
     <string name="logo_del_juego">Logo del juego</string>
     <string name="gana_goza">GANA GOZA</string>
@@ -60,11 +20,55 @@
     <string name="cargando">Cargando…</string>
     <string name="version_del_juego">v1.0</string>
 
+    <string name="encabezado_regla_juego">¿Cómo se juega?</string>
+    <string name="detalle_regla_juego">Los jugadores forman un circulo y en el centro colocan el dispositivo móvil, luuego tocan el botón parpadeante para girar la botella.El jugador que señale la botella debe cumplir el reto que lanza la app, de lo contrario abandona el juego.</string>
+    <string name="terminos_condiciones">TÉRMINOS Y CONDICIONES</string>
+    <string name="politica_privacidad">POLÍTICA DE PRIVACIDAD</string>
 
+    <string name="btn_reglas">Reglas</string>
+    <string name="btn_retos">Retos</string>
+    <string name="btn_compartir">Compartir</string>
+    <string name="btn_idioma">Idioma</string>
+
+    <string name="agregar_reto">Agregar reto</string>
+    <string name="escribe_un_reto_divertido_para_jugar">Escribe un reto divertido para jugar</string>
+    <string name="textoIndicacion">Escriba el reto</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_guardar">Guardar</string>
+    <string name="modifica_tu_reto_y_sorprende_a_todos">Modifica tu reto y sorprende a todos</string>
+    <string name="reto_modificar">Reto a modificar</string>
 
     <string name="eliminar_reto">Eliminar Reto</string>
     <string name="desea_eliminar_este_reto">¿Desea eliminar este reto?</string>
+
+    <string name="reto_que_debes_hacer">Reto que debes hacer</string>
+    <string name="btn_CerrarDialogo">Cerrar</string>
+
+    <string name="selecionar_idioma">Seleccionar Idioma</string>
+
+    <string name="descripcion_icono_politica_privacidad">Icono de privacidad</string>
+    <string name="al_continuar_aceptas_nuestros_terminos_y_condiciones">Al continuar aceptas nuestros términos y condiciones</string>
+    <string name="ver_politica_de_privacidad">Ver política de privacidad</string>
+    <string name="aceptar_terminos">Aceptar y Continuar</string>
+
+
+    <string name="juego_de_retos">¡JUEGO DE RETOS!</string>
+    <string name="girar">¡GIRAR!</string>
+    <string name="reto">RETO</string>
+
+    <string name="descripcion_del_reto">Descripcion del reto</string>
+    <string name="editar_reto">Editar Reto</string>
+    <string name="btn_sonido">Sonido</string>
+
+    <string name="español">Español</string>
+    <string name="ingles">Inglés</string>
+    <string name="francia">Francés</string>
+    <string name="brasil">Portugués</string>
+
+    <string name="titulo_privacidad">Términos de Privacidad</string>
+
     <string name="btn_si">SI</string>
     <string name="btn_no">NO</string>
-    <string name="no_hay_retos_todav_a_npresiona_para_crear_uno_nuevo">¡NO HAY RETOS TODAVÍA!\nPresiona + para crear uno nuevo</string>
+
+
 </resources>

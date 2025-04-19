@@ -9,7 +9,7 @@
         android:background="@drawable/game_toolbar_background">
 
         <ImageView
-            android:id="@+id/wave_pattern_bg"
+            android:id="@+id/fondo_patron_onda"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
@@ -34,14 +34,13 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <!-- Encabezado con título -->
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center">
 
                     <TextView
-                        android:id="@+id/tvTitulo"
+                        android:id="@+id/tvEncabezado"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/jersey"
@@ -61,7 +60,6 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <!-- Texto descriptivo -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -73,7 +71,6 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
-                <!-- Contenido del reto en una tarjeta -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -84,7 +81,6 @@
                     app:cardElevation="3dp">
                 </androidx.cardview.widget.CardView>
 
-                <!-- Botones de acción con MaterialButton para un look moderno -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -14,7 +14,7 @@ import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.dapm.ganagoza.R
-import com.dapm.ganagoza.databinding.FragmentJuegoBinding
+import com.dapm.ganagoza.databinding.FragmentoJuegoBinding
 import com.dapm.ganagoza.model.Reto
 import com.dapm.ganagoza.view.AgregarReto
 import com.dapm.ganagoza.view.ReglaJuego
@@ -29,14 +29,14 @@ class FragmentoJuego : Fragment() {
     private lateinit var efectoSonidoPresionarBoton: MediaPlayer
     private lateinit var efectoSonidoTension: MediaPlayer
     private val vistaModeloJuego: VistaModeloJuego by viewModels()
-    private lateinit var binding: FragmentJuegoBinding
+    private lateinit var binding: FragmentoJuegoBinding
     private var sonido = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentJuegoBinding.inflate(inflater, container, false)
+        binding = FragmentoJuegoBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
         return binding.root
     }
@@ -77,7 +77,7 @@ class FragmentoJuego : Fragment() {
         binding.menuJuegoEncabezado.apply {
             llReglasDelJuego.setOnClickListener { mostrarPantallaReglas() }
             llVolumenDelJuego.setOnClickListener { cambiarEstadoSonido() }
-            llReglasDelJuego.setOnClickListener { mostrarPantallaAgregarReto() }
+            llRetosDelJuego.setOnClickListener { mostrarPantallaAgregarReto() }
             llCompartirDelJuego.setOnClickListener { compartirJuego() }
             llIdiomaDelJuego.setOnClickListener { mostrarDialogoIdioma() }
         }
@@ -132,12 +132,12 @@ class FragmentoJuego : Fragment() {
         vistaModeloJuego.activarSonido.observe(viewLifecycleOwner) { habilitar ->
             if (habilitar) {
                 musicaAmbienteJuego.setVolume(0f, 0f)
-                binding.menuJuegoEncabezado.idImgVolume.isVisible = !habilitar
-                binding.menuJuegoEncabezado.idImgNoVolumen.isVisible = habilitar
+                binding.menuJuegoEncabezado.idImgConVolumen.isVisible = !habilitar
+                binding.menuJuegoEncabezado.idImgSinVolumen.isVisible = habilitar
             } else {
                 musicaAmbienteJuego.setVolume(1f, 1f)
-                binding.menuJuegoEncabezado.idImgVolume.isVisible = !habilitar
-                binding.menuJuegoEncabezado.idImgNoVolumen.isVisible = habilitar
+                binding.menuJuegoEncabezado.idImgConVolumen.isVisible = !habilitar
+                binding.menuJuegoEncabezado.idImgSinVolumen.isVisible = habilitar
             }
         }
     }
@@ -207,7 +207,7 @@ class FragmentoJuego : Fragment() {
         musicaAmbienteJuego.pause()
         efectoSonidoGiro.start()
         vistaModeloJuego.giroBotella.observe(viewLifecycleOwner) { rotacion ->
-            binding.ivBotella.startAnimation(rotacion)
+            binding.ivBotellin.startAnimation(rotacion)
         }
     }
 

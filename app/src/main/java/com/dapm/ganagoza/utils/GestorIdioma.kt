@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import java.util.Locale
+import androidx.core.content.edit
 
 object GestorIdioma {
     const val ESPANOL = "es"
@@ -24,7 +25,7 @@ object GestorIdioma {
 
 
         val preferencias = actividad.getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
-        preferencias.edit().putString("idioma_seleccionado", codigoIdioma).apply()
+        preferencias.edit() { putString("idioma_seleccionado", codigoIdioma) }
 
         actividad.recreate()
     }

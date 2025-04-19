@@ -29,7 +29,7 @@ object DialogoMostrarReto {
         binding.tvMostrarReto.text = mostrarReto
     }
     private fun configurarAcciones(binding: DialogoMostrarRetoBinding, alertDialog: AlertDialog, audioFondo: MediaPlayer) {
-        binding.idBtnCancelar.setOnClickListener {
+        binding.idBtnCerrar.setOnClickListener {
             audioFondo.start()
             alertDialog.dismiss()
         }

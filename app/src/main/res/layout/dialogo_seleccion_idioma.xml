@@ -19,14 +19,13 @@
             android:fontFamily="@font/bangers"
             android:gravity="center"
             android:padding="8dp"
-            android:text="@string/select_language"
+            android:text="@string/selecionar_idioma"
             android:textColor="#2196F3"
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <!-- Español -->
         <LinearLayout
-            android:id="@+id/layout_spanish"
+            android:id="@+id/formato_espanol"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackground"
@@ -46,15 +45,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/bangers"
-                android:text="@string/spanish"
+                android:text="@string/español"
                 android:textColor="#FF5722"
                 android:textSize="18sp" />
 
         </LinearLayout>
 
-        <!-- Inglés -->
         <LinearLayout
-            android:id="@+id/layout_english"
+            android:id="@+id/formato_ingles"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackground"
@@ -74,15 +72,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/bangers"
-                android:text="@string/english"
+                android:text="@string/ingles"
                 android:textColor="#2196F3"
                 android:textSize="18sp" />
 
         </LinearLayout>
 
-        <!-- Francés -->
         <LinearLayout
-            android:id="@+id/layout_french"
+            android:id="@+id/formato_francia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackground"
@@ -102,15 +99,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/bangers"
-                android:text="@string/french"
+                android:text="@string/francia"
                 android:textColor="#4CAF50"
                 android:textSize="18sp" />
 
         </LinearLayout>
 
-        <!-- Portugués -->
         <LinearLayout
-            android:id="@+id/layout_portuguese"
+            android:id="@+id/formato_brasil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackground"
@@ -130,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/bangers"
-                android:text="@string/portuguese"
+                android:text="@string/brasil"
                 android:textColor="#FFC107"
                 android:textSize="18sp" />
 

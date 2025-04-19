@@ -4,21 +4,18 @@
     <string name="texto_pantalla_presentacion">GANA GOZA</string>
     <string name="firma">Gana Goza</string>
     <string name="ganagoza">Gana Goza</string>
-    <string name="Boton_registrar">Register</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="btn_CerrarDialogo">Close</string>
-    <string name="retos">Challenges</string>
-    <string name="descripcion_del_reto">Challenge description</string>
-    <string name="btn_flotante">Add challenge</string>
+
     <string name="agregar_reto">Add challenge</string>
-    <string name="texto_hint">Write the challenge</string>
+    <string name="textoIndicacion">Write the challenge</string>
     <string name="btn_cancelar">Cancel</string>
     <string name="btn_guardar">Save</string>
-    <string name="title_dialog_eliminar">Do you want to delete the following challenge?</string>
+
     <string name="editar_reto">Edit Challenge</string>
     <string name="reto_modificar">Challenge to modify</string>
-    <string name="titulo_1">How to play?</string>
-    <string name="descripcion_1">Players form a circle and place the mobile device in the center, then touch the flashing button to spin the bottle. The player pointed by the bottle must complete the challenge given by the app, otherwise they leave the game.</string>
+    <string name="encabezado_regla_juego">How to play?</string>
+    <string name="detalle_regla_juego">Players form a circle and place the mobile device in the center, then touch the flashing button to spin the bottle. The player pointed by the bottle must complete the challenge given by the app, otherwise they leave the game.</string>
     <string name="name_reglas">Game Rules</string>
     <string name="btn_sonido">Sound</string>
     <string name="btn_reglas">Rules</string>
@@ -32,11 +29,11 @@
     <string name="modifica_tu_reto_y_sorprende_a_todos">Modify your challenge and surprise everyone</string>
     <string name="girar">SPIN!</string>
     <string name="reto">CHALLENGE</string>
-    <string name="select_language">Select Language</string>
-    <string name="spanish">Spanish</string>
-    <string name="english">English</string>
-    <string name="french">French</string>
-    <string name="portuguese">Portuguese</string>
+    <string name="selecionar_idioma">Select Language</string>
+    <string name="español">Spanish</string>
+    <string name="ingles">English</string>
+    <string name="francia">French</string>
+    <string name="brasil">Portuguese</string>
 
 
 
@@ -58,6 +55,17 @@
     <string name="puntos_tres">•</string>
     <string name="cargando">>Loading…</string>
     <string name="version_del_juego">v1.0</string>
+
+
+    <string name="no_hay_retos_todav_a_npresiona_para_crear_uno_nuevo">NO CHALLENGES YET!\nPress + to create a new one</string>
+    <string name="btn_flotante_agregar_reto">Add Challenge</string>
+    <string name="eliminar_reto">Delete Challenge</string>
+    <string name="desea_eliminar_este_reto">Do you want to delete this challenge?</string>
+    <string name="reto_que_debes_hacer">Challenge you must do</string>
+    <string name="descripcion_del_reto">Challenge description</string>
+    <string name="btn_si">YES</string>
+    <string name="btn_no">NO</string>
+
 
 
 </resources>

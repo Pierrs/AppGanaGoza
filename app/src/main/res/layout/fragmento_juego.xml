@@ -9,7 +9,7 @@
         android:fitsSystemWindows="false">
 
         <ImageView
-            android:id="@+id/iv_fondo"
+            android:id="@+id/iv_fondoPrincipal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
@@ -33,7 +33,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/iv_botella"
+                android:id="@+id/iv_botellin"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:adjustViewBounds="true"
@@ -62,7 +62,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/menuJuegoEncabezado" />
 
-            <!-- BOTÓN DE GIRAR CENTRADO Y SIN CORTES -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_contenedor_boton"
                 android:layout_width="match_parent"

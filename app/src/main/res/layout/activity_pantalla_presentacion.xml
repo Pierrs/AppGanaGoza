@@ -6,32 +6,32 @@
     android:layout_height="match_parent">
 
     <View
-        android:id="@+id/background_view"
+        android:id="@+id/vista_fondo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/game_toolbar_background" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_top"
+        android:id="@+id/linea_guía_superior"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.15" />
 
     <ImageView
-        android:id="@+id/game_logo"
+        android:id="@+id/logo_juego"
         android:layout_width="350dp"
         android:layout_height="350dp"
         android:elevation="12dp"
         android:contentDescription="@string/logo_del_juego"
         android:src="@drawable/pantalla_presentacion"
-        app:layout_constraintTop_toBottomOf="@id/guideline_top"
+        app:layout_constraintTop_toBottomOf="@id/linea_guía_superior"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp" />
 
     <TextView
-        android:id="@+id/tv_titulo"
+        android:id="@+id/tv_principal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -47,7 +47,7 @@
         android:shadowRadius="6"
         android:rotation="-3"
         android:elevation="14dp"
-        app:layout_constraintTop_toBottomOf="@+id/game_logo"
+        app:layout_constraintTop_toBottomOf="@+id/logo_juego"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -66,12 +66,12 @@
         android:shadowDy="1"
         android:shadowRadius="2"
         android:elevation="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_titulo"
+        app:layout_constraintTop_toBottomOf="@+id/tv_principal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <LinearLayout
-        android:id="@+id/dots_container"
+        android:id="@+id/contenedor_puntos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -82,7 +82,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:id="@+id/dot1"
+            android:id="@+id/punto1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/puntos_uno"
@@ -91,7 +91,7 @@
             android:alpha="1.0" />
 
         <TextView
-            android:id="@+id/dot2"
+            android:id="@+id/punto2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/puntos_dos"
@@ -100,7 +100,7 @@
             android:alpha="1.0" />
 
         <TextView
-            android:id="@+id/dot3"
+            android:id="@+id/punto3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/puntos_tres"
@@ -110,7 +110,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tv_loading"
+        android:id="@+id/tv_cargando"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cargando"
@@ -122,7 +122,7 @@
         android:shadowDx="1"
         android:shadowDy="1"
         android:shadowRadius="2"
-        app:layout_constraintTop_toBottomOf="@+id/dots_container"
+        app:layout_constraintTop_toBottomOf="@+id/contenedor_puntos"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

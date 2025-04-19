@@ -11,9 +11,8 @@
         android:fitsSystemWindows="true"
         tools:context="com.dapm.ganagoza.view.ReglaJuego">
 
-        <!-- Patrón de ondas como fondo -->
         <ImageView
-            android:id="@+id/wave_pattern_bg"
+            android:id="@+id/fondo_patron_onda"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
@@ -29,7 +28,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
-        <!-- Tarjeta principal con todo el contenido -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -49,7 +47,6 @@
                 android:scrollbars="none"
                 android:clipToPadding="false">
 
-                <!-- Contenedor de reglas -->
                 <LinearLayout
                     android:id="@+id/ll_contenedor"
                     android:layout_width="match_parent"
@@ -57,13 +54,11 @@
                     android:orientation="vertical"
                     android:padding="20dp">
 
-                    <!-- Contenedor para título y estrella -->
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start">
 
-                        <!-- Título con estilo lúdico -->
                         <TextView
                             android:id="@+id/tv_titulo_reglas"
                             android:layout_width="wrap_content"
@@ -74,7 +69,7 @@
                             android:shadowDx="2"
                             android:shadowDy="2"
                             android:shadowRadius="3"
-                            android:text="@string/titulo_1"
+                            android:text="@string/encabezado_regla_juego"
                             android:textAllCaps="true"
                             android:textColor="#FF5722"
                             android:textSize="36sp"
@@ -82,7 +77,6 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <!-- Estrella decorativa -->
                         <ImageView
                             android:layout_width="28dp"
                             android:layout_height="28dp"
@@ -93,7 +87,6 @@
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <!-- Descripción de las reglas con estilo mejorado -->
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -106,7 +99,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="16dp"
-                            android:text="@string/descripcion_1"
+                            android:text="@string/detalle_regla_juego"
                             android:textColor="#FFFFFF"
                             android:textSize="16sp"
                             android:fontFamily="sans-serif"
@@ -114,14 +107,13 @@
 
                     </androidx.cardview.widget.CardView>
 
-                    <!-- Animación Lottie con decoración -->
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp">
 
                         <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/animation_view"
+                            android:id="@+id/vista_animación"
                             android:layout_width="240dp"
                             android:layout_height="240dp"
                             app:layout_constraintStart_toStartOf="parent"
@@ -132,7 +124,6 @@
                             app:lottie_loop="true"
                             app:lottie_rawRes="@raw/regla"/>
 
-                        <!-- Decoraciones adicionales -->
                         <ImageView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
@@ -141,7 +132,7 @@
                             android:src="@drawable/ic_start"
                             app:tint="#FFEB3B"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintBottom_toBottomOf="@id/animation_view" />
+                            app:layout_constraintBottom_toBottomOf="@id/vista_animación" />
 
                         <ImageView
                             android:layout_width="24dp"
@@ -151,10 +142,9 @@
                             android:src="@drawable/ic_start"
                             app:tint="#FFEB3B"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintBottom_toBottomOf="@id/animation_view" />
+                            app:layout_constraintBottom_toBottomOf="@id/vista_animación" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <!-- Links de Términos y Privacidad -->
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -171,7 +161,6 @@
                             android:gravity="center"
                             android:padding="16dp">
 
-                            <!-- Términos y Condiciones -->
                             <TextView
                                 android:id="@+id/tv_terminos"
                                 android:layout_width="wrap_content"
@@ -184,7 +173,6 @@
                                 android:gravity="center"
                                 android:letterSpacing="0.03" />
 
-                            <!-- Política de Privacidad -->
                             <TextView
                                 android:id="@+id/tv_privacidad"
                                 android:layout_width="wrap_content"

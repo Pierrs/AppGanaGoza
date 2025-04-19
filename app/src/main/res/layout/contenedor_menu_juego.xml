@@ -2,19 +2,15 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- Contenedor principal que permite posicionar el menú en la parte inferior -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Contenedor para el fragmento - AÑADIDO -->
-
-        <!-- Menú mejorado con transparencia clara y más grande -->
         <FrameLayout
             android:id="@+id/FragmentoJuego"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/menuCardView"
+            app:layout_constraintBottom_toTopOf="@+id/vistaTarjetaaMenu"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +18,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/menuCardView"
+            android:id="@+id/vistaTarjetaaMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -43,7 +39,6 @@
                 android:orientation="horizontal"
                 android:padding="10dp">
 
-                <!-- Botón de volumen - Mejorado y más pequeño -->
                 <LinearLayout
                     android:id="@+id/ll_VolumenDelJuego"
                     android:layout_width="0dp"
@@ -67,7 +62,7 @@
                             android:layout_height="match_parent">
 
                             <ImageView
-                                android:id="@+id/idImgVolume"
+                                android:id="@+id/idImgConVolumen"
                                 android:layout_width="25dp"
                                 android:layout_height="25dp"
                                 android:layout_gravity="center"
@@ -76,7 +71,7 @@
                                 app:tint="#FF5722" />
 
                             <ImageView
-                                android:id="@+id/idImgNoVolumen"
+                                android:id="@+id/idImgSinVolumen"
                                 android:layout_width="25dp"
                                 android:layout_height="25dp"
                                 android:layout_gravity="center"
@@ -102,7 +97,6 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
-                <!-- Botón de reglas - Mejorado y más pequeño -->
                 <LinearLayout
                     android:id="@+id/ll_ReglasDelJuego"
                     android:layout_width="0dp"
@@ -145,7 +139,6 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
-                <!-- Botón de agregar reto - Mejorado y más pequeño -->
                 <LinearLayout
                     android:id="@+id/ll_RetosDelJuego"
                     android:layout_width="0dp"
@@ -188,7 +181,6 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
-                <!-- Botón de compartir - Mejorado y más pequeño -->
                 <LinearLayout
                     android:id="@+id/ll_CompartirDelJuego"
                     android:layout_width="0dp"
@@ -231,7 +223,6 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
-                <!-- Botón de idioma - NUEVO -->
                 <LinearLayout
                     android:id="@+id/ll_IdiomaDelJuego"
                     android:layout_width="0dp"
