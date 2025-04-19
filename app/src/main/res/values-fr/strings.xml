@@ -46,9 +46,9 @@
 
     <string name="al_continuar_aceptas_nuestros_terminos_y_condiciones">En continuant, vous acceptez nos termes et conditions</string>
     <string name="ver_politica_de_privacidad">Voir la politique de confidentialité</string>
-    <string name="privacy_icon_description">Icône de confidentialité</string>
-    <string name="privacy_title">Termes de confidentialité</string>
-    <string name="accept_terms">Accepter et enregistrer</string>
+    <string name="descripcion_icono_politica_privacidad">Icône de confidentialité</string>
+    <string name="titulo_privacidad">Termes de confidentialité</string>
+    <string name="aceptar_terminos">Accepter et enregistrer</string>
 
     <string name="terminos_condiciones">CONDITIONS GÉNÉRALES</string>
     <string name="politica_privacidad">POLITIQUE DE CONFIDENTIALITÉ</string>

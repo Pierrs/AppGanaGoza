@@ -16,175 +16,166 @@ import com.dapm.ganagoza.R
 import com.dapm.ganagoza.model.Reto
 import com.dapm.ganagoza.repository.RepositorioRetos
 import com.dapm.ganagoza.utils.Constantes
-import com.dapm.ganagoza.utils.Constantes.RETARDO_POR_DEFECTO
-import com.dapm.ganagoza.view.MainActivity
 import com.dapm.ganagoza.view.dialogo.DialogoMostrarReto.mostrarDialogoReto
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import java.util.concurrent.Executors
-import java.util.concurrent.TimeUnit
 import kotlin.random.Random
 
-
 class VistaModeloJuego(application: Application) : AndroidViewModel(application) {
-    private val context = getApplication<Application>()
-    private val retoRepository = RepositorioRetos(context)
-
-    private val _estadoRotacionBotella = MutableLiveData(false)
-    val estadoRotacionBotella: LiveData<Boolean> get() = _estadoRotacionBotella
-
-    private val _rotacionBotella = MutableLiveData<RotateAnimation>()
-    val rotacionBotella: LiveData<RotateAnimation> get() = _rotacionBotella
-
-    private val _habilitarBoton = MutableLiveData(true)
-    val habilitarBoton: LiveData<Boolean> get() = _habilitarBoton
-
-    private val _isCerpentina = MutableLiveData(false)
-    val isCerpentina: LiveData<Boolean> get() = _isCerpentina
-
-    private val _statusShowDialog = MutableLiveData(false)
-    val statusShowDialog: LiveData<Boolean> get() = _statusShowDialog
-
-    private val _habilitarSonido = MutableLiveData(false)
-    val habilitarSonido: LiveData<Boolean> get() = _habilitarSonido
-
-    private val _listaReto = MutableLiveData<MutableList<Reto>>()
-    val listaReto: LiveData<MutableList<Reto>> get() = _listaReto
-
-    private val _progresSstate = MutableLiveData(false)
-    val progresSstate: LiveData<Boolean> get() = _progresSstate
-
-    //recomepnsa
-
-    private var contadorJuegos = MutableLiveData<Int>(0)
+    private val repositorioRetos = RepositorioRetos(getApplication())
 
 
-    fun pantallaPresentacion(activity: Activity) {
-        val executor = Executors.newSingleThreadScheduledExecutor()
-        executor.schedule({
-            activity.startActivity(Intent(activity, MainActivity::class.java))
-            activity.finish()
-        }, RETARDO_POR_DEFECTO, TimeUnit.MILLISECONDS)
-    }
+    private val _estadoGiroBotella = MutableLiveData(false)
+    val estadoGiroBotella: LiveData<Boolean> = _estadoGiroBotella
+
+    private val _giroBotella = MutableLiveData<RotateAnimation>()
+    val giroBotella: LiveData<RotateAnimation> = _giroBotella
+
+    private val _activarBoton = MutableLiveData(true)
+    val activarBoton: LiveData<Boolean> = _activarBoton
+
+    private val _mostrarEfectoConfeti = MutableLiveData(false)
+    val mostrarEfectoConfeti: LiveData<Boolean> = _mostrarEfectoConfeti
+
+    private val _estadoMostrarDialogo = MutableLiveData(false)
+    val estadoMostrarDialogo: LiveData<Boolean> = _estadoMostrarDialogo
+
+    private val _activarSonido = MutableLiveData(false)
+    val activarSonido: LiveData<Boolean> = _activarSonido
+
+    private val _retosDisponibles = MutableLiveData<List<Reto>>()
+    val retosDisponibles: LiveData<List<Reto>> = _retosDisponibles
+
+    private val _estadoDeProgreso = MutableLiveData(false)
+    val estadoDeProgreso: LiveData<Boolean> = _estadoDeProgreso
+
 
     fun girarBotella() {
-        _estadoRotacionBotella.value = true
-        val grados = (Math.random() * 3600) + 1000
-        val rotacion = RotateAnimation(
-            0f, grados.toFloat(), Animation.RELATIVE_TO_SELF,
-            0.5f, Animation.RELATIVE_TO_SELF, 0.5f
-        )
-
-        rotacion.fillAfter = true
-        rotacion.duration = 3600
-        rotacion.interpolator = DecelerateInterpolator()
-        rotacion.setAnimationListener(object : Animation.AnimationListener {
-            override fun onAnimationStart(animation: Animation?) {
-                _habilitarBoton.value = false
-                _isCerpentina.value = true
-            }
-
-            override fun onAnimationEnd(animation: Animation?) {
-                _isCerpentina.value = false
-                _habilitarBoton.value = true
-                _statusShowDialog.value = true
-                _estadoRotacionBotella.value = false
-            }
-
-            override fun onAnimationRepeat(animation: Animation?) {
-            }
-        })
-        _rotacionBotella.value = rotacion
+        _estadoGiroBotella.value = true
+        val giroBotella = crearAnimacionGiro()
+        giroBotella.setAnimationListener(crearEscuchadorAnimacion())
+        _giroBotella.value = giroBotella
     }
+
+
+    private fun crearAnimacionGiro(): RotateAnimation {
+        val grados = (Math.random() * GRADOS_MAXIMOS) + GRADOS_MINIMOS
+
+        return RotateAnimation(
+            0f, grados.toFloat(),
+            Animation.RELATIVE_TO_SELF, VALOR_PIVOTE,
+            Animation.RELATIVE_TO_SELF, VALOR_PIVOTE
+        ).apply {
+            fillAfter = true
+            duration = DURACION_ANIMACION
+            interpolator = DecelerateInterpolator()
+        }
+    }
+
+    private fun crearEscuchadorAnimacion() = object : Animation.AnimationListener {
+        override fun onAnimationStart(animation: Animation?) {
+            manejarInicioAnimacion()
+        }
+
+        override fun onAnimationEnd(animation: Animation?) {
+            manejarFinAnimacion()
+        }
+
+        override fun onAnimationRepeat(animation: Animation?) {
+        }
+    }
+
+    private fun manejarInicioAnimacion() {
+        _activarBoton.value = false
+        _mostrarEfectoConfeti.value = true
+    }
+
+
+    private fun manejarFinAnimacion() {
+        _mostrarEfectoConfeti.value = false
+        _activarBoton.value = true
+        _estadoMostrarDialogo.value = true
+        _estadoGiroBotella.value = false
+    }
+
 
     fun dialogoMostrarReto(context: Context, audioFondo: MediaPlayer, mensajeReto: String) {
         mostrarDialogoReto(context, audioFondo, mensajeReto)
     }
 
-    suspend fun esperar(tiempo: Int) {
-        delay(tiempo * 1000L)
-    }
-
     fun setHabilitarSonido(habilitar: Boolean) {
-        _habilitarSonido.value = habilitar
+        _activarSonido.value = habilitar
     }
 
     fun agregarReto(reto: Reto) {
-        viewModelScope.launch {
-            _progresSstate.value = true
-            try {
-                retoRepository.agregarReto(reto)
-                obtenerTodosLosRetos()
-                _progresSstate.value = false
-            } catch (e: Exception) {
-                _progresSstate.value = false
-            }
+        ejecutarOperacionRepositorio {
+            repositorioRetos.agregarReto(reto)
+            obtenerTodosLosRetos()
         }
     }
 
     fun obtenerTodosLosRetos() {
-        viewModelScope.launch {
-            _progresSstate.value = true
-            try {
-                _listaReto.value = retoRepository.obtenerTodosLosRetos()
-                _progresSstate.value = false
-            } catch (e: Exception) {
-                _progresSstate.value = false
-            }
+        ejecutarOperacionRepositorio {
+            _retosDisponibles.value = repositorioRetos.obtenerTodosLosRetos()
         }
     }
 
     fun eliminarReto(reto: Reto) {
-        viewModelScope.launch {
-            _progresSstate.value = true
-            try {
-                retoRepository.eliminarReto(reto)
-                _progresSstate.value = false
-            } catch (e: Exception) {
-                _progresSstate.value = false
-            }
+        ejecutarOperacionRepositorio {
+            repositorioRetos.eliminarReto(reto)
+            obtenerTodosLosRetos()
         }
     }
 
     fun actualizarReto(reto: Reto) {
+        ejecutarOperacionRepositorio {
+            repositorioRetos.actualizarReto(reto)
+            obtenerTodosLosRetos()
+        }
+    }
+
+    private fun ejecutarOperacionRepositorio(operacion: suspend () -> Unit) {
         viewModelScope.launch {
-            _progresSstate.value = true
             try {
-                retoRepository.actualizarReto(reto)
-                _progresSstate.value = false
+                _estadoDeProgreso.value = true
+                operacion()
             } catch (e: Exception) {
-                _progresSstate.value = false
+            } finally {
+                _estadoDeProgreso.value = false
             }
         }
     }
 
-    fun obtenerDescripcionReto(listaReto: MutableList<Reto>): String {
-        var descripcion = ""
+    fun obtenerDescripcionReto(listaReto: List<Reto>): String {
         return if (listaReto.isNotEmpty()) {
-            val tamanio = listaReto.size
-            val randomReto = Random.nextInt(0, tamanio)
-            descripcion = listaReto[randomReto].descripcionReto
-            descripcion
+            val indiceAleatorio = Random.nextInt(listaReto.size)
+            listaReto[indiceAleatorio].descripcionReto
         } else {
-            val emptyReto = Constantes.MENSAJE_SIN_RETO
-            emptyReto
+            Constantes.MENSAJE_SIN_RETO
         }
     }
 
     fun compartir(audioFondo: MediaPlayer, activity: Activity) {
         audioFondo.pause()
-        val intent = Intent(Intent.ACTION_SEND)
-        intent.type = "text/plain"
-        intent.putExtra(Intent.EXTRA_SUBJECT, activity.getString(R.string.app_name))
+        val intentCompartir = crearIntentCompartir(activity)
+        activity.startActivity(intentCompartir)
+    }
+
+    private fun crearIntentCompartir(activity: Activity): Intent {
         val nombrePaquete = activity.packageName
         val eslogan = "App Gana Goza.\nHecho por Pieer's Del Aguila !! "
         val urlApp = "https://play.google.com/store/games?hl=es_419&pli=${nombrePaquete}"
-        val compartir = eslogan + urlApp
-        intent.putExtra(Intent.EXTRA_TEXT, compartir)
-        activity.startActivity(intent)
+        val contenidoCompartir = eslogan + urlApp
+
+        return Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_SUBJECT, activity.getString(R.string.app_name))
+            putExtra(Intent.EXTRA_TEXT, contenidoCompartir)
+        }
+    }
+    companion object {
+        private const val GRADOS_MAXIMOS = 3600
+        private const val GRADOS_MINIMOS = 1000
+        private const val VALOR_PIVOTE = 0.5f
+        private const val DURACION_ANIMACION = 3600L
     }
 }
-
-
-
-

@@ -119,13 +119,13 @@ class FragmentJuego : Fragment() {
 
     private fun observadorListaReto() {
         juegoViewModel.obtenerTodosLosRetos()
-        juegoViewModel.listaReto.observe(viewLifecycleOwner) { lista ->
-            listaReto = lista
+        juegoViewModel.retosDisponibles.observe(viewLifecycleOwner) { lista ->
+            listaReto = lista.toMutableList()
         }
     }
 
     private fun observadorSonido() {
-        juegoViewModel.habilitarSonido.observe(viewLifecycleOwner) { habilitar ->
+        juegoViewModel.activarSonido.observe(viewLifecycleOwner) { habilitar ->
             if (habilitar) {
                 audioFondo.setVolume(0f, 0f)
                 binding.icContentedorMenuJuego.idImgVolume.isVisible = !habilitar
@@ -139,7 +139,7 @@ class FragmentJuego : Fragment() {
     }
 
     private fun observadorDialogoReto() {
-        juegoViewModel.statusShowDialog.observe(viewLifecycleOwner) { status ->
+        juegoViewModel.estadoMostrarDialogo.observe(viewLifecycleOwner) { status ->
             if (status) {
                 val countDwnTimer = object : CountDownTimer(4000, 1000) {
                     override fun onTick(millisUntilFinished: Long) {
@@ -166,25 +166,25 @@ class FragmentJuego : Fragment() {
     }
 
     private fun observadorCerpentinaOn() {
-        juegoViewModel.isCerpentina.observe(viewLifecycleOwner) { estadoCerpentina ->
+        juegoViewModel.mostrarEfectoConfeti.observe(viewLifecycleOwner) { estadoCerpentina ->
             binding.lottieCerpentina.isVisible = estadoCerpentina
             binding.lottieCerpentina.playAnimation()
         }
     }
 
     private fun observadorHabilitarBoton() {
-        juegoViewModel.habilitarBoton.observe(viewLifecycleOwner) { estadoHabilitarBoton ->
+        juegoViewModel.activarBoton.observe(viewLifecycleOwner) { estadoHabilitarBoton ->
             binding.botonGirar.isVisible = estadoHabilitarBoton
         }
     }
 
     private fun observadorRotacionBotella() {
-        juegoViewModel.estadoRotacionBotella.observe(viewLifecycleOwner) { giroBotella ->
+        juegoViewModel.estadoGiroBotella.observe(viewLifecycleOwner) { giroBotella ->
             if (giroBotella) {
                 audioBoton.start()
                 audioFondo.pause()
                 audioGiroBotella.start()
-                juegoViewModel.rotacionBotella.observe(viewLifecycleOwner) { rotacion ->
+                juegoViewModel.giroBotella.observe(viewLifecycleOwner) { rotacion ->
                     binding.ivBotella.startAnimation(rotacion)
                 }
             }

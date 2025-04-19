@@ -9,44 +9,42 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import com.dapm.ganagoza.R
-import com.dapm.ganagoza.view.dialogo.DiálogoPrivacidadCondiciones
+import com.dapm.ganagoza.view.dialogo.DialogoPrivacidadCondiciones
 
 class PantallaPresentacion : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        configurarPantalla()
+        comprobarTerminosPrivacidad()
+    }
 
+    private fun configurarPantalla() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
-
         window.statusBarColor = Color.TRANSPARENT
-
-
-
         setContentView(R.layout.activity_pantalla_presentacion)
-
-        setupWindowInsets()
-
-        checkPrivacyTerms()
+        configurarMargenesDePantalla()
     }
 
-    private fun setupWindowInsets() {
-        val rootView = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.main)
-
-        ViewCompat.setOnApplyWindowInsetsListener(rootView) { _, insets ->
-            insets
-        }
+    private fun configurarMargenesDePantalla() {
+        val vistaPrincipal = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.main)
+        ViewCompat.setOnApplyWindowInsetsListener(vistaPrincipal) { _, insets -> insets }
     }
 
-    private fun checkPrivacyTerms() {
-        if (DiálogoPrivacidadCondiciones.shouldShowDialog(this)) {
-            val privacyDialog = DiálogoPrivacidadCondiciones(this)
-            privacyDialog.setOnDismissListener {
-                continuarAMainActivity()
-            }
-            privacyDialog.show()
+    private fun comprobarTerminosPrivacidad() {
+        if (DialogoPrivacidadCondiciones.debeMostrarDialogo(this)) {
+            mostrarDialogoPrivacidad()
         } else {
             continuarAMainActivity()
         }
+    }
+
+    private fun mostrarDialogoPrivacidad() {
+        val dialogoPrivacidad = DialogoPrivacidadCondiciones(this)
+        dialogoPrivacidad.setOnDismissListener {
+            continuarAMainActivity()
+        }
+        dialogoPrivacidad.show()
     }
 
     private fun continuarAMainActivity() {

@@ -12,54 +12,45 @@ import com.dapm.ganagoza.view.dialogo.DialogoAgregarReto.mostrarDialogoAgregarRe
 import com.dapm.ganagoza.view.viewmodel.VistaModeloJuego
 
 class AgregarReto : AppCompatActivity() {
-    private lateinit var binding: ActivityAgregarRetoBinding
-    private val vistaModeloJuego: VistaModeloJuego by viewModels()
+
+    private lateinit var vista: ActivityAgregarRetoBinding
+    private val modeloVista: VistaModeloJuego by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
-        binding = ActivityAgregarRetoBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        controladores()
-        observadorViewModel()
+        vista = ActivityAgregarRetoBinding.inflate(layoutInflater)
+        setContentView(vista.root)
+        configurarUI()
+        observarModeloVista()
     }
 
-    private fun controladores() {
-        binding.icContenedorBarra.ivAtras.setOnClickListener {
-            finish()
-        }
-        binding.floatBtn.setOnClickListener {
-            mostrarDialogoAgregarReto(this, vistaModeloJuego) {
-                observadorListaReto()
+    private fun configurarUI() = with(vista) {
+        icEncabezadoContenedor.ivRegresar.setOnClickListener { finish() }
+
+        btnFlotanteAgregarReto.setOnClickListener {
+            mostrarDialogoAgregarReto(this@AgregarReto, modeloVista) {
+                cargarListaDeRetos()
             }
         }
-    }
-
-    private fun observadorViewModel() {
-        observadorListaReto()
-        observadorProgress()
-    }
-
-    private fun observadorProgress() {
-        vistaModeloJuego.progresSstate.observe(this) { status ->
-            binding.progress.isVisible = status
+        recycleView.layoutManager = LinearLayoutManager(this@AgregarReto).apply {
+            reverseLayout = false
+            stackFromEnd = false
         }
     }
 
-    private fun observadorListaReto() {
-        vistaModeloJuego.obtenerTodosLosRetos()
-        vistaModeloJuego.listaReto.observe(this) { lista ->
-            val recycler = binding.recycleView
-            val layoutManager = LinearLayoutManager(this)
-            layoutManager.reverseLayout = false // Asegura el orden correcto de los elementos
-            layoutManager.stackFromEnd = false // Evita que se apilen al final
-            recycler.layoutManager = layoutManager
-            val adapter = AdaptadorDeRetos(lista, vistaModeloJuego)
-            recycler.adapter = adapter
-            adapter.notifyDataSetChanged()
-            recycler.scrollToPosition(0) // Desplaza al primer elemento automáticamente
+    private fun observarModeloVista() {
+        cargarListaDeRetos()
+        modeloVista.estadoDeProgreso.observe(this) { estaCargando ->
+            vista.progress.isVisible = estaCargando
+        }
+    }
+
+    private fun cargarListaDeRetos() {
+        modeloVista.obtenerTodosLosRetos()
+        modeloVista.retosDisponibles.observe(this) { retos ->
+            vista.recycleView.adapter = AdaptadorDeRetos(retos, modeloVista)
+            vista.recycleView.scrollToPosition(0)
         }
     }
 }

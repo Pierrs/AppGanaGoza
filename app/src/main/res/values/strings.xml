@@ -44,9 +44,9 @@
 
     <string name="al_continuar_aceptas_nuestros_terminos_y_condiciones">Al continuar aceptas nuestros términos y condiciones</string>
     <string name="ver_politica_de_privacidad">Ver política de privacidad</string>
-    <string name="privacy_icon_description">Icono de privacidad</string>
-    <string name="privacy_title">Términos de Privacidad</string>
-    <string name="accept_terms">Aceptar y Continuar</string>
+    <string name="descripcion_icono_politica_privacidad">Icono de privacidad</string>
+    <string name="titulo_privacidad">Términos de Privacidad</string>
+    <string name="aceptar_terminos">Aceptar y Continuar</string>
     <string name="terminos_condiciones">TÉRMINOS Y CONDICIONES</string>
     <string name="politica_privacidad">POLÍTICA DE PRIVACIDAD</string>
 

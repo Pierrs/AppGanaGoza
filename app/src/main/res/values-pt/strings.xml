@@ -45,9 +45,9 @@
 
     <string name="al_continuar_aceptas_nuestros_terminos_y_condiciones">Ao continuar, você aceita nossos termos e condições</string>
     <string name="ver_politica_de_privacidad">Ver política de privacidade</string>
-    <string name="privacy_icon_description">Ícone de privacidade</string>
-    <string name="privacy_title">Termos de privacidade</string>
-    <string name="accept_terms">Aceitar e salvar</string>
+    <string name="descripcion_icono_politica_privacidad">Ícone de privacidade</string>
+    <string name="titulo_privacidad">Termos de privacidade</string>
+    <string name="aceptar_terminos">Aceitar e salvar</string>
 
 
     <string name="terminos_condiciones">TERMOS E CONDIÇÕES</string>

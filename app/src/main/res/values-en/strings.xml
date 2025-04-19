@@ -42,9 +42,9 @@
 
     <string name="al_continuar_aceptas_nuestros_terminos_y_condiciones">By continuing, you accept our terms and conditions</string>
     <string name="ver_politica_de_privacidad">View Privacy Policy</string>
-    <string name="privacy_icon_description">Privacy Icon</string>
-    <string name="privacy_title">Our Privacy Policy</string>
-    <string name="accept_terms">Accept and Save</string>
+    <string name="descripcion_icono_politica_privacidad">Privacy Icon</string>
+    <string name="titulo_privacidad">Our Privacy Policy</string>
+    <string name="aceptar_terminos">Accept and Save</string>
 
     <string name="terminos_condiciones">TERMS AND CONDITIONS</string>
     <string name="politica_privacidad">>PRIVACY POLICY</string>

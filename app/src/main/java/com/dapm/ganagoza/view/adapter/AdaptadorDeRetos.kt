@@ -9,7 +9,7 @@ import com.dapm.ganagoza.view.viewmodel.VistaModeloJuego
 import com.dapm.ganagoza.viewholder.ContenedorVistaReto
 
 class AdaptadorDeRetos(
-    private val todosLosRetos: MutableList<Reto>,
+    private val todosLosRetos: List<Reto>,
     private val vistaModeloJuego: VistaModeloJuego
 ) : RecyclerView.Adapter<ContenedorVistaReto>() {
 

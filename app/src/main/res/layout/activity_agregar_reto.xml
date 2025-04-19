@@ -21,7 +21,7 @@
             app:layout_scrollFlags="noScroll">
 
             <include
-                android:id="@+id/ic_contenedor_barra"
+                android:id="@+id/icEncabezadoContenedor"
                 layout="@layout/barra_principal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
         </androidx.core.widget.NestedScrollView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/float_btn"
+            android:id="@+id/btnFlotanteAgregarReto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"

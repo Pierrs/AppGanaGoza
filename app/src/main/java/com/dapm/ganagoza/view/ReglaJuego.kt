@@ -21,7 +21,7 @@ class ReglaJuego : AppCompatActivity() {
     }
 
     private fun controladores() {
-        binding.icContenedorBarra.ivAtras.setOnClickListener {
+        binding.icContenedorBarra.ivRegresar.setOnClickListener {
             finish()
         }
         binding.icContenedorBarra.tvTituloBarra.text=getString(R.string.name_reglas)
