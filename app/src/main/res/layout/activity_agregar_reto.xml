@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/fondo_barra_juego"
         android:fitsSystemWindows="true"
-        tools:context="com.dapm. presentation.view.AgregarReto">
+        tools:context="com.dapm.ganagoza.interfaz.view.AgregarReto">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBarLayout"

@@ -27,10 +27,10 @@
             android:name=".activity_recompensa"
             android:exported="false" />
         <activity
-            android:name=".view.AgregarReto"
+            android:name=".interfaz.view.AgregarReto"
             android:exported="false" />
         <activity
-            android:name=".view.ReglaJuego"
+            android:name=".interfaz.view.ReglaJuego"
             android:exported="false" />
         <activity
             android:name=".view.CambiarPassword"
@@ -51,7 +51,7 @@
             android:name=".view.OpcionesRegistro"
             android:exported="false" />
         <activity
-            android:name=".view.PantallaPresentacion"
+            android:name=".interfaz.view.PantallaPresentacion"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -61,7 +61,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.MainActivity"
+            android:name=".interfaz.actividad.MainActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
     </application>

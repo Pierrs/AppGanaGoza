@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/fondo_barra_juego"
         android:fitsSystemWindows="true"
-        tools:context="com.dapm.ganagoza.view.ReglaJuego">
+        tools:context="com.dapm.ganagoza.interfaz.view.ReglaJuego">
 
         <ImageView
             android:id="@+id/fondo_patron_onda"

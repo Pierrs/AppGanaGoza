@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
-            tools:context="com.dapm. presentation.view.fragment.FragmentJuego">
+            tools:context="com.dapm.ganagoza.interfaz.fragmento.FragmnetoJuego">
 
             <include
                 android:id="@+id/menuJuegoEncabezado"
