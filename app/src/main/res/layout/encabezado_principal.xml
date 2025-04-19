@@ -13,7 +13,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:background="@drawable/game_toolbar_background"
+            android:background="@drawable/fondo_barra_juego"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:scaleType="fitXY"
-            android:src="@drawable/wave_pattern"
+            android:src="@drawable/patron_ondas"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -62,7 +62,7 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:src="@drawable/ic_back"
+                        android:src="@drawable/ic_retroceder"
                         app:tint="#FF5722" />
                 </androidx.cardview.widget.CardView>
 
@@ -91,7 +91,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginEnd="8dp"
-                    android:src="@drawable/ic_start"
+                    android:src="@drawable/ic_estrella"
                     app:tint="#FFEB3B"
                     app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_encabezado"
                     app:layout_constraintEnd_toStartOf="@+id/tv_titulo_encabezado"
@@ -102,7 +102,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginStart="8dp"
-                    android:src="@drawable/ic_start"
+                    android:src="@drawable/ic_estrella"
                     app:tint="#FFEB3B"
                     app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_encabezado"
                     app:layout_constraintStart_toEndOf="@+id/tv_titulo_encabezado"

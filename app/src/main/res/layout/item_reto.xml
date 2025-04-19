@@ -31,7 +31,7 @@
                     android:id="@+id/indicador"
                     android:layout_width="8dp"
                     android:layout_height="24dp"
-                    android:background="@drawable/indicator_background"
+                    android:background="@drawable/fondo_de_indicador"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -73,7 +73,7 @@
                             android:clickable="true"
                             android:focusable="true"
                             android:background="?selectableItemBackgroundBorderless"
-                            android:src="@drawable/ic_edit"
+                            android:src="@drawable/ic_editar"
                             app:tint="#D15858" />
                     </androidx.cardview.widget.CardView>
 
@@ -92,7 +92,7 @@
                             android:clickable="true"
                             android:focusable="true"
                             android:background="?selectableItemBackgroundBorderless"
-                            android:src="@drawable/ic_delete"
+                            android:src="@drawable/ic_eliminar"
                             app:tint="#E53935" />
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>

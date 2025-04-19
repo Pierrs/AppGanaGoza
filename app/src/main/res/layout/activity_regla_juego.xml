@@ -7,7 +7,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/game_toolbar_background"
+        android:background="@drawable/fondo_barra_juego"
         android:fitsSystemWindows="true"
         tools:context="com.dapm.ganagoza.view.ReglaJuego">
 
@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
-            android:src="@drawable/wave_pattern"
+            android:src="@drawable/patron_ondas"
             android:alpha="0.15" />
 
         <include
@@ -129,7 +129,7 @@
                             android:layout_height="32dp"
                             android:layout_marginStart="30dp"
                             android:rotation="15"
-                            android:src="@drawable/ic_start"
+                            android:src="@drawable/ic_estrella"
                             app:tint="#FFEB3B"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintBottom_toBottomOf="@id/vista_animación" />
@@ -139,7 +139,7 @@
                             android:layout_height="24dp"
                             android:layout_marginEnd="40dp"
                             android:rotation="-10"
-                            android:src="@drawable/ic_start"
+                            android:src="@drawable/ic_estrella"
                             app:tint="#FFEB3B"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintBottom_toBottomOf="@id/vista_animación" />

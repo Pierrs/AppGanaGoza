@@ -110,7 +110,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/button_gradient" />
+                            android:src="@drawable/boton_degradado" />
 
                         <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/botonGirar"

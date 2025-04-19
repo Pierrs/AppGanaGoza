@@ -6,14 +6,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/game_toolbar_background">
+        android:background="@drawable/fondo_barra_juego">
 
         <ImageView
             android:id="@+id/fondo_patron_onda"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
-            android:src="@drawable/wave_pattern"
+            android:src="@drawable/patron_ondas"
             android:alpha="0.15" />
 
         <androidx.cardview.widget.CardView

@@ -9,7 +9,7 @@
         android:id="@+id/vista_fondo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/game_toolbar_background" />
+        android:background="@drawable/fondo_barra_juego" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/linea_guía_superior"
