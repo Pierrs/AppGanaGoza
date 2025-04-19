@@ -67,7 +67,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <TextView
-                    android:id="@+id/tv_titulo_barra"
+                    android:id="@+id/tv_titulo_encabezado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/bangers"
@@ -93,9 +93,9 @@
                     android:layout_marginEnd="8dp"
                     android:src="@drawable/ic_start"
                     app:tint="#FFEB3B"
-                    app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_barra"
-                    app:layout_constraintEnd_toStartOf="@+id/tv_titulo_barra"
-                    app:layout_constraintTop_toTopOf="@+id/tv_titulo_barra" />
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_encabezado"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_titulo_encabezado"
+                    app:layout_constraintTop_toTopOf="@+id/tv_titulo_encabezado" />
 
                 <ImageView
                     android:id="@+id/decoration_right"
@@ -104,9 +104,9 @@
                     android:layout_marginStart="8dp"
                     android:src="@drawable/ic_start"
                     app:tint="#FFEB3B"
-                    app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_barra"
-                    app:layout_constraintStart_toEndOf="@+id/tv_titulo_barra"
-                    app:layout_constraintTop_toTopOf="@+id/tv_titulo_barra" />
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_titulo_encabezado"
+                    app:layout_constraintStart_toEndOf="@+id/tv_titulo_encabezado"
+                    app:layout_constraintTop_toTopOf="@+id/tv_titulo_encabezado" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.appbar.AppBarLayout>

@@ -66,4 +66,5 @@
     <string name="desea_eliminar_este_reto">¿Desea eliminar este reto?</string>
     <string name="btn_si">SI</string>
     <string name="btn_no">NO</string>
+    <string name="no_hay_retos_todav_a_npresiona_para_crear_uno_nuevo">¡NO HAY RETOS TODAVÍA!\nPresiona + para crear uno nuevo</string>
 </resources>

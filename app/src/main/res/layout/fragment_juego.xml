@@ -23,7 +23,7 @@
             tools:context="com.dapm. presentation.view.fragment.FragmentJuego">
 
             <include
-                android:id="@+id/ic_contentedor_menu_juego"
+                android:id="@+id/menuJuegoEncabezado"
                 layout="@layout/contenedor_menu_juego"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHeight_percent="0.45"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ic_contentedor_menu_juego" />
+                app:layout_constraintTop_toBottomOf="@+id/menuJuegoEncabezado" />
 
             <TextView
                 android:id="@+id/tv_cuenta_regresiva"
@@ -60,7 +60,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/cl_contenedor_boton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ic_contentedor_menu_juego" />
+                app:layout_constraintTop_toBottomOf="@+id/menuJuegoEncabezado" />
 
             <!-- BOTÓN DE GIRAR CENTRADO Y SIN CORTES -->
             <androidx.constraintlayout.widget.ConstraintLayout

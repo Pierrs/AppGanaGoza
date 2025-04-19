@@ -26,7 +26,7 @@ class AgregarReto : AppCompatActivity() {
     }
 
     private fun configurarUI() = with(vista) {
-        icEncabezadoContenedor.ivRegresar.setOnClickListener { finish() }
+        icEncabezadoPrincipal.ivRegresar.setOnClickListener { finish() }
 
         btnFlotanteAgregarReto.setOnClickListener {
             mostrarDialogoAgregarReto(this@AgregarReto, modeloVista) {

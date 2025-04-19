@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/game_toolbar_background"
         android:fitsSystemWindows="true"
-        tools:context="com.dapm. presentation.view.ReglaJuego">
+        tools:context="com.dapm.ganagoza.view.ReglaJuego">
 
         <!-- Patrón de ondas como fondo -->
         <ImageView
@@ -21,8 +21,8 @@
             android:alpha="0.15" />
 
         <include
-            android:id="@+id/ic_contenedor_barra"
-            layout="@layout/barra_principal"
+            android:id="@+id/ic_encabezado_principal"
+            layout="@layout/encabezado_principal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
@@ -37,7 +37,7 @@
             app:cardBackgroundColor="#80FFFFFF"
             app:cardCornerRadius="20dp"
             app:cardElevation="6dp"
-            app:layout_constraintTop_toBottomOf="@+id/ic_contenedor_barra"
+            app:layout_constraintTop_toBottomOf="@+id/ic_encabezado_principal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">

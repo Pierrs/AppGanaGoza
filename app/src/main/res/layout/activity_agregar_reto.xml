@@ -21,8 +21,8 @@
             app:layout_scrollFlags="noScroll">
 
             <include
-                android:id="@+id/icEncabezadoContenedor"
-                layout="@layout/barra_principal"
+                android:id="@+id/ic_encabezado_principal"
+                layout="@layout/encabezado_principal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
@@ -95,7 +95,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvSubtituloPantalla">
 
-                    <!-- RecyclerView más grande -->
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recycleView"
                         android:layout_width="match_parent"
@@ -122,7 +121,7 @@
                         android:fontFamily="@font/bangers"
                         android:lineSpacingExtra="8dp"
                         android:rotation="-1"
-                        android:text="¡NO HAY RETOS TODAVÍA!\nPresiona + para crear uno nuevo"
+                        android:text="@string/no_hay_retos_todav_a_npresiona_para_crear_uno_nuevo"
                         android:textAlignment="center"
                         android:textColor="#FF5722"
                         android:textSize="20sp"

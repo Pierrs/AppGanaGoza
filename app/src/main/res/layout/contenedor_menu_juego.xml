@@ -11,7 +11,7 @@
 
         <!-- Menú mejorado con transparencia clara y más grande -->
         <FrameLayout
-            android:id="@+id/FragmentL1"
+            android:id="@+id/FragmentoJuego"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@+id/menuCardView"
@@ -45,7 +45,7 @@
 
                 <!-- Botón de volumen - Mejorado y más pequeño -->
                 <LinearLayout
-                    android:id="@+id/cl_volumen"
+                    android:id="@+id/ll_VolumenDelJuego"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -104,7 +104,7 @@
 
                 <!-- Botón de reglas - Mejorado y más pequeño -->
                 <LinearLayout
-                    android:id="@+id/cl_reglas"
+                    android:id="@+id/ll_ReglasDelJuego"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -147,7 +147,7 @@
 
                 <!-- Botón de agregar reto - Mejorado y más pequeño -->
                 <LinearLayout
-                    android:id="@+id/cl_retos"
+                    android:id="@+id/ll_RetosDelJuego"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -190,7 +190,7 @@
 
                 <!-- Botón de compartir - Mejorado y más pequeño -->
                 <LinearLayout
-                    android:id="@+id/cl_compartir"
+                    android:id="@+id/ll_CompartirDelJuego"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -233,7 +233,7 @@
 
                 <!-- Botón de idioma - NUEVO -->
                 <LinearLayout
-                    android:id="@+id/cl_idioma"
+                    android:id="@+id/ll_IdiomaDelJuego"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
