@@ -33,9 +33,6 @@ class VistaModeloJuego(application: Application) : AndroidViewModel(application)
     private val _activarBoton = MutableLiveData(true)
     val activarBoton: LiveData<Boolean> = _activarBoton
 
-    private val _mostrarEfectoConfeti = MutableLiveData(false)
-    val mostrarEfectoConfeti: LiveData<Boolean> = _mostrarEfectoConfeti
-
     private val _estadoMostrarDialogo = MutableLiveData(false)
     val estadoMostrarDialogo: LiveData<Boolean> = _estadoMostrarDialogo
 
@@ -86,12 +83,11 @@ class VistaModeloJuego(application: Application) : AndroidViewModel(application)
 
     private fun manejarInicioAnimacion() {
         _activarBoton.value = false
-        _mostrarEfectoConfeti.value = true
+
     }
 
 
     private fun manejarFinAnimacion() {
-        _mostrarEfectoConfeti.value = false
         _activarBoton.value = true
         _estadoMostrarDialogo.value = true
         _estadoGiroBotella.value = false
@@ -99,6 +95,7 @@ class VistaModeloJuego(application: Application) : AndroidViewModel(application)
 
 
     fun dialogoMostrarReto(context: Context, audioFondo: MediaPlayer, mensajeReto: String) {
+        _activarBoton.value = false
         mostrarDialogoReto(context, audioFondo, mensajeReto)
     }
 
@@ -111,6 +108,10 @@ class VistaModeloJuego(application: Application) : AndroidViewModel(application)
             repositorioRetos.agregarReto(reto)
             obtenerTodosLosRetos()
         }
+    }
+    fun completarProcesoDeMostrarReto() {
+        _estadoMostrarDialogo.value = false
+        _activarBoton.value = true
     }
 
     fun obtenerTodosLosRetos() {
@@ -176,6 +177,6 @@ class VistaModeloJuego(application: Application) : AndroidViewModel(application)
         private const val GRADOS_MAXIMOS = 3600
         private const val GRADOS_MINIMOS = 1000
         private const val VALOR_PIVOTE = 0.5f
-        private const val DURACION_ANIMACION = 3600L
+        private const val DURACION_ANIMACION = 2600L
     }
 }

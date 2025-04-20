@@ -61,11 +61,11 @@ class FragmentoJuego : Fragment() {
     }
 
     private fun cargarRecursosMultimedia() {
-        musicaAmbienteJuego = MediaPlayer.create(context, R.raw.musicafondo)
-        efectoSonidoGiro = MediaPlayer.create(context, R.raw.audiobotella)
-        efectoSonidoRelevarReto = MediaPlayer.create(context, R.raw.audioreto)
-        efectoSonidoPresionarBoton = MediaPlayer.create(context, R.raw.audioboton)
-        efectoSonidoTension = MediaPlayer.create(context, R.raw.audiosuspenso)
+        musicaAmbienteJuego = MediaPlayer.create(context, R.raw.musica_fondo)
+        efectoSonidoGiro = MediaPlayer.create(context, R.raw.audio_botella_girando)
+        efectoSonidoRelevarReto = MediaPlayer.create(context, R.raw.audio_mostrar_reto)
+        efectoSonidoPresionarBoton = MediaPlayer.create(context, R.raw.audio_presionando_boton)
+        efectoSonidoTension = MediaPlayer.create(context, R.raw.audio_revelador)
         musicaAmbienteJuego.start()
     }
 
@@ -114,7 +114,6 @@ class FragmentoJuego : Fragment() {
 
     private fun configurarObservadores() {
         observadorGiroBotella()
-        observadorEfectoConfetiActivado()
         observadorActivarBoton()
         observadorDialogoReto()
         observadorSonido()
@@ -145,13 +144,14 @@ class FragmentoJuego : Fragment() {
     private fun observadorDialogoReto() {
         vistaModeloJuego.estadoMostrarDialogo.observe(viewLifecycleOwner) { status ->
             if (status) {
+                binding.botonGirar.isEnabled = false
                 iniciarCuentaRegresiva()
             }
         }
     }
 
     private fun iniciarCuentaRegresiva() {
-        val countDwnTimer = object : CountDownTimer(4000, 1000) {
+        val countDwnTimer = object : CountDownTimer(5000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 efectoSonidoTension.start()
                 binding.tvCuentaRegresiva.text = (millisUntilFinished / 1000).toString()
@@ -174,23 +174,20 @@ class FragmentoJuego : Fragment() {
         )
         pausarSonidosJuego()
         binding.tvCuentaRegresiva.text = ""
+
+        vistaModeloJuego.completarProcesoDeMostrarReto()
     }
+
 
     private fun pausarSonidosJuego() {
         efectoSonidoGiro.pause()
         efectoSonidoPresionarBoton.pause()
     }
 
-    private fun observadorEfectoConfetiActivado() {
-        vistaModeloJuego.mostrarEfectoConfeti.observe(viewLifecycleOwner) { estadoCerpentina ->
-            binding.lottieCerpentina.isVisible = estadoCerpentina
-            binding.lottieCerpentina.playAnimation()
-        }
-    }
-
     private fun observadorActivarBoton() {
         vistaModeloJuego.activarBoton.observe(viewLifecycleOwner) { estadoHabilitarBoton ->
             binding.botonGirar.isVisible = estadoHabilitarBoton
+            binding.botonGirar.isEnabled = estadoHabilitarBoton
         }
     }
 

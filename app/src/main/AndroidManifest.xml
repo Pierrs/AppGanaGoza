@@ -21,34 +21,10 @@
         android:theme="@style/Theme.GanaGoza"
         tools:targetApi="31">
         <activity
-            android:name=".view.RecompensaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity_recompensa"
-            android:exported="false" />
-        <activity
             android:name=".interfaz.view.AgregarReto"
             android:exported="false" />
         <activity
             android:name=".interfaz.view.ReglaJuego"
-            android:exported="false" />
-        <activity
-            android:name=".view.CambiarPassword"
-            android:exported="false" />
-        <activity
-            android:name=".view.RecuperarPassword"
-            android:exported="false" />
-        <activity
-            android:name=".view.EditarPerfil"
-            android:exported="false" />
-        <activity
-            android:name=".view.Registro_usuario"
-            android:exported="false" />
-        <activity
-            android:name=".view.CuentaExistente"
-            android:exported="false" />
-        <activity
-            android:name=".view.OpcionesRegistro"
             android:exported="false" />
         <activity
             android:name=".interfaz.view.PantallaPresentacion"
