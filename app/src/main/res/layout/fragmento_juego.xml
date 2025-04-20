@@ -6,7 +6,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="false">
+        android:fitsSystemWindows="true">
 
         <ImageView
             android:id="@+id/iv_fondoPrincipal"
@@ -65,14 +65,14 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_contenedor_boton"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginBottom="64dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="32dp"
                 android:clipChildren="false"
                 android:clipToPadding="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHeight_percent="0.25"
                 app:layout_constraintStart_toStartOf="parent">
+
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cv_boton_container"
                     android:layout_width="160dp"
@@ -107,7 +107,7 @@
                             app:lottie_autoPlay="true"
                             app:lottie_colorFilter="@color/botonGirar"
                             app:lottie_loop="true"
-                            app:lottie_rawRes="@raw/boton"
+                            app:lottie_rawRes="@raw/animacion_presionar"
                             app:lottie_speed="1.2" />
 
                         <TextView
