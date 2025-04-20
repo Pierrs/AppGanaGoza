@@ -23,7 +23,6 @@ import kotlin.random.Random
 class VistaModeloJuego(application: Application) : AndroidViewModel(application) {
     private val repositorioRetos = RepositorioRetos(getApplication())
 
-
     private val _estadoGiroBotella = MutableLiveData(false)
     val estadoGiroBotella: LiveData<Boolean> = _estadoGiroBotella
 
@@ -45,7 +44,6 @@ class VistaModeloJuego(application: Application) : AndroidViewModel(application)
     private val _estadoDeProgreso = MutableLiveData(false)
     val estadoDeProgreso: LiveData<Boolean> = _estadoDeProgreso
 
-
     fun girarBotella() {
         _estadoGiroBotella.value = true
         val giroBotella = crearAnimacionGiro()
@@ -53,17 +51,16 @@ class VistaModeloJuego(application: Application) : AndroidViewModel(application)
         _giroBotella.value = giroBotella
     }
 
-
     private fun crearAnimacionGiro(): RotateAnimation {
-        val grados = (Math.random() * GRADOS_MAXIMOS) + GRADOS_MINIMOS
+        val grados = (Math.random() * Constantes.GRADOS_MAXIMOS) + Constantes.GRADOS_MINIMOS
 
         return RotateAnimation(
             0f, grados.toFloat(),
-            Animation.RELATIVE_TO_SELF, VALOR_PIVOTE,
-            Animation.RELATIVE_TO_SELF, VALOR_PIVOTE
+            Animation.RELATIVE_TO_SELF, Constantes.VALOR_PIVOTE,
+            Animation.RELATIVE_TO_SELF, Constantes.VALOR_PIVOTE
         ).apply {
             fillAfter = true
-            duration = DURACION_ANIMACION
+            duration = Constantes.DURACION_ANIMACION
             interpolator = DecelerateInterpolator()
         }
     }
@@ -83,16 +80,13 @@ class VistaModeloJuego(application: Application) : AndroidViewModel(application)
 
     private fun manejarInicioAnimacion() {
         _activarBoton.value = false
-
     }
-
 
     private fun manejarFinAnimacion() {
         _activarBoton.value = true
         _estadoMostrarDialogo.value = true
         _estadoGiroBotella.value = false
     }
-
 
     fun dialogoMostrarReto(context: Context, audioFondo: MediaPlayer, mensajeReto: String) {
         _activarBoton.value = false
@@ -109,6 +103,7 @@ class VistaModeloJuego(application: Application) : AndroidViewModel(application)
             obtenerTodosLosRetos()
         }
     }
+
     fun completarProcesoDeMostrarReto() {
         _estadoMostrarDialogo.value = false
         _activarBoton.value = true
@@ -172,11 +167,5 @@ class VistaModeloJuego(application: Application) : AndroidViewModel(application)
             putExtra(Intent.EXTRA_SUBJECT, activity.getString(R.string.app_name))
             putExtra(Intent.EXTRA_TEXT, contenidoCompartir)
         }
-    }
-    companion object {
-        private const val GRADOS_MAXIMOS = 3600
-        private const val GRADOS_MINIMOS = 1000
-        private const val VALOR_PIVOTE = 0.5f
-        private const val DURACION_ANIMACION = 2600L
     }
 }

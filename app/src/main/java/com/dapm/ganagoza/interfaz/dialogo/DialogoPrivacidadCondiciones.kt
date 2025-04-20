@@ -55,21 +55,21 @@ class DialogoPrivacidadCondiciones(context: Context) : Dialog(context) {
         val textoTerminosFr = "termes et conditions"
         val textoTerminosPt = "termos e condições"
 
-        var indiceInicio = textoCompleto.toLowerCase(Locale.ROOT).indexOf(textoTerminosEs.toLowerCase(Locale.ROOT))
+        var indiceInicio = textoCompleto.lowercase(Locale.ROOT).indexOf(textoTerminosEs.lowercase(Locale.ROOT))
         var textoTerminos = textoTerminosEs
 
         if (indiceInicio == -1) {
-            indiceInicio = textoCompleto.toLowerCase(Locale.ROOT).indexOf(textoTerminosEn.toLowerCase(Locale.ROOT))
+            indiceInicio = textoCompleto.lowercase(Locale.ROOT).indexOf(textoTerminosEn.lowercase(Locale.ROOT))
             textoTerminos = textoTerminosEn
         }
 
         if (indiceInicio == -1) {
-            indiceInicio = textoCompleto.toLowerCase(Locale.ROOT).indexOf(textoTerminosFr.toLowerCase(Locale.ROOT))
+            indiceInicio = textoCompleto.lowercase(Locale.ROOT).indexOf(textoTerminosFr.lowercase(Locale.ROOT))
             textoTerminos = textoTerminosFr
         }
 
         if (indiceInicio == -1) {
-            indiceInicio = textoCompleto.toLowerCase(Locale.ROOT).indexOf(textoTerminosPt.toLowerCase(Locale.ROOT))
+            indiceInicio = textoCompleto.lowercase(Locale.ROOT).indexOf(textoTerminosPt.lowercase(Locale.ROOT))
             textoTerminos = textoTerminosPt
         }
 

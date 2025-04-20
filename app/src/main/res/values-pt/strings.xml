@@ -57,12 +57,12 @@
     <string name="puntos_uno">•</string>
     <string name="puntos_dos">•</string>
     <string name="puntos_tres">•</string>
-    <string name="cargando">>Carregando…</string>
+    <string name="cargando">Carregando…</string>
     <string name="version_del_juego">v1.0</string>
 
 
     <string name="name_reglas">Regras do jogo</string>
-    <string name="no_hay_retos_todav_a_npresiona_para_crear_uno_nuevo">AINDA NÃO HÁ DESAFIOS!\nPressione + para criar um novo</string>
+
     <string name="btn_flotante_agregar_reto">Adicionar desafio</string>
     <string name="eliminar_reto">Excluir desafio</string>
     <string name="desea_eliminar_este_reto">Deseja excluir este desafio?</string>

@@ -56,12 +56,11 @@
     <string name="puntos_uno">•</string>
     <string name="puntos_dos">•</string>
     <string name="puntos_tres">•</string>
-    <string name="cargando">>Chargement…</string>
+    <string name="cargando">Chargement…</string>
     <string name="version_del_juego">v1.0</string>
 
 
 
-    <string name="no_hay_retos_todav_a_npresiona_para_crear_uno_nuevo">PAS ENCORE DE DÉFIS !\nAppuyez sur + pour en créer un nouveau</string>
     <string name="btn_flotante_agregar_reto">Ajouter un défi</string>
     <string name="eliminar_reto">Supprimer le défi</string>
     <string name="desea_eliminar_este_reto">Voulez-vous supprimer ce défi ?</string>

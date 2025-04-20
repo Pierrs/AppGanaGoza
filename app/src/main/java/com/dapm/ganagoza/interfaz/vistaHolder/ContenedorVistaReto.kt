@@ -1,4 +1,4 @@
-package com.dapm.ganagoza.interfaz.vista_holder
+package com.dapm.ganagoza.interfaz.vistaHolder
 import androidx.recyclerview.widget.RecyclerView
 import com.dapm.ganagoza.databinding.ItemRetoBinding
 import com.dapm.ganagoza.modelo.Reto

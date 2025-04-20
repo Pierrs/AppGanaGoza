@@ -1,5 +1,4 @@
 package com.dapm.ganagoza.interfaz.fragmento
-
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -122,28 +121,28 @@ class FragmentoJuego : Fragment() {
 
     private fun observadorRetosDisponibles() {
         vistaModeloJuego.obtenerTodosLosRetos()
-        vistaModeloJuego.retosDisponibles.observe(viewLifecycleOwner) { lista ->
-            retosDisponibles = lista.toMutableList()
+        vistaModeloJuego.retosDisponibles.observe(viewLifecycleOwner) { listarRetos ->
+            retosDisponibles = listarRetos.toMutableList()
         }
     }
 
     private fun observadorSonido() {
-        vistaModeloJuego.activarSonido.observe(viewLifecycleOwner) { habilitar ->
-            if (habilitar) {
+        vistaModeloJuego.activarSonido.observe(viewLifecycleOwner) { activar ->
+            if (activar) {
                 musicaAmbienteJuego.setVolume(0f, 0f)
-                binding.menuJuegoEncabezado.idImgConVolumen.isVisible = !habilitar
-                binding.menuJuegoEncabezado.idImgSinVolumen.isVisible = habilitar
+                binding.menuJuegoEncabezado.idImgConVolumen.isVisible = !activar
+                binding.menuJuegoEncabezado.idImgSinVolumen.isVisible = activar
             } else {
                 musicaAmbienteJuego.setVolume(1f, 1f)
-                binding.menuJuegoEncabezado.idImgConVolumen.isVisible = !habilitar
-                binding.menuJuegoEncabezado.idImgSinVolumen.isVisible = habilitar
+                binding.menuJuegoEncabezado.idImgConVolumen.isVisible = !activar
+                binding.menuJuegoEncabezado.idImgSinVolumen.isVisible = activar
             }
         }
     }
 
     private fun observadorDialogoReto() {
-        vistaModeloJuego.estadoMostrarDialogo.observe(viewLifecycleOwner) { status ->
-            if (status) {
+        vistaModeloJuego.estadoMostrarDialogo.observe(viewLifecycleOwner) { estado ->
+            if (estado) {
                 binding.botonGirar.isEnabled = false
                 iniciarCuentaRegresiva()
             }
@@ -185,9 +184,9 @@ class FragmentoJuego : Fragment() {
     }
 
     private fun observadorActivarBoton() {
-        vistaModeloJuego.activarBoton.observe(viewLifecycleOwner) { estadoHabilitarBoton ->
-            binding.botonGirar.isVisible = estadoHabilitarBoton
-            binding.botonGirar.isEnabled = estadoHabilitarBoton
+        vistaModeloJuego.activarBoton.observe(viewLifecycleOwner) { estadoActivarBoton ->
+            binding.botonGirar.isVisible = estadoActivarBoton
+            binding.botonGirar.isEnabled = estadoActivarBoton
         }
     }
 
@@ -203,8 +202,8 @@ class FragmentoJuego : Fragment() {
         efectoSonidoPresionarBoton.start()
         musicaAmbienteJuego.pause()
         efectoSonidoGiro.start()
-        vistaModeloJuego.giroBotella.observe(viewLifecycleOwner) { rotacion ->
-            binding.ivBotellin.startAnimation(rotacion)
+        vistaModeloJuego.giroBotella.observe(viewLifecycleOwner) { girar ->
+            binding.ivBotellin.startAnimation(girar)
         }
     }
 

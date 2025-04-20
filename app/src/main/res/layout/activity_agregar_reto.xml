@@ -123,7 +123,6 @@
                         android:fontFamily="@font/bangers"
                         android:lineSpacingExtra="8dp"
                         android:rotation="-1"
-                        android:text="@string/no_hay_retos_todav_a_npresiona_para_crear_uno_nuevo"
                         android:textAlignment="center"
                         android:textColor="#FF5722"
                         android:textSize="20sp"
