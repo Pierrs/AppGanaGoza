@@ -68,6 +68,8 @@
 
     <string name="btn_si">SI</string>
     <string name="btn_no">NO</string>
+    <string name="mensaje_sin_reto">No hay retos disponibles</string>
+
 
 
 </resources>

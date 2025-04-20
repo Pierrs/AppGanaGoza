@@ -68,6 +68,7 @@
     <string name="descripcion_del_reto">Description du défi</string>
     <string name="btn_si">OUI</string>
     <string name="btn_no">NON</string>
+    <string name="mensaje_sin_reto">Il n\'y a pas de défis disponibles</string>
 
 
 

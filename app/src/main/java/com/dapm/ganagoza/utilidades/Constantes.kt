@@ -6,5 +6,4 @@ object Constantes {
     const val VALOR_PIVOTE = 0.5f
     const val DURACION_ANIMACION = 2600L
     const val NOMBRE_BASE_DE_DATOS: String = "app_database.db"
-    const val MENSAJE_SIN_RETO: String = "No hay retos"
 }

@@ -64,6 +64,8 @@
     <string name="descripcion_del_reto">Challenge description</string>
     <string name="btn_si">YES</string>
     <string name="btn_no">NO</string>
+    <string name="mensaje_sin_reto">No challenges available</string>
+
 
 
 

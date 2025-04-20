@@ -72,5 +72,6 @@
 
     <string name="btn_si">SIM</string>
     <string name="btn_no">NÃO</string>
+    <string name="mensaje_sin_reto">Não há desafios disponíveis</string>
 
 </resources>

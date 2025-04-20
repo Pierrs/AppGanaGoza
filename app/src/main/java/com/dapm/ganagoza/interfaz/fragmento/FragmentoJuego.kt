@@ -18,6 +18,7 @@ import com.dapm.ganagoza.modelo.Reto
 import com.dapm.ganagoza.interfaz.view.AgregarReto
 import com.dapm.ganagoza.interfaz.view.ReglaJuego
 import com.dapm.ganagoza.interfaz.dialogo.DialogoIdioma
+import com.dapm.ganagoza.utilidades.GestorIdioma
 import com.dapm.ganagoza.viewmodel.VistaModeloJuego
 
 class FragmentoJuego : Fragment() {
@@ -225,6 +226,7 @@ class FragmentoJuego : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         liberarRecursosMultimedia()
+        GestorIdioma.reiniciarIdioma()
     }
 
     private fun liberarRecursosMultimedia() {

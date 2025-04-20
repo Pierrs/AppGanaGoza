@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.media.MediaPlayer
 import android.view.animation.Animation
 import android.view.animation.DecelerateInterpolator
@@ -17,7 +18,9 @@ import com.dapm.ganagoza.modelo.Reto
 import com.dapm.ganagoza.repositorio.RepositorioRetos
 import com.dapm.ganagoza.utilidades.Constantes
 import com.dapm.ganagoza.interfaz.dialogo.DialogoMostrarReto.mostrarDialogoReto
+import com.dapm.ganagoza.utilidades.GestorIdioma
 import kotlinx.coroutines.launch
+import java.util.Locale
 import kotlin.random.Random
 
 class VistaModeloJuego(application: Application) : AndroidViewModel(application) {
@@ -146,7 +149,14 @@ class VistaModeloJuego(application: Application) : AndroidViewModel(application)
             val indiceAleatorio = Random.nextInt(listaReto.size)
             listaReto[indiceAleatorio].descripcionReto
         } else {
-            Constantes.MENSAJE_SIN_RETO
+            val codigoIdioma = GestorIdioma.obtenerIdiomaActual()
+            val locale = Locale(codigoIdioma)
+
+            val configuracion = Configuration(getApplication<Application>().resources.configuration)
+            configuracion.setLocale(locale)
+
+            val contextoLocalizado = getApplication<Application>().createConfigurationContext(configuracion)
+            contextoLocalizado.getString(R.string.mensaje_sin_reto)
         }
     }
 
