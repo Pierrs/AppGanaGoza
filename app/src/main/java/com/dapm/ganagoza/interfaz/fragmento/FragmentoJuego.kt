@@ -15,11 +15,11 @@ import androidx.fragment.app.viewModels
 import com.dapm.ganagoza.R
 import com.dapm.ganagoza.databinding.FragmentoJuegoBinding
 import com.dapm.ganagoza.modelo.Reto
-import com.dapm.ganagoza.interfaz.view.AgregarReto
-import com.dapm.ganagoza.interfaz.view.ReglaJuego
+import com.dapm.ganagoza.interfaz.vista.AgregarReto
+import com.dapm.ganagoza.interfaz.vista.ReglaJuego
 import com.dapm.ganagoza.interfaz.dialogo.DialogoIdioma
 import com.dapm.ganagoza.utilidades.GestorIdioma
-import com.dapm.ganagoza.viewmodel.VistaModeloJuego
+import com.dapm.ganagoza.vistaModelo.VistaModeloJuego
 
 class FragmentoJuego : Fragment() {
     private lateinit var retosDisponibles: MutableList<Reto>

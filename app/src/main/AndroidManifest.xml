@@ -21,13 +21,13 @@
         android:theme="@style/Theme.GanaGoza"
         tools:targetApi="31">
         <activity
-            android:name=".interfaz.view.AgregarReto"
+            android:name=".interfaz.vista.AgregarReto"
             android:exported="false" />
         <activity
-            android:name=".interfaz.view.ReglaJuego"
+            android:name=".interfaz.vista.ReglaJuego"
             android:exported="false" />
         <activity
-            android:name=".interfaz.view.PantallaPresentacion"
+            android:name=".interfaz.vista.PantallaPresentacion"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

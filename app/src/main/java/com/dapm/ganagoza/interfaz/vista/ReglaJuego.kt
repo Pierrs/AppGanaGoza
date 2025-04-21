@@ -1,4 +1,4 @@
-package com.dapm.ganagoza.interfaz.view
+package com.dapm.ganagoza.interfaz.vista
 
 import android.content.Intent
 import android.os.Bundle

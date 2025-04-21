@@ -1,4 +1,4 @@
-package com.dapm.ganagoza.interfaz.view
+package com.dapm.ganagoza.interfaz.vista
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dapm.ganagoza.databinding.ActivityAgregarRetoBinding
 import com.dapm.ganagoza.adaptador.AdaptadorDeRetos
 import com.dapm.ganagoza.interfaz.dialogo.DialogoAgregarReto.mostrarDialogoAgregarReto
-import com.dapm.ganagoza.viewmodel.VistaModeloJuego
+import com.dapm.ganagoza.vistaModelo.VistaModeloJuego
 
 class AgregarReto : AppCompatActivity() {
 

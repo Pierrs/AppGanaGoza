@@ -5,7 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import com.dapm.ganagoza.databinding.DialogoEliminarRetoBinding
 import com.dapm.ganagoza.modelo.Reto
-import com.dapm.ganagoza.viewmodel.VistaModeloJuego
+import com.dapm.ganagoza.vistaModelo.VistaModeloJuego
 
 object DialogoEliminarReto {
 
