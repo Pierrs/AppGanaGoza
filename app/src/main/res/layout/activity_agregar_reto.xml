@@ -38,7 +38,7 @@
             android:clipToPadding="false"
             android:fillViewport="true"
             app:layout_constraintTop_toBottomOf="@+id/ic_encabezado_principal"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toTopOf="@+id/ad_container_card">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -149,7 +149,7 @@
             app:srcCompat="@android:drawable/ic_input_add"
             app:tint="#FF5722"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="@+id/ad_container_card" />
 
         <FrameLayout
             android:id="@+id/pantalla_cargando"
@@ -177,6 +177,28 @@
             </androidx.cardview.widget.CardView>
 
         </FrameLayout>
+
+        <!-- CONTENEDOR PARA EL BANNER PUBLICITARIO -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ad_container_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="10dp"
+            app:cardBackgroundColor="#80FFFFFF"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <FrameLayout
+                android:id="@+id/ad_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

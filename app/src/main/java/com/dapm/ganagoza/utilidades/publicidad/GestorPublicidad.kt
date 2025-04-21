@@ -6,6 +6,7 @@ import android.util.Log
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
@@ -16,7 +17,6 @@ class GestorPublicidad private constructor() {
 
     private var interstitialAd: InterstitialAd? = null
     private var ultimoTiempoMostrado: Long = 0
-    private var contadorRetosAgregados: Int = 0
     private var ultimoEvento: String = ""
     private var onAnuncioCerradoCallback: (() -> Unit)? = null
 
@@ -85,47 +85,6 @@ class GestorPublicidad private constructor() {
         )
     }
 
-    fun registrarEvento(activity: Activity, tipoEvento: String): Boolean {
-        val tiempoActual = System.currentTimeMillis()
-        val tiempoTranscurrido = (tiempoActual - ultimoTiempoMostrado) / 1000
-
-        when (tipoEvento) {
-            ConfiguracionAnuncios.EVENTO_AGREGAR_RETO -> {
-                contadorRetosAgregados++
-
-                if (contadorRetosAgregados >= 2 &&
-                    tiempoTranscurrido >= ConfiguracionAnuncios.INTERVALO_MINIMO_SEGUNDOS &&
-                    ultimoEvento != ConfiguracionAnuncios.EVENTO_AGREGAR_RETO) {
-
-                    contadorRetosAgregados = 0
-                    return mostrarAnuncioIntersticial(activity, tipoEvento)
-                }
-            }
-            else -> {
-                if (tiempoTranscurrido >= ConfiguracionAnuncios.INTERVALO_MINIMO_SEGUNDOS &&
-                    ultimoEvento != tipoEvento) {
-
-                    return mostrarAnuncioIntersticial(activity, tipoEvento)
-                }
-            }
-        }
-
-        return false
-    }
-
-    private fun mostrarAnuncioIntersticial(activity: Activity, tipoEvento: String): Boolean {
-        return if (interstitialAd != null) {
-            interstitialAd?.show(activity)
-            ultimoTiempoMostrado = System.currentTimeMillis()
-            ultimoEvento = tipoEvento
-            true
-        } else {
-            Log.d(TAG, "El anuncio intersticial no estaba listo")
-            cargarAnuncioIntersticial(activity)
-            false
-        }
-    }
-
     fun mostrarAnuncioObligatorioCerrarGuardar(activity: Activity): Boolean {
         if (interstitialAd != null) {
             interstitialAd?.show(activity)
@@ -153,7 +112,7 @@ class GestorPublicidad private constructor() {
         }
     }
 
-    private fun obtenerTamañoBanner(activity: Activity): AdSize {
+    fun obtenerTamañoBanner(activity: Activity): AdSize {
         val displayMetrics = activity.resources.displayMetrics
         val anchoPixeles = displayMetrics.widthPixels
         val densidad = displayMetrics.density

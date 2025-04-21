@@ -26,7 +26,6 @@ object GestorIdioma {
 
         recursos.updateConfiguration(config, recursos.displayMetrics)
 
-        // Guardar idioma seleccionado
         val preferencias = actividad.getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
         preferencias.edit { putString("idioma_seleccionado", codigoIdioma) }
 
