@@ -15,7 +15,7 @@
     <string name="editar_reto">Edit Challenge</string>
     <string name="reto_modificar">Challenge to modify</string>
     <string name="encabezado_regla_juego">How to play?</string>
-    <string name="detalle_regla_juego">Players form a circle and place the mobile device in the center, then touch the flashing button to spin the bottle. The player pointed by the bottle must complete the challenge given by the app, otherwise they leave the game.</string>
+    <string name="detalle_regla_juego">The players sit in a circle and place the phone in the center. Then, in Gana Goza, they press the Spin button to spin the bottle. The player who the bottle points to must complete the challenge that appears in Gana Goza; if they don\'t, they are eliminated from the game.</string>
     <string name="name_reglas">Game Rules</string>
     <string name="btn_sonido">Sound</string>
     <string name="btn_reglas">Rules</string>

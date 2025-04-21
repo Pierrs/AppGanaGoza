@@ -7,9 +7,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.widget.addTextChangedListener
 import com.dapm.ganagoza.databinding.DialogoAgregarRetoBinding
 import com.dapm.ganagoza.modelo.Reto
-import com.dapm.ganagoza.utilidades.publicidad.ConfiguracionAnuncios
 import com.dapm.ganagoza.utilidades.publicidad.GestorPublicidad
-import com.dapm.ganagoza.vistaModelo.VistaModeloJuego
+import com.dapm.ganagoza.viewmodel.VistaModeloJuego
 
 object DialogoAgregarReto {
 

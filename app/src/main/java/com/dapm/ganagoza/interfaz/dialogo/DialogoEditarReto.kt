@@ -8,7 +8,7 @@ import androidx.core.widget.addTextChangedListener
 import com.dapm.ganagoza.databinding.DialogoEditarRetoBinding
 import com.dapm.ganagoza.modelo.Reto
 import com.dapm.ganagoza.utilidades.publicidad.GestorPublicidad
-import com.dapm.ganagoza.vistaModelo.VistaModeloJuego
+import com.dapm.ganagoza.viewmodel.VistaModeloJuego
 
 object DialogoEditarReto {
 

@@ -1,4 +1,4 @@
-package com.dapm.ganagoza.vistaModelo
+package com.dapm.ganagoza.viewmodel
 
 import android.app.Activity
 import android.app.Application

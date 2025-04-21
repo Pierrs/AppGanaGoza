@@ -4,7 +4,7 @@ import com.dapm.ganagoza.databinding.ItemRetoBinding
 import com.dapm.ganagoza.modelo.Reto
 import com.dapm.ganagoza.interfaz.dialogo.DialogoEditarReto
 import com.dapm.ganagoza.interfaz.dialogo.DialogoEliminarReto.mostrarDialogoEliminarReto
-import com.dapm.ganagoza.vistaModelo.VistaModeloJuego
+import com.dapm.ganagoza.viewmodel.VistaModeloJuego
 
 class ContenedorVistaReto(
     private val binding: ItemRetoBinding,

@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.dapm.ganagoza.databinding.ItemRetoBinding
 import com.dapm.ganagoza.modelo.Reto
-import com.dapm.ganagoza.vistaModelo.VistaModeloJuego
+import com.dapm.ganagoza.viewmodel.VistaModeloJuego
 import com.dapm.ganagoza.interfaz.vistaHolder.ContenedorVistaReto
 
 class AdaptadorDeRetos(

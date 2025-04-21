@@ -19,7 +19,7 @@ import com.dapm.ganagoza.interfaz.vista.AgregarReto
 import com.dapm.ganagoza.interfaz.vista.ReglaJuego
 import com.dapm.ganagoza.interfaz.dialogo.DialogoIdioma
 import com.dapm.ganagoza.utilidades.GestorIdioma
-import com.dapm.ganagoza.vistaModelo.VistaModeloJuego
+import com.dapm.ganagoza.viewmodel.VistaModeloJuego
 
 class FragmentoJuego : Fragment() {
     private lateinit var retosDisponibles: MutableList<Reto>

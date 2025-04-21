@@ -14,7 +14,7 @@
     <string name="editar_reto">Modifier le défi</string>
     <string name="reto_modificar">Défi à modifier</string>
     <string name="encabezado_regla_juego">Comment jouer?</string>
-    <string name="detalle_regla_juego">Les joueurs forment un cercle et placent l\'appareil mobile au centre, puis touchent le bouton clignotant pour faire tourner la bouteille. Le joueur désigné par la bouteille doit accomplir le défi lancé par l\'application, sinon il quitte le jeu.</string>
+    <string name="detalle_regla_juego">Les joueurs s\'assoient en cercle et placent le téléphone au centre. Ensuite, dans Gana Goza, ils appuient sur le bouton Tourner pour faire tourner la bouteille. Le joueur que la bouteille désigne doit relever le défi qui apparaît dans Gana Goza ; s\'il ne le fait pas, il est éliminé du jeu.</string>
     <string name="name_reglas">Règles du jeu</string>
     <string name="btn_sonido">Son</string>
     <string name="btn_reglas">Règles</string>

@@ -8,6 +8,7 @@ import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import com.dapm.ganagoza.databinding.DialogoSeleccionIdiomaBinding
 import com.dapm.ganagoza.utilidades.GestorIdioma
+import com.dapm.ganagoza.utilidades.publicidad.GestorPublicidad
 import androidx.core.graphics.drawable.toDrawable
 
 class DialogoIdioma(private val contexto: Context) {
@@ -31,6 +32,10 @@ class DialogoIdioma(private val contexto: Context) {
         }
     }
 
+    private val gestorPublicidad: GestorPublicidad by lazy {
+        GestorPublicidad.obtenerInstancia()
+    }
+
     fun mostrar() {
         configurarEscuchadores()
         dialogo.show()
@@ -38,24 +43,27 @@ class DialogoIdioma(private val contexto: Context) {
 
     private fun configurarEscuchadores() {
         binding.formatoEspanol.setOnClickListener {
-            cambiarIdioma(GestorIdioma.ESPANOL)
+            mostrarAnuncioCambioIdioma(GestorIdioma.ESPANOL)
         }
 
         binding.formatoIngles.setOnClickListener {
-            cambiarIdioma(GestorIdioma.INGLES)
+            mostrarAnuncioCambioIdioma(GestorIdioma.INGLES)
         }
 
         binding.formatoFrancia.setOnClickListener {
-            cambiarIdioma(GestorIdioma.FRANCES)
+            mostrarAnuncioCambioIdioma(GestorIdioma.FRANCES)
         }
 
         binding.formatoBrasil.setOnClickListener {
-            cambiarIdioma(GestorIdioma.PORTUGUES)
+            mostrarAnuncioCambioIdioma(GestorIdioma.PORTUGUES)
         }
     }
 
-    private fun cambiarIdioma(codigoIdioma: String) {
+    private fun mostrarAnuncioCambioIdioma(codigoIdioma: String) {
+
         dialogo.dismiss()
-        GestorIdioma.establecerLocale(contexto as AppCompatActivity, codigoIdioma)
+        gestorPublicidad.mostrarAnuncioObligatorioIdioma(contexto as AppCompatActivity) {
+            GestorIdioma.establecerLocale(contexto, codigoIdioma)
+        }
     }
 }

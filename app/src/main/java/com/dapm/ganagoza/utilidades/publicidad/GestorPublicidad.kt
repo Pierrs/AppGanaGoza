@@ -3,19 +3,14 @@ package com.dapm.ganagoza.utilidades.publicidad
 import android.app.Activity
 import android.content.Context
 import android.util.Log
-import android.view.ViewGroup
-import android.widget.LinearLayout
-import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
-import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
-
 
 class GestorPublicidad private constructor() {
 
@@ -23,13 +18,14 @@ class GestorPublicidad private constructor() {
     private var ultimoTiempoMostrado: Long = 0
     private var contadorRetosAgregados: Int = 0
     private var ultimoEvento: String = ""
+    private var onAnuncioCerradoCallback: (() -> Unit)? = null
 
     companion object {
         private const val TAG = "GestorPublicidad"
+        private const val EVENTO_CAMBIO_IDIOMA = "cambio_idioma"
 
         @Volatile
         private var instancia: GestorPublicidad? = null
-
 
         fun obtenerInstancia(): GestorPublicidad {
             return instancia ?: synchronized(this) {
@@ -65,13 +61,22 @@ class GestorPublicidad private constructor() {
 
                     interstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
                         override fun onAdDismissedFullScreenContent() {
-                            // Una vez que se cierra el anuncio, cargamos otro
+
+                            onAnuncioCerradoCallback?.invoke()
+
+                            onAnuncioCerradoCallback = null
+
+
                             interstitialAd = null
                             cargarAnuncioIntersticial(context)
                         }
 
                         override fun onAdFailedToShowFullScreenContent(error: AdError) {
                             Log.e(TAG, "Error al mostrar intersticial: ${error.message}")
+
+                            onAnuncioCerradoCallback?.invoke()
+                            onAnuncioCerradoCallback = null
+
                             interstitialAd = null
                         }
                     }
@@ -132,16 +137,25 @@ class GestorPublicidad private constructor() {
         }
     }
 
+    fun mostrarAnuncioObligatorioIdioma(activity: Activity, callback: () -> Unit): Boolean {
+        onAnuncioCerradoCallback = callback
 
-
-
+        if (interstitialAd != null) {
+            interstitialAd?.show(activity)
+            ultimoTiempoMostrado = System.currentTimeMillis()
+            ultimoEvento = EVENTO_CAMBIO_IDIOMA
+            return true
+        } else {
+            Log.d(TAG, "El anuncio intersticial para cambio de idioma no estaba listo")
+            callback.invoke()
+            cargarAnuncioIntersticial(activity)
+            return false
+        }
+    }
 
     private fun obtenerTamañoBanner(activity: Activity): AdSize {
-
         val displayMetrics = activity.resources.displayMetrics
         val anchoPixeles = displayMetrics.widthPixels
-
-
         val densidad = displayMetrics.density
         val anchoDp = (anchoPixeles / densidad).toInt()
 

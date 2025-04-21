@@ -17,7 +17,9 @@
     <string name="editar_reto">Editar Desafio</string>
     <string name="reto_modificar">Desafio para modificar</string>
     <string name="encabezado_regla_juego">Como jogar?</string>
-    <string name="detalle_regla_juego">Os jogadores formam um círculo e colocam o dispositivo móvel no centro, depois tocam no botão piscante para girar a garrafa. O jogador apontado pela garrafa deve cumprir o desafio lançado pelo aplicativo, caso contrário, sai do jogo.</string>
+    <string name="detalle_regla_juego">Os jogadores se sentam em círculo e colocam o celular no centro. Em seguida, no Gana Goza, eles pressionam o botão Girar para girar a garrafa. O jogador para quem a garrafa apontar deve cumprir o desafio que aparece no Gana Goza; se não o fizer, será eliminado do jogo.
+
+</string>
 
     <string name="btn_reglas">Regras</string>
     <string name="btn_retos">Desafios</string>
@@ -28,7 +30,7 @@
     <string name="juego_de_retos">JOGO DE DESAFIOS!</string>
     <string name="escribe_un_reto_divertido_para_jugar">Escreva um desafio divertido para jogar</string>
     <string name="modifica_tu_reto_y_sorprende_a_todos">Modifique seu desafio e surpreenda a todos</string>
-    <string name="girar">GIRAR!</string>
+    <string name="girar">RODAR!</string>
     <string name="reto">DESAFIO</string>
     <string name="selecionar_idioma">Selecionar idioma</string>
     <string name="español">Espanhol</string>

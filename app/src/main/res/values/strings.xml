@@ -20,7 +20,7 @@
     <string name="version_del_juego">v1.0</string>
 
     <string name="encabezado_regla_juego">¿Cómo se juega?</string>
-    <string name="detalle_regla_juego">Los jugadores forman un circulo y en el centro colocan el dispositivo móvil, luuego tocan el botón parpadeante para girar la botella.El jugador que señale la botella debe cumplir el reto que lanza la app, de lo contrario abandona el juego.</string>
+    <string name="detalle_regla_juego">Los jugadores se sientan formando un círculo y colocan el celular en el centro. Luego, en Gana Goza, presionan el botón Girar para hacer girar la botella. El jugador hacia quien apunta la botella debe cumplir el reto que aparece en Gana Goza; si no lo hace, queda eliminado del juego.</string>
     <string name="terminos_condiciones">TÉRMINOS Y CONDICIONES</string>
     <string name="politica_privacidad">POLÍTICA DE PRIVACIDAD</string>
 
