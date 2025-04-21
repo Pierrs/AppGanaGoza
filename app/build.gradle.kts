@@ -62,4 +62,5 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.room.ktx)
     implementation(libs.floatingactionbutton)
+    implementation (libs.play.services.ads)
 }

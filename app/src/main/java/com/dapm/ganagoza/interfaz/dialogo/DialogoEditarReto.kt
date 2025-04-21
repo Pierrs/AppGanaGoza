@@ -1,11 +1,13 @@
 package com.dapm.ganagoza.interfaz.dialogo
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.view.LayoutInflater
 import androidx.core.widget.addTextChangedListener
 import com.dapm.ganagoza.databinding.DialogoEditarRetoBinding
 import com.dapm.ganagoza.modelo.Reto
+import com.dapm.ganagoza.utilidades.publicidad.GestorPublicidad
 import com.dapm.ganagoza.vistaModelo.VistaModeloJuego
 
 object DialogoEditarReto {
@@ -19,7 +21,7 @@ object DialogoEditarReto {
         val binding = DialogoEditarRetoBinding.inflate(LayoutInflater.from(contexto))
         val dialogo = crearDialogo(contexto, binding)
 
-        configurarEventos(binding, dialogo, vistaModelo, reto, alActualizarLista)
+        configurarEventos(binding, dialogo, contexto, vistaModelo, reto, alActualizarLista)
         configurarCamposIniciales(binding, reto)
         dialogo.show()
     }
@@ -33,6 +35,7 @@ object DialogoEditarReto {
             setCancelable(false)
         }.create()
     }
+
     private fun configurarCamposIniciales(
         binding: DialogoEditarRetoBinding,
         reto: Reto
@@ -48,11 +51,18 @@ object DialogoEditarReto {
     private fun configurarEventos(
         binding: DialogoEditarRetoBinding,
         dialogo: AlertDialog,
+        contexto: Context,
         vistaModelo: VistaModeloJuego,
         reto: Reto,
         alActualizarLista: () -> Unit
     ) {
+        val gestorPublicidad = GestorPublicidad.obtenerInstancia()
+
         binding.idBtnCancelar.setOnClickListener {
+
+            if (contexto is Activity) {
+                gestorPublicidad.mostrarAnuncioObligatorioCerrarGuardar(contexto)
+            }
             dialogo.dismiss()
         }
 
@@ -62,8 +72,12 @@ object DialogoEditarReto {
             if (nuevaDescripcion.isNotEmpty()) {
                 val retoActualizado = Reto(reto.retoId, nuevaDescripcion)
                 vistaModelo.actualizarReto(retoActualizado)
-                alActualizarLista()
+
+                if (contexto is Activity) {
+                    gestorPublicidad.mostrarAnuncioObligatorioCerrarGuardar(contexto)
+                }
                 dialogo.dismiss()
+                alActualizarLista()
             }
         }
     }

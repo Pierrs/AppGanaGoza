@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import com.dapm.ganagoza.databinding.DialogoEliminarRetoBinding
 import com.dapm.ganagoza.modelo.Reto
+import com.dapm.ganagoza.utilidades.publicidad.GestorPublicidad
 import com.dapm.ganagoza.vistaModelo.VistaModeloJuego
 
 object DialogoEliminarReto {
@@ -18,7 +19,7 @@ object DialogoEliminarReto {
         val binding = DialogoEliminarRetoBinding.inflate(LayoutInflater.from(contexto))
         val dialogo = crearDialogo(contexto, binding)
 
-        configurarEventos(binding, dialogo, vistaModelo, reto, alActualizarLista)
+        configurarEventos(binding, dialogo, contexto, vistaModelo, reto, alActualizarLista)
         dialogo.show()
     }
 
@@ -35,17 +36,26 @@ object DialogoEliminarReto {
     private fun configurarEventos(
         binding: DialogoEliminarRetoBinding,
         dialogo: AlertDialog,
+        contexto: Context,
         vistaModelo: VistaModeloJuego,
         reto: Reto,
         alActualizarLista: () -> Unit
     ) {
+        val gestorPublicidad = GestorPublicidad.obtenerInstancia()
+
         binding.idBtnNo.setOnClickListener {
+            if (contexto is android.app.Activity) {
+                gestorPublicidad.mostrarAnuncioObligatorioCerrarGuardar(contexto)
+            }
             dialogo.dismiss()
         }
 
         binding.idBtnSi.setOnClickListener {
             vistaModelo.eliminarReto(reto)
             alActualizarLista()
+            if (contexto is android.app.Activity) {
+                gestorPublicidad.mostrarAnuncioObligatorioCerrarGuardar(contexto)
+            }
             dialogo.dismiss()
         }
     }
