@@ -6,6 +6,7 @@ import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
@@ -19,7 +20,11 @@ import com.dapm.ganagoza.interfaz.vista.AgregarReto
 import com.dapm.ganagoza.interfaz.vista.ReglaJuego
 import com.dapm.ganagoza.interfaz.dialogo.DialogoIdioma
 import com.dapm.ganagoza.utilidades.GestorIdioma
+import com.dapm.ganagoza.utilidades.publicidad.ConfiguracionAnuncios
+import com.dapm.ganagoza.utilidades.publicidad.GestorPublicidad
 import com.dapm.ganagoza.viewmodel.VistaModeloJuego
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 
 class FragmentoJuego : Fragment() {
     private lateinit var retosDisponibles: MutableList<Reto>
@@ -31,6 +36,7 @@ class FragmentoJuego : Fragment() {
     private val vistaModeloJuego: VistaModeloJuego by viewModels()
     private lateinit var binding: FragmentoJuegoBinding
     private var sonido = false
+    private var adView: AdView? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,6 +54,19 @@ class FragmentoJuego : Fragment() {
         inicializarControladores()
         configurarObservadores()
         cargarRecursosMultimedia()
+        configurarBannerPublicitario()
+    }
+
+    private fun configurarBannerPublicitario() {
+        val gestorPublicidad = GestorPublicidad.obtenerInstancia()
+        gestorPublicidad.inicializarAdMob(requireContext())
+        adView = AdView(requireContext())
+        adView?.adUnitId = ConfiguracionAnuncios.ID_BANNER
+        adView?.setAdSize(gestorPublicidad.obtenerTamañoBanner(requireActivity()))
+        binding.adViewContainer.removeAllViews()
+        binding.adViewContainer.addView(adView)
+        val adRequest = AdRequest.Builder().build()
+        adView?.loadAd(adRequest)
     }
 
     private fun configurarAjustesVentana() {
@@ -214,6 +233,7 @@ class FragmentoJuego : Fragment() {
         if (::musicaAmbienteJuego.isInitialized && !musicaAmbienteJuego.isPlaying) {
             musicaAmbienteJuego.start()
         }
+        adView?.resume()
     }
 
     override fun onPause() {
@@ -221,12 +241,14 @@ class FragmentoJuego : Fragment() {
         if (::musicaAmbienteJuego.isInitialized) {
             musicaAmbienteJuego.pause()
         }
+        adView?.pause()
     }
 
     override fun onDestroy() {
         super.onDestroy()
         liberarRecursosMultimedia()
         GestorIdioma.reiniciarIdioma()
+        adView?.destroy()
     }
 
     private fun liberarRecursosMultimedia() {

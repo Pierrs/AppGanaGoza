@@ -1,8 +1,6 @@
 package com.dapm.ganagoza.interfaz.vista
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -63,6 +61,7 @@ class AgregarReto : AppCompatActivity() {
             vista.listaElementos.scrollToPosition(0)
         }
     }
+
     private fun configurarBannerPublicitario() {
         GestorPublicidad.obtenerInstancia().inicializarAdMob(this)
 
@@ -72,11 +71,9 @@ class AgregarReto : AppCompatActivity() {
                 setAdSize(GestorPublicidad.obtenerInstancia().obtenerTamañoBanner(this@AgregarReto))
                 adListener = object : AdListener() {
                     override fun onAdLoaded() {
-                        Log.d(TAG, "Banner cargado con éxito")
                     }
 
                     override fun onAdFailedToLoad(error: LoadAdError) {
-                        Log.e(TAG, "Error al cargar banner: ${error.message}")
                     }
                 }
             }
@@ -85,8 +82,6 @@ class AgregarReto : AppCompatActivity() {
 
             val adRequest = AdRequest.Builder().build()
             adView.loadAd(adRequest)
-        } else {
-            Log.e(TAG, "No se encontró el contenedor para el anuncio (adContainer)")
         }
     }
 

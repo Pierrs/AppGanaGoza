@@ -32,7 +32,6 @@ object DialogoMostrarReto {
                 alertDialog.dismiss()
             }
         }
-
         alertDialog.show()
     }
 }

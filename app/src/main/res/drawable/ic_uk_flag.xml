@@ -4,7 +4,6 @@
     android:viewportWidth="300"
     android:viewportHeight="200">
 
-    <!-- Background with red and white stripes -->
     <path android:fillColor="#B22234" android:pathData="M0,0h300v15H0z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M0,15h300v15H0z"/>
     <path android:fillColor="#B22234" android:pathData="M0,30h300v15H0z"/>
@@ -19,10 +18,8 @@
     <path android:fillColor="#FFFFFF" android:pathData="M0,165h300v15H0z"/>
     <path android:fillColor="#B22234" android:pathData="M0,180h300v20H0z"/>
 
-    <!-- Blue canton -->
     <path android:fillColor="#3C3B6E" android:pathData="M0,0h120v105H0z"/>
 
-    <!-- Stars - first row -->
     <path android:fillColor="#FFFFFF" android:pathData="M10,8 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M30,8 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M50,8 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
@@ -30,14 +27,12 @@
     <path android:fillColor="#FFFFFF" android:pathData="M90,8 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M110,8 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
 
-    <!-- Stars - second row -->
     <path android:fillColor="#FFFFFF" android:pathData="M20,20 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M40,20 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M60,20 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M80,20 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M100,20 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
 
-    <!-- Stars - third row -->
     <path android:fillColor="#FFFFFF" android:pathData="M10,32 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M30,32 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M50,32 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
@@ -45,15 +40,13 @@
     <path android:fillColor="#FFFFFF" android:pathData="M90,32 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M110,32 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
 
-    <!-- Continue with more rows as needed -->
-    <!-- Stars - fourth row -->
     <path android:fillColor="#FFFFFF" android:pathData="M20,44 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M40,44 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M60,44 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M80,44 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M100,44 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
 
-    <!-- Stars - fifth row -->
+
     <path android:fillColor="#FFFFFF" android:pathData="M10,56 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M30,56 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M50,56 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
@@ -61,14 +54,14 @@
     <path android:fillColor="#FFFFFF" android:pathData="M90,56 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M110,56 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
 
-    <!-- Stars - sixth row -->
+
     <path android:fillColor="#FFFFFF" android:pathData="M20,68 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M40,68 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M60,68 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M80,68 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M100,68 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
 
-    <!-- Stars - seventh row -->
+
     <path android:fillColor="#FFFFFF" android:pathData="M10,80 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M30,80 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M50,80 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
@@ -76,7 +69,7 @@
     <path android:fillColor="#FFFFFF" android:pathData="M90,80 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M110,80 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
 
-    <!-- Stars - eighth row -->
+
     <path android:fillColor="#FFFFFF" android:pathData="M20,92 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M40,92 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>
     <path android:fillColor="#FFFFFF" android:pathData="M60,92 l1.5,4.5 h4.7 l-3.8,2.8 l1.5,4.5 l-3.9,-2.8 l-3.9,2.8 l1.5,-4.5 l-3.8,-2.8 h4.7z"/>

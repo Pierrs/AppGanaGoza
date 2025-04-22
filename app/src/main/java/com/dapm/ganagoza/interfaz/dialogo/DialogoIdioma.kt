@@ -58,7 +58,6 @@ class DialogoIdioma(private val contexto: Context) {
             mostrarAnuncioCambioIdioma(GestorIdioma.PORTUGUES)
         }
     }
-
     private fun mostrarAnuncioCambioIdioma(codigoIdioma: String) {
 
         dialogo.dismiss()

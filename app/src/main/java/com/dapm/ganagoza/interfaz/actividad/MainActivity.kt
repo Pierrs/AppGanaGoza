@@ -15,18 +15,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         WindowCompat.setDecorFitsSystemWindows(window, false)
         window.statusBarColor = Color.TRANSPARENT
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         val fragmento = FragmentoJuego()
         supportFragmentManager.beginTransaction()
             .replace(R.id.FragmentoJuego, fragmento)
             .commit()
-
         GestorPublicidad.obtenerInstancia().inicializarAdMob(this)
     }
 

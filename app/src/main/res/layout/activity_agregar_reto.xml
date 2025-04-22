@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Cambiado a ConstraintLayout como en el tercer archivo -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
@@ -12,7 +11,6 @@
         android:fitsSystemWindows="true"
         tools:context="com.dapm.ganagoza.interfaz.vista.AgregarReto">
 
-        <!-- Fondo de ondas como en ReglaJuego.xml -->
         <ImageView
             android:id="@+id/fondo_patron_onda"
             android:layout_width="match_parent"
@@ -21,7 +19,6 @@
             android:src="@drawable/patron_ondas"
             android:alpha="0.15" />
 
-        <!-- Encabezado exactamente como en ReglaJuego.xml -->
         <include
             android:id="@+id/ic_encabezado_principal"
             layout="@layout/encabezado_principal"
@@ -31,7 +28,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
-        <!-- Resto del contenido -->
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -178,7 +174,6 @@
 
         </FrameLayout>
 
-        <!-- CONTENEDOR PARA EL BANNER PUBLICITARIO -->
         <androidx.cardview.widget.CardView
             android:id="@+id/ad_container_card"
             android:layout_width="match_parent"

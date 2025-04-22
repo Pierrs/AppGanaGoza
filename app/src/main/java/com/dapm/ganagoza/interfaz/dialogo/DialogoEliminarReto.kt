@@ -49,7 +49,6 @@ object DialogoEliminarReto {
             }
             dialogo.dismiss()
         }
-
         binding.idBtnSi.setOnClickListener {
             vistaModelo.eliminarReto(reto)
             alActualizarLista()

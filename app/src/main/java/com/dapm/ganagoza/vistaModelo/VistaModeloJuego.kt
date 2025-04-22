@@ -168,8 +168,8 @@ class VistaModeloJuego(application: Application) : AndroidViewModel(application)
 
     private fun crearIntentCompartir(activity: Activity): Intent {
         val nombrePaquete = activity.packageName
-        val eslogan = "App Gana Goza.\nHecho por Pieer's Del Aguila !! "
-        val urlApp = "https://play.google.com/store/games?hl=es_419&pli=${nombrePaquete}"
+        val eslogan = "App Gana Goza.\n¡Hecho por Pieer's Del Aguila! 🎉\n\n"
+        val urlApp = "https://play.google.com/store/apps/details?id=$nombrePaquete"
         val contenidoCompartir = eslogan + urlApp
 
         return Intent(Intent.ACTION_SEND).apply {
@@ -178,4 +178,5 @@ class VistaModeloJuego(application: Application) : AndroidViewModel(application)
             putExtra(Intent.EXTRA_TEXT, contenidoCompartir)
         }
     }
+
 }

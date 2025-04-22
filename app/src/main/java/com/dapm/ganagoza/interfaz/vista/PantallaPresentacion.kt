@@ -1,5 +1,4 @@
 package com.dapm.ganagoza.interfaz.vista
-
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle

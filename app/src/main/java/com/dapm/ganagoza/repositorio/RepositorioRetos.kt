@@ -16,7 +16,6 @@ class RepositorioRetos(context: Context) {
             accesoDatos.agregarReto(reto)
         }
     }
-
     suspend fun actualizarReto(reto: Reto) {
         withContext(Dispatchers.IO) {
             accesoDatos.actualizarReto(reto)

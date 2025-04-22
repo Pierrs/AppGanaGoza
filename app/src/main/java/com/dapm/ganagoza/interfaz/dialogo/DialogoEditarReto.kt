@@ -47,7 +47,6 @@ object DialogoEditarReto {
             binding.btnEditar.isEnabled = it.toString().isNotBlank()
         }
     }
-
     private fun configurarEventos(
         binding: DialogoEditarRetoBinding,
         dialogo: AlertDialog,

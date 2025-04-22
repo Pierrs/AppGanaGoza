@@ -23,7 +23,6 @@ object DialogoAgregarReto {
         configurarEventos(binding, dialogo, activity, vistaModelo, alActualizarLista)
         dialogo.show()
     }
-
     private fun crearDialogo(
         contexto: Context,
         binding: DialogoAgregarRetoBinding
@@ -33,7 +32,6 @@ object DialogoAgregarReto {
             .setCancelable(false)
             .create()
     }
-
     private fun configurarEventos(
         binding: DialogoAgregarRetoBinding,
         dialogo: AlertDialog,

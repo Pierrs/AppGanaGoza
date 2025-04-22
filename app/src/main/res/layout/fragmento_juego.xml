@@ -32,6 +32,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <FrameLayout
+                android:id="@+id/adViewContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/menuJuegoEncabezado" />
+
             <ImageView
                 android:id="@+id/iv_botellin"
                 android:layout_width="wrap_content"
@@ -42,7 +51,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHeight_percent="0.45"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/menuJuegoEncabezado" />
+                app:layout_constraintTop_toBottomOf="@+id/adViewContainer" />
 
             <TextView
                 android:id="@+id/tv_cuenta_regresiva"
@@ -60,7 +69,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/cl_contenedor_boton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/menuJuegoEncabezado" />
+                app:layout_constraintTop_toBottomOf="@+id/adViewContainer" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_contenedor_boton"

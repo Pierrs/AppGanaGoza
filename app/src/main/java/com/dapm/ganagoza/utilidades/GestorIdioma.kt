@@ -14,25 +14,26 @@ object GestorIdioma {
     const val PORTUGUES = "pt"
     private var idiomaActual: String? = null
 
-    fun establecerLocale(actividad: AppCompatActivity, codigoIdioma: String) {
+    fun establecerLocale(contexto: Context, codigoIdioma: String) {
         val locale = Locale(codigoIdioma)
         Locale.setDefault(locale)
 
-        val recursos = actividad.resources
-        val config = Configuration(recursos.configuration)
+        val resources = contexto.resources
+        val configuration = resources.configuration
 
-        config.setLocale(locale)
+        configuration.setLocale(locale)
+        @Suppress("DEPRECATION")
+        resources.updateConfiguration(configuration, resources.displayMetrics)
 
-
-        recursos.updateConfiguration(config, recursos.displayMetrics)
-
-        val preferencias = actividad.getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
-        preferencias.edit { putString("idioma_seleccionado", codigoIdioma) }
+        contexto.getSharedPreferences("app_prefs", Context.MODE_PRIVATE).edit {
+            putString("idioma_seleccionado", codigoIdioma)
+        }
 
         idiomaActual = codigoIdioma
 
-
-        actividad.recreate()
+        if (contexto is AppCompatActivity) {
+            contexto.recreate()
+        }
     }
 
     fun obtenerIdiomaActual(): String {

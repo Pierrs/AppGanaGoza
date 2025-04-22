@@ -2,7 +2,6 @@ package com.dapm.ganagoza.interfaz.vista
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
@@ -14,8 +13,6 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.AdListener
-
-private const val TAG = "ReglaJuego"
 
 class ReglaJuego : AppCompatActivity() {
 
@@ -62,11 +59,9 @@ class ReglaJuego : AppCompatActivity() {
             setAdSize(GestorPublicidad.obtenerInstancia().obtenerTamañoBanner(this@ReglaJuego))
             adListener = object : AdListener() {
                 override fun onAdLoaded() {
-                    Log.d(TAG, "Banner cargado con éxito")
                 }
 
                 override fun onAdFailedToLoad(error: LoadAdError) {
-                    Log.e(TAG, "Error al cargar banner: ${error.message}")
                 }
             }
         }
