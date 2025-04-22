@@ -134,19 +134,19 @@ The game includes a menu with 5 main options:
 
 <div align="center">
   <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-    <img src="./app/src/main/res/drawable/inicio_github.jpg" alt="Splash Screen" width="30%"/>
-    <img src="./app/src/main/res/drawable/principal_github.jpg" alt="Main Screen" width="30%"/>
-    <img src="./app/src/main/res/drawable/principal_giro_github.jpg" alt="Spinning Bottle" width="30%"/>
+    <img src="./app/src/main/res/drawable/inicio_github.png" alt="Splash Screen" width="30%"/>
+    <img src="./app/src/main/res/drawable/principal_github.png" alt="Main Screen" width="30%"/>
+    <img src="./app/src/main/res/drawable/principal_giro_github.png" alt="Spinning Bottle" width="30%"/>
   </div>
   <p></p>
   <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 10px;">
-    <img src="./app/src/main/res/drawable/retos_github.jpg" alt="Challenges Screen" width="30%"/>
-    <img src="./app/src/main/res/drawable/regla_github.jpg" alt="Rules Screen" width="30%"/>
-    <img src="./app/src/main/res/drawable/idioma_github.jpg" alt="Language Screen" width="30%"/>
+    <img src="./app/src/main/res/drawable/retos_github.png" alt="Challenges Screen" width="30%"/>
+    <img src="./app/src/main/res/drawable/regla_github.png" alt="Rules Screen" width="30%"/>
+    <img src="./app/src/main/res/drawable/idioma_github.png" alt="Language Screen" width="30%"/>
   </div>
   <p></p>
   <div style="display: flex; justify-content: center; margin-top: 10px;">
-    <img src="./app/src/main/res/drawable/mostrareto_github.jpg" alt="Challenge Display" width="30%"/>
+    <img src="./app/src/main/res/drawable/mostrareto_github.png" alt="Challenge Display" width="30%"/>
   </div>
 </div>
 
