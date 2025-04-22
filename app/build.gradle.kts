@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("com.google.devtools.ksp")
 }
+
 android {
     namespace = "com.dapm.ganagoza"
     compileSdk = 34
@@ -14,15 +15,18 @@ android {
         versionCode = 1
         versionName = "1.0"
     }
+
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -59,5 +63,5 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.room.ktx)
     implementation(libs.floatingactionbutton)
-    implementation (libs.play.services.ads)
+    implementation(libs.play.services.ads)
 }

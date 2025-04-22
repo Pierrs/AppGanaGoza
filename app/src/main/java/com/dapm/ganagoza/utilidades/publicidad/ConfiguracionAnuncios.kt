@@ -5,11 +5,11 @@ object ConfiguracionAnuncios {
     val ID_BANNER: String = if (ES_MODO_PRUEBA) {
         "ca-app-pub-3940256099942544/6300978111"
     } else {
-        "ca-app-pub-5883634517523480/3097454511"
+        "ca-app-pub-9631305302516404/5683315328"
     }
     val ID_INTERSTICIAL: String = if (ES_MODO_PRUEBA) {
         "ca-app-pub-3940256099942544/1033173712"
     } else {
-        "ca-app-pub-5883634517523480/8158209503"
+        "ca-app-pub-9631305302516404/3057151987"
     }
 }

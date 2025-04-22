@@ -22,6 +22,15 @@
             android:fitsSystemWindows="true"
             tools:context="com.dapm.ganagoza.interfaz.fragmento.FragmnetoJuego">
 
+            <FrameLayout
+                android:id="@+id/adViewContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <include
                 android:id="@+id/menuJuegoEncabezado"
                 layout="@layout/contenedor_menu_juego"
@@ -30,16 +39,7 @@
                 android:layout_margin="@dimen/dimen_contenedor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <FrameLayout
-                android:id="@+id/adViewContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/menuJuegoEncabezado" />
+                app:layout_constraintTop_toBottomOf="@+id/adViewContainer" />
 
             <ImageView
                 android:id="@+id/iv_botellin"
@@ -51,7 +51,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHeight_percent="0.45"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/adViewContainer" />
+                app:layout_constraintTop_toBottomOf="@+id/menuJuegoEncabezado" />
 
             <TextView
                 android:id="@+id/tv_cuenta_regresiva"
@@ -69,7 +69,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/cl_contenedor_boton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/adViewContainer" />
+                app:layout_constraintTop_toBottomOf="@+id/menuJuegoEncabezado" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_contenedor_boton"

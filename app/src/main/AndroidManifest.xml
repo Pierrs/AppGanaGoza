@@ -23,7 +23,7 @@
         tools:targetApi="31">
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-5883634517523480~7257859670"/>
+            android:value="ca-app-pub-9631305302516404~6251899761"/>
 
         <activity
             android:name=".interfaz.vista.AgregarReto"

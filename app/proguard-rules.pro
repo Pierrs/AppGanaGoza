@@ -5,17 +5,38 @@
 # For more details, see
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# Mantener solo los modelos de datos
+-keep class com.dapm.ganagoza.modelo.** { *; }
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# Mantener clases necesarias para Room
+-keep class com.dapm.ganagoza.datos.base_datos.BaseDatosReto { *; }
+-keep class com.dapm.ganagoza.datos.dao.AccesoDatosReto { *; }
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Si alguna clase usa anotaciones (como con Room)
+-keepattributes *Annotation*
+
+# Para serialización/deserialización
+-keepnames class * implements java.io.Serializable
+-keepclassmembers class * implements java.io.Serializable {
+    static final long serialVersionUID;
+    private static final java.io.ObjectStreamField[] serialPersistentFields;
+    !static !transient <fields>;
+    private void writeObject(java.io.ObjectOutputStream);
+    private void readObject(java.io.ObjectInputStream);
+    java.lang.Object writeReplace();
+    java.lang.Object readResolve();
+}
+
+# Para Parcelable
+-keepnames class * implements android.os.Parcelable
+-keepclassmembers class * implements android.os.Parcelable {
+    public static final ** CREATOR;
+}
+
+# Mantener información para debugging
+-keepattributes SourceFile,LineNumberTable
+
+# Mantener anotaciones de Kotlin
+-keepattributes *Annotation*, InnerClasses
+-keepattributes Signature
+-keepattributes Exceptions
